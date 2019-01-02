@@ -1,23 +1,20 @@
 import angular from 'angular';
-
+import ngRoute from 'angular-route';
+import ngCookies from 'angular-cookies';
 import '../style/app.css';
 
-const app = () => ({
-  template: require('./app.html'),
-  controller: 'AppCtrl',
-  controllerAs: 'app',
-});
+import auth from './authentication/auth.module';
+import home from './home/home.module';
 
-class AppCtrl {
-  constructor() {
-    this.url = 'https://github.com/preboot/angular-webpack';
-  }
-}
+import appConfig from './app.config';
+import appRun from './app.run';
 
-const MODULE_NAME = 'app';
-
-angular.module(MODULE_NAME, [])
-  .directive('app', app)
-  .controller('AppCtrl', AppCtrl);
-
-export default MODULE_NAME;
+angular
+  .module('app', [
+    'auth',
+    'home',
+    ngRoute,
+    ngCookies,
+  ])
+  .config(['$routeProvider', '$locationProvider', appConfig])
+  .run(['$rootScope', '$location', '$cookieStore', '$http', appRun]);

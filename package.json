@@ -72,7 +72,9 @@
     "webpack-dev-server": "^2.11.2"
   },
   "dependencies": {
-    "angular-ui-router": "^1.0.20",
-    "angular": "^1.6.4"
+    "angular": "^1.6.4",
+    "angular-cookies": "^1.5.11",
+    "angular-route": "^1.7.5",
+    "angular-ui-router": "^1.0.20"
   }
 }
