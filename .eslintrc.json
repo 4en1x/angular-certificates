@@ -1,0 +1,17 @@
+{
+  "extends": ["eslint:recommended", "angular", "airbnb-base"],
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true,
+    "jasmine": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "sourceType": "module",
+    "ecmaVersion": 8
+  }
+}
