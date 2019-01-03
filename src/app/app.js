@@ -1,6 +1,7 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
 import ngCookies from 'angular-cookies';
+import ngMaterial from 'angular-material';
 import '../style/app.css';
 
 import auth from './authentication/auth.module';
@@ -15,6 +16,7 @@ angular
     'home',
     ngRoute,
     ngCookies,
+    ngMaterial,
   ])
   .config(['$routeProvider', '$locationProvider', appConfig])
   .run(['$rootScope', '$location', '$cookieStore', '$http', appRun]);

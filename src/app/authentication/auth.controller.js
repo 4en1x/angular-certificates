@@ -5,6 +5,8 @@ export default class LoginController {
     this.location = $location;
     this.AuthenticationService = AuthenticationService;
     AuthenticationService.ClearCredentials();
+
+    this.scope.epamLogo = require('../../public/img/epam-logo.svg');
   }
 
   login() {

@@ -9,7 +9,7 @@ export default class AuthService {
 
   Login(email, password, callback) {
     this.timeout(() => {
-      const response = { success: email === 'test@email.com' && password === 'test' };
+      const response = { success: email === 'admin@gmail.com' && password === 'admin' };
       if (!response.success) {
         response.message = 'Email or password is incorrect';
       }
