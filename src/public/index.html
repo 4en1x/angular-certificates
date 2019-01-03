@@ -1,16 +1,73 @@
 <!doctype html>
 <html ng-app="app" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Angular App</title>
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <meta charset="UTF-8">
+    <title>Angular App</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/flag-icon-css/2.8.0/css/flag-icon.css" rel="stylesheet"/>
 
-  <base href="/">
+
+    <base href="/">
 </head>
 <body>
-  <app></app>
-  <div ng-view></div>
+<header class="header-component sticky-header" ng-controller="HeaderController">
+    <div class="header-content">
+
+        <div class="header-content-left">
+            <div class="nav-bar">
+                <i class="material-icons">home</i>
+            </div>
+        </div>
+
+        <div class="header-content-center">
+            <h1 class="app-name">GIFT CERTIFICATES SHOP</h1>
+        </div>
+
+        <div class="header-content-right">
+            <md-list-item>
+                <md-menu class="md-secondary">
+                    <md-button class="md-icon-button">
+                        <i class="material-icons">language</i>
+                    </md-button>
+                    <md-menu-content width="3">
+                        <md-menu-item ng-repeat="item in langs">
+                            <md-button>
+                                <span class="flag-icon flag-icon-{{ item.flag_name }}"></span> {{ item.name }}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+
+                {{ globals.currentUser.username }}
+        </div>
+
+    </div>
+</header>
+
+
+
+<app></app>
+<div ng-view></div>
+
+
+
+
+<footer class="footer-distributed">
+    <div class="footer-right">
+        <a href="https://instagram.com/gatty_lm/"><i class="material-icons">photo_camera</i></a>
+        <a href="https://vk.com/igatty14"><i class="material-icons">person</i></a>
+        <a href="https://t.me/igatty"><i class="material-icons">airplanemode_active</i></a>
+        <a href="https://github.com/"><i class="material-icons">face</i></a>
+    </div>
+
+    <div class="footer-left">
+        <div name="page-footer">
+            Project by <a href="mailto:ahata_pishchalava@epam.com">Ahata Pishchalava</a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

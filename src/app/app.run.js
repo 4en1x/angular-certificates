@@ -6,7 +6,7 @@ export default function run($rootScope, $location, $cookieStore, $http) {
 
   const watchChangeStart = $rootScope.$on('$locationChangeStart', (event, next, current) => {
     // redirect to login page if not logged in
-    if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
+    if (!($location.path() === '/login' || $location.path() === '/register') && !$rootScope.globals.currentUser) {
       $location.path('/login');
     }
   });

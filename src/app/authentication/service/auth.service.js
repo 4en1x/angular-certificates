@@ -9,7 +9,7 @@ export default class AuthService {
 
   Login(email, password, callback) {
     this.timeout(() => {
-      const response = { success: email === 'admin@gmail.com' && password === 'admin' };
+      const response = { success: email === 'admin@gmail.com' && password === 'admin', username: 'admin' };
       if (!response.success) {
         response.message = 'Email or password is incorrect';
       }
@@ -18,11 +18,21 @@ export default class AuthService {
 
 
     /* Use this for real authentication
-                   ----------------------------------------------*/
+                       ----------------------------------------------*/
     // $http.post('/api/authenticate', { email: email, password: password })
     //    .success(function (response) {
     //        callback(response);
     //    });
+  }
+
+  Register(email, userName, password, callback) {
+    this.timeout(() => {
+      const response = { success: email === 'admin@gmail.com' && userName === 'admin' && password === 'admin' };
+      if (!response.success) {
+        response.message = 'Email or userName or password is incorrect';
+      }
+      callback(response);
+    }, 1000);
   }
 
   SetCredentials(email, password) {

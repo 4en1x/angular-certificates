@@ -18,6 +18,7 @@
     "no-bitwise": ["error", { "allow": ["<<", ">>", "&", "|"] }],
     "no-unused-vars": [0],
     "no-param-reassign": [0],
-    "angular/no-cookiestore": [0]
+    "angular/no-cookiestore": [0],
+    "max-len": ["error", 140]
   }
 }
