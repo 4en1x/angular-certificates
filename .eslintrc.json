@@ -13,5 +13,11 @@
     },
     "sourceType": "module",
     "ecmaVersion": 8
+  },
+  "rules": {
+    "no-bitwise": ["error", { "allow": ["<<", ">>", "&", "|"] }],
+    "no-unused-vars": [0],
+    "no-param-reassign": [0],
+    "angular/no-cookiestore": [0]
   }
 }

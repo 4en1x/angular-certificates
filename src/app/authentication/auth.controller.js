@@ -1,3 +1,5 @@
+const epamLogo = require('../../public/img/epam-logo.svg');
+
 export default class LoginController {
   constructor($scope, $rootScope, $location, AuthenticationService) {
     this.scope = $scope;
@@ -6,7 +8,7 @@ export default class LoginController {
     this.AuthenticationService = AuthenticationService;
     AuthenticationService.ClearCredentials();
 
-    this.scope.epamLogo = require('../../public/img/epam-logo.svg');
+    this.scope.epamLogo = epamLogo;
   }
 
   login() {
