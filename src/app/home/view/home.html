@@ -1,3 +1,31 @@
-<h1>Home</h1>
-<p>You're logged in!!</p>
-<p><a href="/login">Logout</a></p>
+<div ng-controller="HomeController">
+    <div class="main-content">
+        <div flex class="gcs-container" ng-repeat="item in gcs">
+            <md-card md-theme-watch class="gcs-card">
+                <md-card-title class="card-title">
+                    <md-card-title-text>
+                        <span class="md-headline">{{item.name | uppercase}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media card-date">
+                            <span class="md-subhead">{{item.dateOfModification | date: 'longDate'}}</span>
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+                <div class="card-content">
+                    <div ng-repeat="tag in item.tags" class="tags-container">
+                        {{tag.name}}
+                    </div>
+                    <br>
+                    <span class="md-subhead">{{item.description}}</span>
+                </div>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </div>
+</div>
+
+

@@ -16,12 +16,7 @@ export default class LoginController {
     this.scope.dataLoading = true;
     this.AuthenticationService.Login(this.scope.email, this.scope.password, (response) => {
       if (response.success) {
-        this.AuthenticationService.SetCredentials(this.scope.email, this.scope.password);
-        this.rootScope.globals = {
-          currentUser: {
-            username: response.username,
-          },
-        };
+        this.AuthenticationService.SetCredentials(this.scope.email, this.scope.password, response.username);
         this.location.path('/');
       } else {
         this.scope.error = response.message;

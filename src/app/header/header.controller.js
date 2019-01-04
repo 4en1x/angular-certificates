@@ -1,5 +1,6 @@
 export default class HeaderController {
-  constructor($scope) {
+  constructor($scope, $rootScope, $cookieStore) {
+    $rootScope.globals = $cookieStore.get('globals') || {};
     this.scope = $scope;
     this.scope.langs = [
       { id: 1, name: 'RUSSIAN', flag_name: 'ru' },

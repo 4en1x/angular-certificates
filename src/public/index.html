@@ -18,7 +18,7 @@
 
         <div class="header-content-left">
             <div class="nav-bar">
-                <i class="material-icons">home</i>
+                <a class="home-button" href="/" ng-hide="path === '/'"><i class="material-icons">home</i></a>
             </div>
         </div>
 
@@ -26,33 +26,64 @@
             <h1 class="app-name">GIFT CERTIFICATES SHOP</h1>
         </div>
 
-        <div class="header-content-right">
-            <md-list-item>
-                <md-menu class="md-secondary">
-                    <md-button class="md-icon-button">
-                        <i class="material-icons">language</i>
+        <div class="header-content-right-container">
+            <div class="header-content-right">
+                <md-list-item ng-if="globals.currentUser.username">
+                    <md-menu class="md-secondary">
+                        <md-button class="md-icon-button"></md-button>
+                        <md-menu-content width="2">
+                            <md-menu-item>
+                                <md-button ng-href="/login">
+                                        <i class="material-icons user-icons">directions_run</i>
+                                        <p class="user-icons">Logout</p>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-href="/cabinet">
+                                    <i class="material-icons user-icons">account_box</i>
+                                    <p class="user-icons">Personal Cabinet</p>
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                    {{ globals.currentUser.username }}
+                </md-list-item>
+                <md-list-item ng-if="!globals.currentUser.username">
+                    <md-button
+                            class="md-raised md-primary"
+                            md-colors="{background: 'black-500'}"
+                            ng-hide="path === '/login'"
+                            ng-href="/login"
+                    >
+                        Login
                     </md-button>
-                    <md-menu-content width="3">
-                        <md-menu-item ng-repeat="item in langs">
-                            <md-button>
-                                <span class="flag-icon flag-icon-{{ item.flag_name }}"></span> {{ item.name }}
-                            </md-button>
-                        </md-menu-item>
-                    </md-menu-content>
-                </md-menu>
+                </md-list-item>
+            </div>
 
-                {{ globals.currentUser.username }}
+            <div class="header-content-right">
+                <md-list-item>
+                    <md-menu class="md-secondary">
+                        <md-button class="md-icon-button">
+                            <i class="material-icons">language</i>
+                        </md-button>
+                        <md-menu-content width="3">
+                            <md-menu-item ng-repeat="item in langs">
+                                <md-button>
+                                    <span class="flag-icon flag-icon-{{ item.flag_name }}"></span> {{ item.name }}
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-list-item>
+            </div>
         </div>
 
     </div>
 </header>
 
 
-
 <app></app>
 <div ng-view></div>
-
-
 
 
 <footer class="footer-distributed">

@@ -35,13 +35,14 @@ export default class AuthService {
     }, 1000);
   }
 
-  SetCredentials(email, password) {
+  SetCredentials(email, password, username) {
     const authdata = this.Base64.encode(`${email}:${password}`);
 
     this.rootScope.globals = {
       currentUser: {
         email,
         authdata,
+        username,
       },
     };
 

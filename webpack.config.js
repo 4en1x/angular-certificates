@@ -178,7 +178,7 @@ module.exports = (function makeWebpackConfig() {
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
       // Extract css files
       // Disabled when in test mode or not in build mode
-      new ExtractTextPlugin({ filename: 'css/[name].css', disable: !isProd, allChunks: true }),
+      new ExtractTextPlugin({ filename: 'css/[name].css', disable: !isProd, allChunks: true })
     );
   }
 
@@ -201,7 +201,7 @@ module.exports = (function makeWebpackConfig() {
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([{
         from: `${__dirname}/src/public`,
-      }]),
+      }])
     );
   }
 

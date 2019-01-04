@@ -25,7 +25,7 @@ export default function config($routeProvider, $locationProvider) {
 
     })
 
-    .otherwise({ redirectTo: '/login' });
+    .otherwise({ redirectTo: '/' });
 
   $locationProvider.html5Mode(true);
 }
