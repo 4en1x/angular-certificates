@@ -9,6 +9,7 @@
 footer {
     position: fixed;
     bottom: 0;
+    z-index: 5;
 }
 
 .footer-distributed {
@@ -132,4 +133,9 @@ footer {
 
 .home-button {
     color: black;
+}
+
+.main-content {
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
