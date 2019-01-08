@@ -3,9 +3,9 @@ export default class HomeService {
     this.http = $http;
   }
 
-  GetAll(page = 1, amountOnPage = 10, callback) {
+  GetGC(id = 1, callback) {
     this.http({
-      url: `http://localhost:8888/giftcertificates?amountOnPage=${amountOnPage}&page=${page}`,
+      url: `http://localhost:8888/giftcertificates/${id}`,
       dataType: 'json',
       method: 'GET',
       data: '',
@@ -18,13 +18,16 @@ export default class HomeService {
       });
   }
 
-  GetAmount(callback) {
+  EditGC(id = 1, gc, callback) {
+    console.log(this.http.defaults.headers.common.Authorization)
+      console.log(this.http.defaults)
     this.http({
-      url: 'http://localhost:8888/giftcertificates/amount',
+      url: `http://localhost:8888/giftcertificates/${id}`,
       dataType: 'json',
-      method: 'GET',
-      data: '',
+      method: 'PUT',
+      data: JSON.stringify(gc),
       headers: {
+        Authorization: this.http.defaults.headers.common.Authorization,
         'Content-Type': 'application/json',
       },
     })

@@ -138,3 +138,10 @@ footer {
     margin-top: 60px;
     margin-bottom: 60px;
 }
+
+.add-icon-href {
+    text-decoration: none;
+}
+.add-icon {
+    margin-top: -20px;
+}

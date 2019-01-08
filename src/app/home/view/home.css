@@ -47,3 +47,7 @@
     display: flex;
 }
 
+.edit-delete-buttons {
+    margin-right: 5px !important;
+}
+

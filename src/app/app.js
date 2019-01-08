@@ -7,6 +7,7 @@ import '../style/app.css';
 import auth from './authentication/auth.module';
 import home from './home/home.module';
 import header from './header/header.module';
+import editgc from './editgc/editgc.module';
 
 import appConfig from './app.config';
 import appRun from './app.run';
@@ -16,6 +17,7 @@ angular
     'auth',
     'home',
     'header',
+    'editgc',
     ngRoute,
     ngCookies,
     ngMaterial,

@@ -1,0 +1,22 @@
+.row-style-price {
+    width: calc(50% - 10px);
+}
+
+.row-style-duration {
+    margin-right: 20px;
+    width: calc(50% - 10px);
+}
+
+.row-style-tags {
+    width: calc(85% - 10px);
+}
+
+.row-style-add-tag {
+    margin-right: 20px;
+    width: calc(15% - 10px);
+}
+
+.row-style-add-tag-icon {
+    margin-top: 6px !important;
+    font-size: 44px !important;
+}

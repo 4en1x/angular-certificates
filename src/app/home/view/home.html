@@ -3,7 +3,7 @@
         <md-card md-theme-watch class="gcs-card">
             <md-card-title class="card-title">
                 <md-card-title-text>
-                    <span class="md-headline">{{item.name | uppercase}}</span>
+                    <span class="md-headline" data-id = "{{item.id}}" ng-click="$ctrl.showFull($event)">{{item.name | uppercase}}</span>
                 </md-card-title-text>
                 <md-card-title-media>
                     <div class="md-media-lg card-media card-date">
@@ -20,8 +20,8 @@
             </div>
             <div class="item-buttons-container">
                 <md-card-actions layout="row" layout-align="start center">
-                    <md-button md-colors="{background: 'Green'}">Edit</md-button>
-                    <md-button md-colors="{background: 'Red'}">Delete</md-button>
+                    <md-button class="edit-delete-buttons" md-colors="{background: 'Green'}" ng-href="/edit/{{item.id}}">Edit</md-button>
+                    <md-button class="edit-delete-buttons" md-colors="{background: 'Red'}">Delete</md-button>
                 </md-card-actions>
 
                 <md-card-actions layout="row" layout-align="end center" class="item-price-container">

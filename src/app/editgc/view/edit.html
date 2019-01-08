@@ -1,0 +1,54 @@
+<div class="auth-container parent-size" ng-controller="EditGCController as $ctrl">
+    <div class="auth-form">
+        <div class="auth-form-header">
+            <h1>Edit Gift Certificate</h1>
+        </div>
+        <div>
+            <div ng-show="error" class="alert-danger">{{ error }}</div>
+
+            <form name="form" role="form">
+                <md-input-container class="md-block">
+                    <input ng-model="gc.name" type="text" placeholder="Title" name="name" id="name" class="form-control"
+                           ng-required="true" md-maxlength="20">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Description</label>
+                    <textarea ng-model="gc.description" name="description" id="description"
+                              class="form-control" ng-required="true" md-maxlength="250" rows="3">
+                    </textarea>
+                </md-input-container>
+
+                <div layout="row">
+                    <md-input-container class="md-block row-style-duration">
+                        <input ng-model="gc.duration" type="number" placeholder="Duration" name="duration" id="duration"
+                               class="form-control" ng-required="true" md-maxlength="4">
+                    </md-input-container>
+
+                    <md-input-container class="md-block row-style-price">
+                        <input ng-model="gc.price" type="number" placeholder="Price" name="price" id="price"
+                               class="form-control" ng-required="true" md-maxlength="7">
+                    </md-input-container>
+                </div>
+
+                <div layout="row">
+                    <md-button class="md-fab row-style-add-tag" aria-label="Add tag">
+                        <i class="material-icons row-style-add-tag-icon">add</i>
+                    </md-button>
+
+                    <md-input-container class="md-block row-style-tags">
+                        <input type="text" placeholder="Tags" name="tags" id="tags" class="form-control">
+                    </md-input-container>
+                </div>
+
+                <div class="form-actions">
+                    <md-button type="submit" ng-disabled="form.$invalid || dataLoading"
+                               class="md-raised md-warn login-button" ng-click="$ctrl.editGC(gc.id)">Edit
+                    </md-button>
+                    <img ng-if="dataLoading"
+                         src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 export default class AuthService {
-  constructor(Base64, $http, $cookieStore, $rootScope, $timeout) {
+  constructor(Base64, $http, $cookieStore, $rootScope, $timeout, $httpParamSerializer) {
     this.http = $http;
+    this.httpParamSerializer = $httpParamSerializer;
     this.rootScope = $rootScope;
     this.cookieStore = $cookieStore;
     this.timeout = $timeout;
@@ -8,6 +9,7 @@ export default class AuthService {
   }
 
   Login(email, password, callback) {
+    /*
     this.timeout(() => {
       const response = { success: email === 'admin@gmail.com' && password === 'admin', username: 'admin' };
       if (!response.success) {
@@ -16,13 +18,29 @@ export default class AuthService {
       callback(response);
     }, 1000);
 
+*/
+    this.http({
+      url: 'http://localhost:8888/oauth/token',
+      method: 'POST',
+      redirect_url: 'http://localhost:8080',
+      data: this.httpParamSerializer({
+        grant_type: 'password',
+        username: 'admin',
+        password: 'User1',
+        client_id: 'devglan-client',
+      }),
+      headers: {
+        Authorization: `Basic ${btoa('devglan-client:devglan-secret')}`,
+        'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
+      },
 
-    /* Use this for real authentication
-                       ----------------------------------------------*/
-    // $http.post('/api/authenticate', { email: email, password: password })
-    //    .success(function (response) {
-    //        callback(response);
-    //    });
+    })
+      .then((response) => {
+        this.http.defaults.headers.common.Authorization = `Bearer ${response.data.access_token}`;
+        console.log('---------------------------------------------');
+        console.log(response);
+        callback(response);
+      });
   }
 
   Register(email, userName, password, callback) {
