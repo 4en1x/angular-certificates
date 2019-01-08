@@ -95,11 +95,9 @@ footer {
 }
 
 .header-content-center {
-    height: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 100px;
+    position: absolute;
+    left: 50px;
+    right: 50px;
 }
 
 .header-component .logo-container {
@@ -121,6 +119,7 @@ footer {
 
 .app-name {
     font: normal 1.5em/1.1 OFL Sorts Mill Goudy;
+    text-align: center;
 }
 
 .header-content-right {
