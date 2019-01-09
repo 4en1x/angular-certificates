@@ -79,7 +79,6 @@ footer {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    margin-top: -60px !important;
     background-color: #fafafa;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
@@ -135,17 +134,24 @@ footer {
 }
 
 .main-content {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
 
 .add-icon-href {
     text-decoration: none;
 }
 .add-icon {
     margin-top: -20px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.md-open-menu-container.md-active {
+    z-index: 1000;
 }
