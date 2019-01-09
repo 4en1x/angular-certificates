@@ -32,14 +32,24 @@
                 </div>
 
                 <div layout="row">
-                    <md-button class="md-fab row-style-add-tag" aria-label="Add tag">
+                    <md-button class="md-fab row-style-add-tag" aria-label="Add tag" ng-click="$ctrl.addTag()">
                         <i class="material-icons row-style-add-tag-icon">add</i>
                     </md-button>
 
                     <md-input-container class="md-block row-style-tags">
-                        <input type="text" placeholder="Tags" name="tags" id="tags" class="form-control">
+                        <input ng-model="inputTag" type="text" placeholder="Tags" name="tags" id="tags" class="form-control">
                     </md-input-container>
+
+
                 </div>
+
+                <md-chips ng-model="gc.tags" readonly=true
+                          md-removable=true placeholder="Enter a fruit..."
+                          input-aria-label="Fruit names">
+                    <md-chip-template>
+                        <strong>{{$chip.name}}</strong>
+                    </md-chip-template>
+                </md-chips>
 
                 <div class="form-actions">
                     <md-button type="submit" ng-disabled="form.$invalid || dataLoading"

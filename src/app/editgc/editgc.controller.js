@@ -20,6 +20,17 @@ export default class HomeController {
     });
   }
 
+  addTag() {
+    if (!this.scope.inputTag) {
+      return;
+    }
+
+    this.scope.gc.tags.push({
+      name: this.scope.inputTag,
+    });
+    this.scope.inputTag = '';
+  }
+
   editGC(id) {
     this.scope.dataLoading = true;
     this.EditGCService.EditGC(id, this.scope.gc, (response) => {
