@@ -15,14 +15,14 @@ export default class LoginController {
   login() {
     this.scope.dataLoading = true;
     this.AuthenticationService.Login(this.scope.email, this.scope.password, (response) => {
-      if (response.success) {
-        this.AuthenticationService.SetCredentials(this.scope.email, this.scope.password, response.username);
-        this.location.path('/');
-      } else {
-        this.scope.error = response.message;
-        this.scope.dataLoading = false;
-      }
-    });
+      this.AuthenticationService.SetCredentials(this.scope.email, this.scope.password, 'Потом сменить');
+      this.location.path('/');
+    }, this.errorCallback.bind(this));
+  }
+
+  errorCallback(error) {
+    console.log(error);
+    this.scope.dataLoading = false;
   }
 
   register() {

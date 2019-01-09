@@ -18,9 +18,9 @@ export default class HomeService {
       });
   }
 
-  EditGC(id = 1, gc, callback) {
-    console.log(this.http.defaults.headers.common.Authorization)
-      console.log(this.http.defaults)
+  EditGC(id = 1, gc, callback, errorCallback) {
+    console.log(this.http.defaults.headers.common.Authorization);
+    console.log(this.http.defaults);
     this.http({
       url: `http://localhost:8888/giftcertificates/${id}`,
       dataType: 'json',
@@ -33,6 +33,31 @@ export default class HomeService {
     })
       .then((response) => {
         callback(response);
+      },
+      (error) => {
+        errorCallback(error);
+      });
+  }
+
+
+  AddGC(gc, callback, errorCallback) {
+    console.log(this.http.defaults.headers.common.Authorization);
+    console.log(this.http.defaults);
+    this.http({
+      url: 'http://localhost:8888/giftcertificates',
+      dataType: 'json',
+      method: 'POST',
+      data: JSON.stringify(gc),
+      headers: {
+        Authorization: this.http.defaults.headers.common.Authorization,
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        callback(response);
+      },
+      (error) => {
+        errorCallback(error);
       });
   }
 }

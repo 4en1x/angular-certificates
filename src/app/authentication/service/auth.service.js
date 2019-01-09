@@ -8,25 +8,15 @@ export default class AuthService {
     this.Base64 = Base64;
   }
 
-  Login(email, password, callback) {
-    /*
-    this.timeout(() => {
-      const response = { success: email === 'admin@gmail.com' && password === 'admin', username: 'admin' };
-      if (!response.success) {
-        response.message = 'Email or password is incorrect';
-      }
-      callback(response);
-    }, 1000);
-
-*/
+  Login(email, password, callback, errorCallback) {
     this.http({
       url: 'http://localhost:8888/oauth/token',
       method: 'POST',
       redirect_url: 'http://localhost:8080',
       data: this.httpParamSerializer({
         grant_type: 'password',
-        username: 'admin',
-        password: 'User1',
+        username: email,
+        password,
         client_id: 'devglan-client',
       }),
       headers: {
@@ -36,10 +26,15 @@ export default class AuthService {
 
     })
       .then((response) => {
-        this.http.defaults.headers.common.Authorization = `Bearer ${response.data.access_token}`;
+        const authToken = `Bearer ${response.data.access_token}`;
+        this.http.defaults.headers.common.Authorization = authToken;
+        this.cookieStore.put('authToken', authToken);
         console.log('---------------------------------------------');
         console.log(response);
         callback(response);
+      },
+      (error) => {
+        errorCallback(error);
       });
   }
 

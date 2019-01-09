@@ -1,7 +1,8 @@
 <div class="auth-container parent-size" ng-controller="EditGCController as $ctrl">
     <div class="auth-form">
         <div class="auth-form-header">
-            <h1>Edit Gift Certificate</h1>
+            <h1 ng-hide="path === '/add'">Edit Gift Certificate</h1>
+            <h1 ng-hide="path !== '/add'">Add Gift Certificate</h1>
         </div>
         <div>
             <div ng-show="error" class="alert-danger">{{ error }}</div>
@@ -51,13 +52,26 @@
                     </md-chip-template>
                 </md-chips>
 
-                <div class="form-actions">
-                    <md-button type="submit" ng-disabled="form.$invalid || dataLoading"
-                               class="md-raised md-warn login-button" ng-click="$ctrl.editGC(gc.id)">Edit
-                    </md-button>
+                <div layout="row" class="actions-button">
+                    <div class="form-actions">
+                        <md-button type="submit" ng-disabled="form.$invalid || dataLoading"
+                                   class="md-raised md-warn" ng-click="$ctrl.editGC(gc.id)" ng-hide="path === '/add'">Edit
+                        </md-button>
+                    </div>
+                    <div class="form-actions">
+                        <md-button type="submit" ng-disabled="form.$invalid || dataLoading"
+                                   class="md-raised md-warn" ng-click="$ctrl.addGC()" ng-hide="path.indexOf('/edit') !== -1">Add
+                        </md-button>
+                    </div>
+                    <div class="form-actions">
+                        <md-button type="submit" ng-disabled="form.$invalid || dataLoading"
+                                   class="md-raised md-warn" ng-click="$ctrl.deleteGC(gc.id)" ng-hide="path === '/add'">Delete
+                        </md-button>
+                    </div>
                     <img ng-if="dataLoading"
                          src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
                 </div>
+
             </form>
         </div>
     </div>
