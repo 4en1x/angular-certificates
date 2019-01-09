@@ -1,3 +1,6 @@
+const deleteConfirmTemplate = require('./view/deleteConfirmation.html');
+const exitConfirmTemplate = require('./view/exitConfirmation.html');
+
 export default class EditGCController {
   constructor($scope, $mdDialog, $routeParams, EditGCService) {
     this.scope = $scope;
@@ -6,9 +9,31 @@ export default class EditGCController {
     this.EditGCService = EditGCService;
     this.scope.gc = {};
     const id = this.routeParams.id;
+
     if (id) {
       this.getGC(id);
     }
+
+    this.scope.$on('$locationChangeStart', (event) => {
+      console.log('refef')
+        event.preventDefault();
+      const that = this;
+      const mdDialogCtrl = function ($scope) {
+        $scope.cancel = function () {
+          that.mdDialog.cancel();
+        };
+        $scope.confirm = function () {
+          that.mdDialog.cancel();
+        };
+      };
+      this.mdDialog.show({
+        controller: mdDialogCtrl,
+        template: exitConfirmTemplate,
+        parent: angular.element(document.body),
+        clickOutsideToClose: true,
+        fullscreen: false,
+      });
+    });
   }
 
   getGC(id) {
@@ -34,8 +59,35 @@ export default class EditGCController {
   }
 
   deleteGC(id) {
-
+    this.scope.dataLoading = true;
+    this.EditGCService.DeleteGC(id, (response) => {
+      alert('success');
+      this.scope.dataLoading = false;
+    }, this.errorCallback.bind(this));
   }
+
+  beforeDeleteGC(gcId) {
+    const that = this;
+    const mdDialogCtrl = function ($scope, dataToPass) {
+      $scope.id = dataToPass;
+      $scope.cancel = function () {
+        that.mdDialog.cancel();
+      };
+      $scope.delete = function (id) {
+        that.deleteGC(id);
+        that.mdDialog.cancel();
+      };
+    };
+    this.mdDialog.show({
+      locals: { dataToPass: gcId },
+      controller: mdDialogCtrl,
+      template: deleteConfirmTemplate,
+      parent: angular.element(document.body),
+      clickOutsideToClose: true,
+      fullscreen: false,
+    });
+  }
+
 
   errorCallback(error) {
     console.log(error);

@@ -75,11 +75,6 @@ export default class HomeController {
       targetEvent: e,
       clickOutsideToClose: true,
       fullscreen: false,
-    })
-      .then((answer) => {
-        this.scope.fullStatus = `You said the information was "${answer}".`;
-      }, () => {
-        this.scope.fullStatus = 'You cancelled the dialog.';
-      });
+    });
   }
 }

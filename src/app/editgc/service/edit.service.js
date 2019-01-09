@@ -18,7 +18,28 @@ export default class HomeService {
       });
   }
 
-  EditGC(id = 1, gc, callback, errorCallback) {
+  DeleteGC(id, callback, errorCallback) {
+    console.log(this.http.defaults.headers.common.Authorization);
+    console.log(this.http.defaults);
+    this.http({
+      url: `http://localhost:8888/giftcertificates/${id}`,
+      dataType: 'json',
+      method: 'DELETE',
+      data: '',
+      headers: {
+        Authorization: this.http.defaults.headers.common.Authorization,
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        callback(response);
+      },
+      (error) => {
+        errorCallback(error);
+      });
+  }
+
+  EditGC(id, gc, callback, errorCallback) {
     console.log(this.http.defaults.headers.common.Authorization);
     console.log(this.http.defaults);
     this.http({

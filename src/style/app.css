@@ -139,6 +139,10 @@ footer {
     margin-bottom: 60px;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .add-icon-href {
     text-decoration: none;
 }
