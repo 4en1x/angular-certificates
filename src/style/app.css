@@ -73,6 +73,7 @@ footer {
 }
 
 .header-component {
+    top: 0;
     height: 60px;
     display: flex;
     justify-content: center;

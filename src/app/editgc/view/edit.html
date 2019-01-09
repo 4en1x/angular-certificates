@@ -54,17 +54,17 @@
 
                 <div layout="row" class="actions-button">
                     <div class="form-actions">
-                        <md-button type="submit" ng-disabled="form.$invalid || dataLoading"
+                        <md-button ng-disabled="form.$invalid || dataLoading"
                                    class="md-raised md-warn" ng-click="$ctrl.editGC(gc.id)" ng-hide="path === '/add'">Edit
                         </md-button>
                     </div>
                     <div class="form-actions">
-                        <md-button type="submit" ng-disabled="form.$invalid || dataLoading"
+                        <md-button ng-disabled="form.$invalid || dataLoading"
                                    class="md-raised md-warn" ng-click="$ctrl.addGC()" ng-hide="path.indexOf('/edit') !== -1">Add
                         </md-button>
                     </div>
                     <div class="form-actions">
-                        <md-button type="submit" ng-disabled="form.$invalid || dataLoading"
+                        <md-button ng-disabled="form.$invalid || dataLoading"
                                    class="md-raised md-warn" ng-click="$ctrl.beforeDeleteGC(gc.id)" ng-hide="path === '/add'">Delete
                         </md-button>
                     </div>

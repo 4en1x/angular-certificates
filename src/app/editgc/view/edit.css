@@ -28,3 +28,7 @@
 md-chips.md-default-theme .md-chips, md-chips .md-chips {
     box-shadow: 0 0 rgba(0,0,0,0.12);
 }
+
+md-chips-wrap#_md-chips-wrapper-1:focus {
+    outline: none;
+}

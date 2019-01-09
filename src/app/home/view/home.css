@@ -51,3 +51,11 @@
     margin-right: 5px !important;
 }
 
+.md-headline {
+    outline: none;
+    cursor: pointer;
+}
+
+md-dialog.md-transition-in, md-dialog.md-transition-out {
+    min-width: 700px;
+}
