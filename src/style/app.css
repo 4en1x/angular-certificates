@@ -156,3 +156,10 @@ input[type=number]::-webkit-outer-spin-button {
 .md-open-menu-container.md-active {
     z-index: 1000;
 }
+
+.toast-container {
+    position: absolute;
+    height: 60px;
+    margin-top: 47px;
+    width: 100%;
+}

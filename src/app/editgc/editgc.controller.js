@@ -2,12 +2,13 @@ const deleteConfirmTemplate = require('./view/deleteConfirmation.html');
 const exitConfirmTemplate = require('./view/exitConfirmation.html');
 
 export default class EditGCController {
-  constructor($scope, $rootScope, $mdDialog, $routeParams, $location, EditGCService) {
+  constructor($scope, $rootScope, $mdDialog, $mdToast, $routeParams, $location, EditGCService) {
     this.scope = $scope;
     this.rootScope = $rootScope;
     this.location = $location;
     this.routeParams = $routeParams;
     this.mdDialog = $mdDialog;
+    this.mdToast = $mdToast;
     this.EditGCService = EditGCService;
     this.scope.gc = {};
     const id = this.routeParams.id;
@@ -95,9 +96,18 @@ export default class EditGCController {
     });
   }
 
-
   errorCallback(error) {
     console.log(error);
+
+    this.mdToast.show(
+      this.mdToast.simple()
+        .content('my message')
+        .action('Close')
+        .highlightAction(true)
+        .hideDelay(0)
+        .position('top center')
+        .parent('.toast-container'),
+    );
     this.scope.dataLoading = false;
   }
 

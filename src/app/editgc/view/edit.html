@@ -9,26 +9,80 @@
 
             <form name="form" role="form">
                 <md-input-container class="md-block">
-                    <input ng-model="gc.name" type="text" placeholder="Title" name="name" id="name" class="form-control"
-                           ng-required="true" md-maxlength="20">
+                    <input
+                            ng-model="gc.name"
+                            type="text"
+                            placeholder="Title"
+                            name="name"
+                            id="name"
+                            class="form-control"
+                            required
+                            md-maxlength="20"
+                    >
+                    <div ng-messages="form.name.$error">
+                        <div ng-message="md-maxlength">
+                            Your email must be less than 20 characters long.
+                        </div>
+                        <div ng-message="required">This is required.</div>
+                    </div>
                 </md-input-container>
 
                 <md-input-container class="md-block">
                     <label>Description</label>
-                    <textarea ng-model="gc.description" name="description" id="description"
-                              class="form-control" ng-required="true" md-maxlength="250" rows="3">
-                    </textarea>
+                    <textarea
+                            ng-model="gc.description"
+                            name="description"
+                            id="description"
+                            class="form-control"
+                            required
+                            md-maxlength="250"
+                            rows="3"
+                    ></textarea>
+                    <div ng-messages="form.description.$error">
+                        <div ng-message="md-maxlength">
+                            Your email must be less than 250 characters long.
+                        </div>
+                        <div ng-message="required">This is required.</div>
+                    </div>
                 </md-input-container>
 
                 <div layout="row">
                     <md-input-container class="md-block row-style-duration">
-                        <input ng-model="gc.duration" type="number" placeholder="Duration" name="duration" id="duration"
-                               class="form-control" ng-required="true" md-maxlength="4">
+                        <input
+                                ng-model="gc.duration"
+                                type="number"
+                                placeholder="Duration"
+                                name="duration"
+                                id="duration"
+                                class="form-control"
+                                required
+                                md-maxlength="4"
+                        >
+                        <div ng-messages="form.duration.$error">
+                            <div ng-message="md-maxlength">
+                                Your email must be less than 5 characters long.
+                            </div>
+                            <div ng-message="required">This is required.</div>
+                        </div>
                     </md-input-container>
 
                     <md-input-container class="md-block row-style-price">
-                        <input ng-model="gc.price" type="number" placeholder="Price" name="price" id="price"
-                               class="form-control" ng-required="true" md-maxlength="7">
+                        <input
+                                ng-model="gc.price"
+                                type="number"
+                                placeholder="Price"
+                                name="price"
+                                id="price"
+                                class="form-control"
+                                required
+                                md-maxlength="7"
+                        >
+                        <div ng-messages="form.price.$error">
+                            <div ng-message="md-maxlength">
+                                Your email must be less than 7 characters long.
+                            </div>
+                            <div ng-message="required">This is required.</div>
+                        </div>
                     </md-input-container>
                 </div>
 
