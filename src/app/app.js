@@ -2,6 +2,8 @@ import angular from 'angular';
 import ngRoute from 'angular-route';
 import ngCookies from 'angular-cookies';
 import ngMaterial from 'angular-material';
+import ngMessages from 'angular-messages';
+import ngAnimate from 'angular-animate';
 import '../style/app.css';
 
 import auth from './authentication/auth.module';
@@ -21,6 +23,8 @@ angular
     ngRoute,
     ngCookies,
     ngMaterial,
+    ngMessages,
+    ngAnimate,
   ])
   .config(['$routeProvider', '$locationProvider', appConfig])
   .config(($mdThemingProvider) => {

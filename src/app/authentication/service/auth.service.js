@@ -27,10 +27,10 @@ export default class AuthService {
     })
       .then((response) => {
         const authToken = `Bearer ${response.data.access_token}`;
+
         this.http.defaults.headers.common.Authorization = authToken;
         this.cookieStore.put('authToken', authToken);
-        console.log('---------------------------------------------');
-        console.log(response);
+
         callback(response);
       },
       (error) => {
@@ -38,14 +38,26 @@ export default class AuthService {
       });
   }
 
-  Register(email, userName, password, callback) {
-    this.timeout(() => {
-      const response = { success: email === 'admin@gmail.com' && userName === 'admin' && password === 'admin' };
-      if (!response.success) {
-        response.message = 'Email or userName or password is incorrect';
-      }
-      callback(response);
-    }, 1000);
+  Register(userName, password, callback, errorCallback) {
+    this.http({
+      url: 'http://localhost:8888/users',
+      dataType: 'json',
+      method: 'POST',
+      data: {
+        password,
+        login: userName,
+      },
+      headers: {
+        Authorization: this.http.defaults.headers.common.Authorization,
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        callback(response);
+      },
+      (error) => {
+        errorCallback(error);
+      });
   }
 
   SetCredentials(email, password, username) {

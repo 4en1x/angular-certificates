@@ -12,6 +12,16 @@ export default class LoginController {
     this.scope.epamLogo = epamLogo;
   }
 
+  validateForm(form) {
+    if (this.scope.password !== this.scope.repeatPassword) {
+      form.password.$setValidity('validatePasswordsMatch', false);
+      form.repeatPassword.$setValidity('validatePasswordsMatch', false);
+    } else {
+      form.password.$setValidity('validatePasswordsMatch', true);
+      form.repeatPassword.$setValidity('validatePasswordsMatch', true);
+    }
+  }
+
   login() {
     this.scope.dataLoading = true;
     this.AuthenticationService.Login(this.scope.email, this.scope.password, (response) => {
@@ -27,14 +37,14 @@ export default class LoginController {
 
   register() {
     this.scope.dataLoading = true;
-    this.AuthenticationService.Register(this.scope.email, this.scope.userName, this.scope.password, (response) => {
+    this.AuthenticationService.Register(this.scope.userName, this.scope.password, (response) => {
       if (response.success) {
         this.location.path('/login');
       } else {
         this.scope.error = response.message;
         this.scope.dataLoading = false;
       }
-    });
+    }, this.errorCallback.bind(this));
   }
 
   redirectRegister() {

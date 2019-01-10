@@ -1,4 +1,4 @@
-<div class="auth-container parent-size" ng-controller="LoginController as $ctrl">
+<div class="auth-container parent-size" ng-controller="LoginController as $ctrl" ng-cloak>
     <div class="auth-form">
         <div class="auth-form-header">
            <h1>Registration</h1>
@@ -6,30 +6,37 @@
         <div>
             <div ng-show="error" class="alert-danger">{{ error }}</div>
 
-            <form name="form" role="form">
+            <form name="form" role="form" ng-submit="$ctrl.register()">
                 <md-input-container class="md-block">
-                    <input ng-model="email" type="email" placeholder="Email" name="email" id="email" class="form-control" ng-required="true">
-                </md-input-container>
-
-                <md-input-container class="md-block">
-                    <input ng-model="userName" type="text" placeholder="User Name" name="userName" id="userName" class="form-control" ng-required="true">
+                    <input ng-model="userName" type="text" placeholder="User Name" name="userName" id="userName" class="form-control" required>
+                    <div ng-messages="form.userName.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
                 </md-input-container>
 
                 <div layout="row">
                     <md-input-container class="md-block row-style-password">
-                        <input ng-model="password" type="password" placeholder="Password" name="password" id="password" class="form-control" ng-required="true">
+                        <input ng-model="password" type="password" placeholder="Password" name="password" id="password" class="form-control" required md-maxlength="6" ng-change="$ctrl.validateForm(form)">
+                        <div ng-messages="form.password.$error">
+                            <div ng-message="validatePasswordsMatch">Passwords doesn't match</div>
+                            <div ng-message="md-maxlength">The description must be less than 6 characters long.</div>
+                            <div ng-message="required">This is required.</div>
+                        </div>
                     </md-input-container>
 
                     <md-input-container class="md-block row-style-repeat-password">
-                        <input ng-model="repeatPassword" type="password" placeholder="Repeat Password" name="password" id="repeatPassword" class="form-control" ng-required="true">
+                        <input ng-model="repeatPassword" type="password" placeholder="Repeat Password" name="repeatPassword" id="repeatPassword" class="form-control" required md-maxlength="6" ng-change="$ctrl.validateForm(form)">
+                        <div ng-messages="form.repeatPassword.$error">
+                            <div ng-message="validatePasswordsMatch">Passwords doesn't match</div>
+                            <div ng-message="required">This is required.</div>
+                            <div ng-message="md-maxlength">The description must be less than 6 characters long.</div>
+                        </div>
                     </md-input-container>
                 </div>
 
-
-
                 <div class="form-actions">
-                    <md-button class="md-primary register-button" ng-click='$ctrl.redirectLogin()'>Login</md-button>
-                    <md-button type="submit" ng-disabled="form.$invalid || dataLoading" class="md-raised md-warn login-button" ng-click="$ctrl.register()">Login</md-button>
+                    <md-button class="md-primary register-button" ng-click='$ctrl.redirectLogin()'>Back to Login</md-button>
+                    <md-button ng-disabled="form.$invalid || dataLoading" class="md-raised md-warn login-button">Register</md-button>
                     <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
                 </div>
             </form>
