@@ -1,11 +1,12 @@
 const fullViewTemplate = require('./view/fullView.html');
 
 export default class HomeController {
-  constructor($scope, $mdDialog, HomeService, PagerService) {
+  constructor($scope, $mdDialog, HomeService, PagerService, AlertHelper) {
     this.scope = $scope;
     this.mdDialog = $mdDialog;
     this.HomeService = HomeService;
     this.PagerService = PagerService;
+    this.AlertHelper = AlertHelper;
     this.getAll();
     this.scope.pager = {};
     this.scope.amount = 0;
@@ -15,28 +16,20 @@ export default class HomeController {
   getAll(firstTime) {
     this.scope.dataLoading = true;
     this.HomeService.GetAll(1, 10, (response) => {
-      if (response.status === 200) {
-        this.scope.gcs = response.data;
-      } else {
-        this.scope.error = response.message;
-        this.scope.dataLoading = false;
-      }
-    });
+      this.scope.gcs = response.data;
+      this.scope.dataLoading = false;
+    }, this.errorCallback.bind(this));
   }
 
   getAmount(firstTime) {
     this.scope.dataLoading = true;
     this.HomeService.GetAmount((response) => {
-      if (response.status === 200) {
-        this.scope.amount = response.data;
-        if (firstTime === true) {
-          this.setPage(1);
-        }
-      } else {
-        this.scope.error = response.message;
-        this.scope.dataLoading = false;
+      this.scope.amount = response.data;
+      if (firstTime === true) {
+        this.setPage(1);
       }
-    });
+      this.scope.dataLoading = false;
+    }, this.errorCallback.bind(this));
   }
 
   setPage(page) {
@@ -47,13 +40,9 @@ export default class HomeController {
     this.scope.pager = this.PagerService.GetPager(this.scope.amount, page);
     this.scope.dataLoading = true;
     this.HomeService.GetAll(page, 10, (response) => {
-      if (response.status === 200) {
-        this.scope.gcs = response.data;
-      } else {
-        this.scope.error = response.message;
-        this.scope.dataLoading = false;
-      }
-    });
+      this.scope.gcs = response.data;
+      this.scope.dataLoading = false;
+    }, this.errorCallback.bind(this));
   }
 
   showFull(e) {
@@ -76,5 +65,10 @@ export default class HomeController {
       clickOutsideToClose: true,
       fullscreen: false,
     });
+  }
+
+  errorCallback(error) {
+    this.AlertHelper.errorCallback(error);
+    this.scope.dataLoading = false;
   }
 }

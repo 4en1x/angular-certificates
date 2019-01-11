@@ -1,8 +1,9 @@
 const epamLogo = require('../../public/img/epam-logo.svg');
 
-export default class LoginController {
-  constructor($scope, $rootScope, $location, AuthenticationService, $window) {
+export default class AuthController {
+  constructor($scope, $rootScope, $location, AuthenticationService, $window, AlertHelper) {
     this.scope = $scope;
+    this.AlertHelper = AlertHelper;
     this.rootScope = $rootScope;
     this.location = $location;
     this.AuthenticationService = AuthenticationService;
@@ -26,24 +27,22 @@ export default class LoginController {
     this.scope.dataLoading = true;
     this.AuthenticationService.Login(this.scope.email, this.scope.password, (response) => {
       this.AuthenticationService.SetCredentials(this.scope.email, this.scope.password, 'Потом сменить');
+      this.AlertHelper.successCallback(response);
       this.location.path('/');
     }, this.errorCallback.bind(this));
   }
 
   errorCallback(error) {
-    console.log(error);
+    this.AlertHelper.errorCallback(error);
     this.scope.dataLoading = false;
   }
 
   register() {
     this.scope.dataLoading = true;
     this.AuthenticationService.Register(this.scope.userName, this.scope.password, (response) => {
-      if (response.success) {
-        this.location.path('/login');
-      } else {
-        this.scope.error = response.message;
-        this.scope.dataLoading = false;
-      }
+      this.location.path('/login');
+      this.scope.dataLoading = false;
+      this.AlertHelper.successCallback(response);
     }, this.errorCallback.bind(this));
   }
 

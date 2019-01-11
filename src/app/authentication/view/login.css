@@ -28,19 +28,6 @@
     padding-left: 0;
 }
 
-.alert-danger {
-    background-color: rgba(236, 0, 0, 0.9);
-    opacity: 0.7;
-    border-color: rgba(4, 15, 255, 0.9);
-    color: rgb(255,255,255);
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-    height: 40px;
-    line-height: 40px;
-    margin-top: 5px;
-    margin-bottom: 30px;
-    border-radius: 5px;
-    text-align: center;
-}
 
 .row-style-repeat-password {
     width: calc(50% - 10px);

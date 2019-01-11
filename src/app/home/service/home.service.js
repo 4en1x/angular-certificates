@@ -3,7 +3,7 @@ export default class HomeService {
     this.http = $http;
   }
 
-  GetAll(page = 1, amountOnPage = 10, callback) {
+  GetAll(page = 1, amountOnPage = 10, callback, errorCallback) {
     this.http({
       url: `http://localhost:8888/giftcertificates?amountOnPage=${amountOnPage}&page=${page}`,
       dataType: 'json',
@@ -15,10 +15,13 @@ export default class HomeService {
     })
       .then((response) => {
         callback(response);
+      },
+      (error) => {
+        errorCallback(error);
       });
   }
 
-  GetAmount(callback) {
+  GetAmount(callback, errorCallback) {
     this.http({
       url: 'http://localhost:8888/giftcertificates/amount',
       dataType: 'json',
@@ -30,6 +33,9 @@ export default class HomeService {
     })
       .then((response) => {
         callback(response);
+      },
+      (error) => {
+        errorCallback(error);
       });
   }
 }

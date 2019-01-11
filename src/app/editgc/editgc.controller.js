@@ -2,13 +2,13 @@ const deleteConfirmTemplate = require('./view/deleteConfirmation.html');
 const exitConfirmTemplate = require('./view/exitConfirmation.html');
 
 export default class EditGCController {
-  constructor($scope, $rootScope, $mdDialog, ngToast, $routeParams, $location, EditGCService) {
+  constructor($scope, $rootScope, $mdDialog, $routeParams, $location, EditGCService, AlertHelper) {
     this.scope = $scope;
     this.rootScope = $rootScope;
     this.location = $location;
     this.routeParams = $routeParams;
     this.mdDialog = $mdDialog;
-    this.ngToast = ngToast;
+    this.AlertHelper = AlertHelper;
     this.EditGCService = EditGCService;
     this.scope.gc = {};
     const id = this.routeParams.id;
@@ -47,29 +47,23 @@ export default class EditGCController {
   getGC(id) {
     this.scope.dataLoading = true;
     this.EditGCService.GetGC(id, (response) => {
-      if (response.status === 200) {
-        this.scope.gc = response.data;
-        this.scope.dataLoading = false;
-      } else {
-        this.scope.error = response.message;
-        this.scope.dataLoading = false;
-      }
+      this.scope.gc = response.data;
+      this.scope.dataLoading = false;
     }, this.errorCallback.bind(this));
   }
-
 
   addGC() {
     this.scope.dataLoading = true;
     this.EditGCService.AddGC(this.scope.gc, (response) => {
       this.scope.dataLoading = false;
-      alert('success');
+      this.AlertHelper.successCallback(response);
     }, this.errorCallback.bind(this));
   }
 
   deleteGC(id) {
     this.scope.dataLoading = true;
     this.EditGCService.DeleteGC(id, (response) => {
-      alert('success');
+      this.AlertHelper.successCallback(response);
       this.scope.dataLoading = false;
     }, this.errorCallback.bind(this));
   }
@@ -97,12 +91,7 @@ export default class EditGCController {
   }
 
   errorCallback(error) {
-    console.log(error);
-    this.ngToast.create({
-      timeout: 100000,
-      content: 'a toast message...',
-        dismissButton: true,
-    });
+    this.AlertHelper.errorCallback(error);
     this.scope.dataLoading = false;
   }
 
@@ -124,7 +113,7 @@ export default class EditGCController {
   editGC(id) {
     this.scope.dataLoading = true;
     this.EditGCService.EditGC(id, this.scope.gc, (response) => {
-      alert('success');
+      this.AlertHelper.successCallback(response);
       this.scope.dataLoading = false;
     }, this.errorCallback.bind(this));
   }

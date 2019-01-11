@@ -5,6 +5,7 @@ import ngMaterial from 'angular-material';
 import ngMessages from 'angular-messages';
 import ngAnimate from 'angular-animate';
 import '../style/app.css';
+import '../style/alert.css';
 
 import auth from './authentication/auth.module';
 import home from './home/home.module';
