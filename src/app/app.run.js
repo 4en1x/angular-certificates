@@ -6,7 +6,6 @@ export default function run($rootScope, $location, $cookieStore, $http) {
   }
 
   const watchChangeStart = $rootScope.$on('$locationChangeSuccess', (event, next, current) => {
-/*
     const isUserNotLogged = !$rootScope.globals.currentUser && !$cookieStore.get('authToken');
     if (!(
       $location.path() === '/login'
@@ -19,7 +18,7 @@ export default function run($rootScope, $location, $cookieStore, $http) {
         $location.path('/');
       }
     }
-*/
+
     $rootScope.path = $location.path();
     $rootScope.isLogged = $rootScope.globals.currentUser && $cookieStore.get('authToken');
   });
