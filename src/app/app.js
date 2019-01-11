@@ -14,6 +14,8 @@ import editgc from './editgc/editgc.module';
 import appConfig from './app.config';
 import appRun from './app.run';
 
+require('ng-toast');
+
 angular
   .module('app', [
     'auth',
@@ -25,6 +27,8 @@ angular
     ngMaterial,
     ngMessages,
     ngAnimate,
+    require('angular-sanitize'),
+    'ngToast',
   ])
   .config(['$routeProvider', '$locationProvider', appConfig])
   .config(($mdThemingProvider) => {
