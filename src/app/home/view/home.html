@@ -20,19 +20,19 @@
             </div>
             <div class="item-buttons-container">
                 <md-card-actions layout="row" layout-align="start center">
-                    <md-button class="edit-delete-buttons" md-colors="{background: 'Green'}" ng-href="/edit/{{item.id}}">Edit</md-button>
+                    <md-button class="edit-delete-buttons" md-colors="{background: 'Green'}" ng-href="/edit/{{item.id}}">{{ 'home.edit.label' | translate }}</md-button>
                     <md-button
                             ng-controller="EditGCController as $ctrl2"
                             class="edit-delete-buttons"
                             md-colors="{background: 'Red'}"
                             ng-click="$ctrl2.beforeDeleteGC(gc.id)"
                     >
-                        Delete
+                        {{ 'home.delete.label' | translate }}
                     </md-button>
                 </md-card-actions>
 
                 <md-card-actions layout="row" layout-align="end center" class="item-price-container">
-                    <md-button md-colors="{background: 'Cyan'}">Buy</md-button>
+                    <md-button md-colors="{background: 'Cyan'}">{{ 'home.buy.label' | translate }}</md-button>
                     <div class="item-price">
                         {{item.price}} BYN
                     </div>
@@ -44,19 +44,19 @@
     <div class="pagination-container">
         <ul ng-if="pager.pages.length" class="pagination">
             <li ng-class="{disabled:pager.currentPage === 1}">
-                <a ng-click="$ctrl.setPage(1)">First</a>
+                <a ng-click="$ctrl.setPage(1)">{{ 'home.pager.first' | translate }}</a>
             </li>
             <li ng-class="{disabled:pager.currentPage === 1}">
-                <a ng-click="$ctrl.setPage(pager.currentPage - 1)">Previous</a>
+                <a ng-click="$ctrl.setPage(pager.currentPage - 1)">{{ 'home.pager.previous' | translate }}</a>
             </li>
             <li ng-repeat="page in pager.pages" ng-class="{active:pager.currentPage === page}">
                 <a ng-click="$ctrl.setPage(page)">{{page}}</a>
             </li>
             <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
-                <a ng-click="$ctrl.setPage(pager.currentPage + 1)">Next</a>
+                <a ng-click="$ctrl.setPage(pager.currentPage + 1)">{{ 'home.pager.next' | translate }}</a>
             </li>
             <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
-                <a ng-click="$ctrl.setPage(pager.totalPages)">Last</a>
+                <a ng-click="$ctrl.setPage(pager.totalPages)">{{ 'home.pager.last' | translate }}</a>
             </li>
         </ul>
     </div>

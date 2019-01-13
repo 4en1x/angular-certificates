@@ -4,6 +4,9 @@ import ngCookies from 'angular-cookies';
 import ngMaterial from 'angular-material';
 import ngMessages from 'angular-messages';
 import ngAnimate from 'angular-animate';
+import ngSanitize from 'angular-sanitize';
+import ngTranslate from 'angular-translate';
+
 import '../style/app.css';
 import '../style/alert.css';
 
@@ -14,6 +17,7 @@ import editgc from './editgc/editgc.module';
 
 import appConfig from './app.config';
 import appRun from './app.run';
+import translationsConfig from './app.translations';
 
 require('ng-toast');
 
@@ -23,15 +27,17 @@ angular
     'home',
     'header',
     'editgc',
+    'ngToast',
     ngRoute,
     ngCookies,
     ngMaterial,
     ngMessages,
     ngAnimate,
-    require('angular-sanitize'),
-    'ngToast',
+    ngSanitize,
+    ngTranslate,
   ])
   .config(['$routeProvider', '$locationProvider', appConfig])
+  .config(['$translateProvider', translationsConfig])
   .config(($mdThemingProvider) => {
     $mdThemingProvider.definePalette('black', {
       50: '000000',
@@ -51,4 +57,4 @@ angular
       contrastDefaultColor: 'light',
     });
   })
-  .run(['$rootScope', '$location', '$cookieStore', '$http', appRun]);
+  .run(['$rootScope', '$location', '$cookieStore', '$http', '$translate', appRun]);

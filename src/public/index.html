@@ -11,7 +11,7 @@
     <base href="/">
 </head>
 <body>
-<header class="header-component sticky-header" ng-controller="HeaderController">
+<header class="header-component sticky-header" ng-controller="HeaderController as $ctrl">
     <div class="header-content">
 
         <div class="header-content-left">
@@ -20,13 +20,13 @@
             </div>
             <div class="nav-bar">
                 <a class="home-button add-icon-href" href="/add" ng-hide="path !== '/'">
-                    <i class="material-icons">create</i><span class="add-icon">Add Certificate</span>
+                    <i class="material-icons">create</i><span class="add-icon">{{ 'header.addCrtLabel' | translate }}</span>
                 </a>
             </div>
         </div>
 
         <div class="header-content-center">
-            <h1 class="app-name">GIFT CERTIFICATES SHOP</h1>
+            <h1 class="app-name">{{ 'header.name' | translate }}</h1>
         </div>
 
         <div class="header-content-right-container">
@@ -38,13 +38,7 @@
                             <md-menu-item>
                                 <md-button ng-href="/login">
                                         <i class="material-icons user-icons">directions_run</i>
-                                        <p class="user-icons">Logout</p>
-                                </md-button>
-                            </md-menu-item>
-                            <md-menu-item>
-                                <md-button ng-href="/cabinet">
-                                    <i class="material-icons user-icons">account_box</i>
-                                    <p class="user-icons">Personal Cabinet</p>
+                                        <p class="user-icons">{{ 'header.logoutLabel' | translate }}</p>
                                 </md-button>
                             </md-menu-item>
                         </md-menu-content>
@@ -58,7 +52,7 @@
                             ng-hide="path === '/login'"
                             ng-href="/login"
                     >
-                        Login
+                        {{ 'header.loginLabel' | translate }}
                     </md-button>
                 </md-list-item>
             </div>
@@ -71,7 +65,7 @@
                         </md-button>
                         <md-menu-content width="3">
                             <md-menu-item ng-repeat="item in langs">
-                                <md-button>
+                                <md-button ng-click="$ctrl.changeLanguage(item.langKey)">
                                     <span class="flag-icon flag-icon-{{ item.flag_name }}"></span> {{ item.name }}
                                 </md-button>
                             </md-menu-item>
@@ -100,7 +94,7 @@
 
     <div class="footer-left">
         <div name="page-footer">
-            Project by <a href="mailto:ahata_pishchalava@epam.com">Ahata Pishchalava</a>
+            {{ 'footer.projectBy' | translate }} <a href="mailto:ahata_pishchalava@epam.com">Ahata Pishchalava</a>
         </div>
     </div>
 </footer>

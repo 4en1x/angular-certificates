@@ -1,8 +1,8 @@
-<md-dialog aria-label="Mango (Fruit)" ng-controller="HomeController as $ctrl">
+<md-dialog aria-label="Exit Confirmation" ng-controller="HomeController as $ctrl">
     <form ng-cloak>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>Confirm exit</h2>
+                <h2>{{ 'dialog.exit.label.confirm' | translate }}</h2>
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="cancel()">
                     <i class="material-icons" aria-label="Close dialog">cancel</i>
@@ -12,17 +12,17 @@
 
         <md-dialog-content>
             <div class="md-dialog-content">
-                <p class="md-subhead">You have unsaved changes. Do you want to leave this page?</p>
+                <p class="md-subhead">{{ 'dialog.exit.label.unsaved' | translate }}</p>
             </div>
         </md-dialog-content>
 
         <md-dialog-actions layout="row">
             <span flex></span>
             <md-button ng-click="cancel()">
-                Cancel
+                {{ 'dialog.exit.label.cancel' | translate }}
             </md-button>
             <md-button ng-click="confirm()">
-                Leave Page
+                {{ 'dialog.exit.label.leave' | translate }}
             </md-button>
         </md-dialog-actions>
     </form>

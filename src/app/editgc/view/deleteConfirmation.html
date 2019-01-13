@@ -1,8 +1,8 @@
-<md-dialog aria-label="Mango (Fruit)" ng-controller="HomeController as $ctrl">
+<md-dialog aria-label="Delete Confirmation" ng-controller="HomeController as $ctrl">
     <form ng-cloak>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>Confirm delete</h2>
+                <h2>{{ 'dialog.exit.label.confirm' | translate }}</h2>
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="cancel()">
                     <i class="material-icons" aria-label="Close dialog">cancel</i>
@@ -12,18 +12,18 @@
 
         <md-dialog-content>
             <div class="md-dialog-content">
-                <p class="md-subhead">Do you want to delete this certificate???</p>
+                <p class="md-subhead">{{ 'dialog.exit.label.want' | translate }}</p>
             </div>
         </md-dialog-content>
 
         <md-dialog-actions layout="row">
             <span flex></span>
             <md-button ng-click="cancel()">
-                Cancel
+                {{ 'dialog.exit.label.cancel' | translate }}
             </md-button>
             <span flex></span>
             <md-button ng-click="delete(id)">
-                Delete
+                {{ 'dialog.exit.label.delete' | translate }}
             </md-button>
         </md-dialog-actions>
     </form>

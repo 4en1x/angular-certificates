@@ -1,8 +1,8 @@
 <div class="auth-container parent-size" ng-controller="EditGCController as $ctrl">
     <div class="auth-form">
         <div class="auth-form-header">
-            <h1 ng-hide="path === '/add'">Edit Gift Certificate</h1>
-            <h1 ng-hide="path !== '/add'">Add Gift Certificate</h1>
+            <h1 ng-hide="path === '/add'">{{ 'crud.edit.name' | translate }}</h1>
+            <h1 ng-hide="path !== '/add'">{{ 'crud.add.name' | translate }}</h1>
         </div>
         <div>
             <div ng-show="error" class="alert-danger">{{ error }}</div>
@@ -12,7 +12,7 @@
                     <input
                             ng-model="gc.name"
                             type="text"
-                            placeholder="Title"
+                            placeholder="{{ 'crud.title.placeholder' | translate }}"
                             name="name"
                             id="name"
                             class="form-control"
@@ -21,14 +21,14 @@
                     >
                     <div ng-messages="form.name.$error">
                         <div ng-message="md-maxlength">
-                            Your email must be less than 20 characters long.
+                            {{ 'crud.title.error' | translate }}
                         </div>
-                        <div ng-message="required">This is required.</div>
+                        <div ng-message="required">{{ 'crud.error.required' | translate }}</div>
                     </div>
                 </md-input-container>
 
                 <md-input-container class="md-block">
-                    <label>Description</label>
+                    <label>{{ 'crud.description.label' | translate }}</label>
                     <textarea
                             ng-model="gc.description"
                             name="description"
@@ -40,9 +40,9 @@
                     ></textarea>
                     <div ng-messages="form.description.$error">
                         <div ng-message="md-maxlength">
-                            Your email must be less than 250 characters long.
+                            {{ 'crud.description.error' | translate }}
                         </div>
-                        <div ng-message="required">This is required.</div>
+                        <div ng-message="required">{{ 'crud.error.required' | translate }}</div>
                     </div>
                 </md-input-container>
 
@@ -51,7 +51,7 @@
                         <input
                                 ng-model="gc.duration"
                                 type="number"
-                                placeholder="Duration"
+                                placeholder="{{ 'crud.duration.placeholder' | translate }}"
                                 name="duration"
                                 id="duration"
                                 class="form-control"
@@ -60,9 +60,9 @@
                         >
                         <div ng-messages="form.duration.$error">
                             <div ng-message="md-maxlength">
-                                Your email must be less than 5 characters long.
+                                {{ 'crud.duration.error' | translate }}
                             </div>
-                            <div ng-message="required">This is required.</div>
+                            <div ng-message="required">{{ 'crud.error.required' | translate }}</div>
                         </div>
                     </md-input-container>
 
@@ -70,7 +70,7 @@
                         <input
                                 ng-model="gc.price"
                                 type="number"
-                                placeholder="Price"
+                                placeholder="{{ 'crud.price.placeholder' | translate }}"
                                 name="price"
                                 id="price"
                                 class="form-control"
@@ -79,9 +79,9 @@
                         >
                         <div ng-messages="form.price.$error">
                             <div ng-message="md-maxlength">
-                                Your email must be less than 7 characters long.
+                                {{ 'crud.price.error' | translate }}
                             </div>
-                            <div ng-message="required">This is required.</div>
+                            <div ng-message="required">{{ 'crud.error.required' | translate }}</div>
                         </div>
                     </md-input-container>
                 </div>
@@ -92,15 +92,15 @@
                     </md-button>
 
                     <md-input-container class="md-block row-style-tags">
-                        <input ng-model="inputTag" type="text" placeholder="Tags" name="tags" id="tags" class="form-control">
+                        <input ng-model="inputTag" type="text" placeholder="{{ 'crud.tags.placeholder' | translate }}" name="tags" id="tags" class="form-control">
                     </md-input-container>
-
-
                 </div>
 
-                <md-chips ng-model="gc.tags" readonly=true
-                          md-removable=true placeholder="Enter a fruit..."
-                          input-aria-label="Fruit names">
+                <md-chips ng-model="gc.tags"
+                          readonly=true
+                          md-removable=true
+                          input-aria-label="Chips"
+                >
                     <md-chip-template>
                         <strong>{{$chip.name}}</strong>
                     </md-chip-template>
@@ -108,18 +108,33 @@
 
                 <div layout="row" class="actions-button">
                     <div class="form-actions">
-                        <md-button ng-disabled="form.$invalid || dataLoading"
-                                   class="md-raised md-warn" ng-click="$ctrl.editGC(gc.id)" ng-hide="path === '/add'">Edit
+                        <md-button
+                                ng-disabled="form.$invalid || dataLoading"
+                                class="md-raised md-warn"
+                                ng-click="$ctrl.editGC(gc.id)"
+                                ng-hide="path === '/add'"
+                        >
+                            {{ 'crud.edit.label' | translate }}
                         </md-button>
                     </div>
                     <div class="form-actions">
-                        <md-button ng-disabled="form.$invalid || dataLoading"
-                                   class="md-raised md-warn" ng-click="$ctrl.addGC()" ng-hide="path.indexOf('/edit') !== -1">Add
+                        <md-button
+                                ng-disabled="form.$invalid || dataLoading"
+                                class="md-raised md-warn"
+                                ng-click="$ctrl.addGC()"
+                                ng-hide="path.indexOf('/edit') !== -1"
+                        >
+                            {{ 'crud.add.label' | translate }}
                         </md-button>
                     </div>
                     <div class="form-actions">
-                        <md-button ng-disabled="form.$invalid || dataLoading"
-                                   class="md-raised md-warn" ng-click="$ctrl.beforeDeleteGC(gc.id)" ng-hide="path === '/add'">Delete
+                        <md-button
+                                ng-disabled="form.$invalid || dataLoading"
+                                class="md-raised md-warn"
+                                ng-click="$ctrl.beforeDeleteGC(gc.id)"
+                                ng-hide="path === '/add'"
+                        >
+                            {{ 'crud.delete.label' | translate }}
                         </md-button>
                     </div>
                 </div>

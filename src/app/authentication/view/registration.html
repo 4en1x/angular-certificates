@@ -1,7 +1,7 @@
 <div class="auth-container parent-size" ng-controller="LoginController as $ctrl" ng-cloak>
     <div class="auth-form">
         <div class="auth-form-header">
-           <h1>Registration</h1>
+           <h1>{{ 'auth.register.name' | translate }}</h1>
         </div>
         <div>
             <form name="form" role="form" ng-submit="$ctrl.register()">
@@ -9,14 +9,14 @@
                     <input
                             ng-model="userName"
                             type="text"
-                            placeholder="User Name"
+                            placeholder="{{ 'auth.username.placeholder' | translate }}"
                             name="userName"
                             id="userName"
                             class="form-control"
                             required
                     >
                     <div ng-messages="form.userName.$error">
-                        <div ng-message="required">This is required.</div>
+                        <div ng-message="required">{{ 'auth.error.required' | translate }}</div>
                     </div>
                 </md-input-container>
 
@@ -25,7 +25,7 @@
                         <input
                                 ng-model="password"
                                 type="password"
-                                placeholder="Password"
+                                placeholder="{{ 'auth.password.placeholder' | translate }}"
                                 name="password"
                                 id="password"
                                 class="form-control"
@@ -35,11 +35,11 @@
                                 ng-change="$ctrl.validateForm(form)"
                         >
                         <div ng-messages="form.password.$error">
-                            <div ng-message="validatePasswordsMatch">Passwords doesn't match</div>
+                            <div ng-message="validatePasswordsMatch">{{ 'auth.error.passwordMatch' | translate }}</div>
                             <div ng-message-exp="['minlength', 'maxlength']">
-                                Your email must be between 5 and 23 characters long.
+                                {{ 'auth.error.length' | translate }}
                             </div>
-                            <div ng-message="required">This is required.</div>
+                            <div ng-message="required">{{ 'auth.error.required' | translate }}</div>
                         </div>
                     </md-input-container>
 
@@ -47,7 +47,7 @@
                         <input
                                 ng-model="repeatPassword"
                                 type="password"
-                                placeholder="Repeat Password"
+                                placeholder="{{ 'auth.repeatPassword.placeholder' | translate }}"
                                 name="repeatPassword"
                                 id="repeatPassword"
                                 class="form-control"
@@ -57,18 +57,18 @@
                                 ng-change="$ctrl.validateForm(form)"
                         >
                         <div ng-messages="form.repeatPassword.$error">
-                            <div ng-message="validatePasswordsMatch">Passwords doesn't match</div>
-                            <div ng-message="required">This is required.</div>
+                            <div ng-message="validatePasswordsMatch">{{ 'auth.error.passwordMatch' | translate }}</div>
+                            <div ng-message="required">{{ 'auth.error.required' | translate }}</div>
                             <div ng-message-exp="['minlength', 'maxlength']">
-                                Your email must be between 5 and 23 characters long.
+                                {{ 'auth.error.length' | translate }}
                             </div>
                         </div>
                     </md-input-container>
                 </div>
 
                 <div class="form-actions">
-                    <md-button class="md-primary register-button" ng-click='$ctrl.redirectLogin()'>Back to Login</md-button>
-                    <md-button type="submit" ng-disabled="form.$invalid || dataLoading" class="md-raised md-warn login-button">Register</md-button>
+                    <md-button class="md-primary register-button" ng-click='$ctrl.redirectLogin()'>{{ 'auth.login.back' | translate }}</md-button>
+                    <md-button type="submit" ng-disabled="form.$invalid || dataLoading" class="md-raised md-warn login-button">{{ 'auth.register.label' | translate }}</md-button>
                     <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
                 </div>
             </form>

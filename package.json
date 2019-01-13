@@ -80,6 +80,7 @@
     "angular-messages": "^1.7.5",
     "angular-route": "^1.7.5",
     "angular-sanitize": "1.6.5",
+    "angular-translate": "^2.18.1",
     "angular-ui-router": "^1.0.20",
     "ng-toast": "^2.0.0"
   }

@@ -6,16 +6,45 @@
         <div>
             <form name="form" role="form">
                 <md-input-container class="md-block">
-                    <input ng-model="email" type="text" placeholder="Login" name="login" id="login" class="form-control" ng-required="true">
+                    <input
+                            ng-model="email"
+                            type="text"
+                            placeholder="{{ 'auth.login.placeholder' | translate }}"
+                            name="login"
+                            id="login"
+                            class="form-control"
+                            ng-required="true"
+                    >
                 </md-input-container>
 
                 <md-input-container class="md-block">
-                    <input ng-model="password" type="password" placeholder="Password" name="password" id="password" class="form-control" ng-required="true">
+                    <input
+                            ng-model="password"
+                            type="password"
+                            placeholder="{{ 'auth.password.placeholder' | translate }}"
+                            name="password"
+                            id="password"
+                            class="form-control"
+                            ng-required="true"
+                    >
                 </md-input-container>
 
                 <div class="form-actions">
-                    <md-button class="md-primary register-button" target="_blank" ng-click='$ctrl.redirectRegister()'>Register</md-button>
-                    <md-button type="submit" ng-disabled="form.$invalid || dataLoading" class="md-raised md-warn login-button" ng-click="$ctrl.login()">Login</md-button>
+                    <md-button
+                            class="md-primary register-button"
+                            target="_blank"
+                            ng-click='$ctrl.redirectRegister()'
+                    >
+                        {{ 'auth.register.label' | translate }}
+                    </md-button>
+                    <md-button
+                            type="submit"
+                            ng-disabled="form.$invalid || dataLoading"
+                            class="md-raised md-warn login-button"
+                            ng-click="$ctrl.login()"
+                    >
+                        {{ 'auth.login.label' | translate }}
+                    </md-button>
                 </div>
             </form>
 

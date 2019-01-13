@@ -1,4 +1,4 @@
-<md-dialog aria-label="Mango (Fruit)" ng-controller="HomeController as $ctrl">
+<md-dialog aria-label="Full View" ng-controller="HomeController as $ctrl">
     <form ng-cloak>
         <md-toolbar>
             <div class="md-toolbar-tools">
@@ -17,17 +17,17 @@
                 </div>
                 <br>
                 <p class="md-subhead">{{gc.description}}</p>
-                <p class="md-subhead"><strong>Duration:</strong> {{gc.duration}}</p>
-                <p class="md-subhead"><strong>Date of Creation:</strong> {{gc.dateOfCreation| date: 'longDate'}}</p>
-                <p class="md-subhead"><strong>Date of Last Modification:</strong> {{gc.dateOfModification| date: 'longDate'}}</p>
-                <p class="md-subhead"><strong>Price:</strong> {{gc.price}} BYN</p>
+                <p class="md-subhead"><strong>{{ 'home.full.duration' | translate }}:</strong> {{gc.duration}}</p>
+                <p class="md-subhead"><strong>{{ 'home.full.creationDate' | translate }}:</strong> {{gc.dateOfCreation| date: 'longDate'}}</p>
+                <p class="md-subhead"><strong>{{ 'home.full.modificationDate' | translate }}:</strong> {{gc.dateOfModification| date: 'longDate'}}</p>
+                <p class="md-subhead"><strong>{{ 'home.full.price' | translate }}:</strong> {{gc.price}} BYN</p>
             </div>
         </md-dialog-content>
 
         <md-dialog-actions layout="row">
             <span flex></span>
             <md-button ng-click="cancel()">
-                Cancel
+                {{ 'home.full.cancel.kabel' | translate }}
             </md-button>
         </md-dialog-actions>
     </form>
