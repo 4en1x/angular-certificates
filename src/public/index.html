@@ -20,7 +20,7 @@
             </div>
             <div class="nav-bar">
                 <a class="home-button add-icon-href" href="/add" ng-hide="path !== '/'">
-                    <i class="material-icons">create</i><span class="add-icon">{{ 'header.addCrtLabel' | translate }}</span>
+                    <i class="material-icons add-icon">create</i><span class="add-icon">{{ 'header.addCrtLabel' | translate }}</span>
                 </a>
             </div>
         </div>
@@ -81,7 +81,7 @@
 
 <app></app>
 
-<div ng-view class="main-content"></div>
+<div ng-view class="main-content" ng-cloak></div>
 
 
 <footer class="footer-distributed">
