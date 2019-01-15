@@ -94,7 +94,7 @@ export default {
     },
     duration: {
       placeholder: 'Duration',
-      error: 'Your duration must be less than 5 characters long.',
+      error: 'Your duration must be less than 3 characters long.',
     },
     price: {
       placeholder: 'Price',

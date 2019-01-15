@@ -18,9 +18,9 @@ export default class HomeService {
   }
 
   GetAmount(callback, errorCallback) {
-    this.http({
+    this.http(basicRequest({
       url: 'giftcertificates/amount',
-    })
+    }))
       .then((response) => {
         callback(response);
       },

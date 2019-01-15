@@ -45,12 +45,12 @@ export default class HomeService {
 
 
   AddGC(gc, callback, errorCallback) {
-    this.http({
+    this.http(basicRequest({
       url: 'giftcertificates',
       method: 'POST',
       data: JSON.stringify(gc),
       auth: this.http.defaults.headers.common.Authorization,
-    })
+    }))
       .then((response) => {
         callback(response);
       },

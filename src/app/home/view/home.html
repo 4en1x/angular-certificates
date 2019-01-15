@@ -12,10 +12,14 @@
                 </md-card-title-media>
             </md-card-title>
             <div class="card-content">
-                <div ng-repeat="tag in item.tags" class="tags-container">
-                    {{tag.name}}
-                </div>
-                <br>
+                <md-chips ng-model="item.tags"
+                          readonly=true
+                          input-aria-label="Chips"
+                >
+                    <md-chip-template>
+                        <strong>{{$chip.name}}</strong>
+                    </md-chip-template>
+                </md-chips>
                 <span class="md-subhead">{{item.description}}</span>
             </div>
             <div class="item-buttons-container">

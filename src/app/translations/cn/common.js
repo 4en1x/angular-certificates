@@ -94,7 +94,7 @@ export default {
     },
     duration: {
       placeholder: '持续时间',
-      error: '您的持续时间必须少于5个字符。',
+      error: '您的持续时间必须少于3个字符。',
     },
     price: {
       placeholder: '价钱',

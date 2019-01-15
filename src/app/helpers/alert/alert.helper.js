@@ -10,17 +10,23 @@ export default class AlertHelper {
   }
 
   errorCallback(error) {
-    const content = error.data || this.scope.error;
-    this.ngToast.create({
-      timeout: 3000,
-      content,
-      dismissButton: true,
-      className: 'danger',
+    let content = error.data.exceptionMessage || [this.scope.error];
+
+    if (error.data.exceptionMessage) {
+      content = content.split('; ').filter(item => item !== '');
+    }
+    content.forEach((item) => {
+      this.ngToast.create({
+        timeout: 3000,
+        content: item,
+        dismissButton: true,
+        className: 'danger',
+      });
     });
   }
 
   successCallback(response) {
-    const content = response || this.scope.success;
+    const content = this.scope.success;
 
     this.ngToast.create({
       timeout: 3000,

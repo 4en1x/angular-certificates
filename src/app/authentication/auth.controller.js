@@ -26,7 +26,7 @@ export default class AuthController {
   login() {
     this.scope.dataLoading = true;
     this.AuthenticationService.Login(this.scope.email, this.scope.password, (response) => {
-      this.AuthenticationService.SetCredentials(this.scope.email, this.scope.password, 'Потом сменить');
+      this.AuthenticationService.SetCredentials(this.scope.email, this.scope.password, this.scope.email);
       this.AlertHelper.successCallback(response);
       this.location.path('/');
     }, this.errorCallback.bind(this));
