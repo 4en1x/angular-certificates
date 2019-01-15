@@ -1,34 +1,25 @@
+import basicRequest from '../../helpers/http/custom-http.helper';
+
 export default class HomeService {
   constructor($http) {
     this.http = $http;
   }
 
   GetGC(id = 1, callback) {
-    this.http({
-      url: `http://localhost:8888/giftcertificates/${id}`,
-      dataType: 'json',
-      method: 'GET',
-      data: '',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    this.http(basicRequest({
+      url: `giftcertificates/${id}`,
+    }))
       .then((response) => {
         callback(response);
       });
   }
 
   DeleteGC(id, callback, errorCallback) {
-    this.http({
-      url: `http://localhost:8888/giftcertificates/${id}`,
-      dataType: 'json',
+    this.http(basicRequest({
+      url: `giftcertificates/${id}`,
       method: 'DELETE',
-      data: '',
-      headers: {
-        Authorization: this.http.defaults.headers.common.Authorization,
-        'Content-Type': 'application/json',
-      },
-    })
+      auth: this.http.defaults.headers.common.Authorization,
+    }))
       .then((response) => {
         callback(response);
       },
@@ -38,16 +29,12 @@ export default class HomeService {
   }
 
   EditGC(id, gc, callback, errorCallback) {
-    this.http({
-      url: `http://localhost:8888/giftcertificates/${id}`,
-      dataType: 'json',
+    this.http(basicRequest({
+      url: `giftcertificates/${id}`,
       method: 'PUT',
       data: JSON.stringify(gc),
-      headers: {
-        Authorization: this.http.defaults.headers.common.Authorization,
-        'Content-Type': 'application/json',
-      },
-    })
+      auth: this.http.defaults.headers.common.Authorization,
+    }))
       .then((response) => {
         callback(response);
       },
@@ -59,14 +46,10 @@ export default class HomeService {
 
   AddGC(gc, callback, errorCallback) {
     this.http({
-      url: 'http://localhost:8888/giftcertificates',
-      dataType: 'json',
+      url: 'giftcertificates',
       method: 'POST',
       data: JSON.stringify(gc),
-      headers: {
-        Authorization: this.http.defaults.headers.common.Authorization,
-        'Content-Type': 'application/json',
-      },
+      auth: this.http.defaults.headers.common.Authorization,
     })
       .then((response) => {
         callback(response);

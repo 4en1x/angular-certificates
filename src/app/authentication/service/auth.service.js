@@ -1,3 +1,5 @@
+import basicRequest from '../../helpers/http/custom-http.helper';
+
 export default class AuthService {
   constructor(Base64, $http, $cookieStore, $rootScope, $timeout, $httpParamSerializer) {
     this.http = $http;
@@ -9,8 +11,8 @@ export default class AuthService {
   }
 
   Login(email, password, callback, errorCallback) {
-    this.http({
-      url: 'http://localhost:8888/oauth/token',
+    this.http(basicRequest({
+      url: 'oauth/token',
       method: 'POST',
       redirect_url: 'http://localhost:8080',
       data: this.httpParamSerializer({
@@ -24,7 +26,7 @@ export default class AuthService {
         'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
       },
 
-    })
+    }))
       .then((response) => {
         const authToken = `Bearer ${response.data.access_token}`;
 
@@ -39,19 +41,14 @@ export default class AuthService {
   }
 
   Register(userName, password, callback, errorCallback) {
-    this.http({
-      url: 'http://localhost:8888/users',
-      dataType: 'json',
+    this.http(basicRequest({
+      url: 'users',
       method: 'POST',
       data: {
         password,
         login: userName,
       },
-      headers: {
-        Authorization: this.http.defaults.headers.common.Authorization,
-        'Content-Type': 'application/json',
-      },
-    })
+    }))
       .then((response) => {
         callback(response);
       },
