@@ -8,14 +8,34 @@
 }
 
 .card-content {
-    background-color: #33383b24;
     min-height: 150px;
     padding-right: 10px;
     padding-left: 10px;
+    background-color: rgb(255, 252, 255);
 }
 
 .card-title {
+    background-color: rgb(63, 81, 181);
     height: 30px;
+}
+
+.md-headline, .md-subhead {
+    color: rgb(255, 252, 255);
+}
+
+.button-white {
+    color: rgb(255, 252, 255) !important;
+}
+.md-button {
+    border-radius: 5px;
+}
+
+.md-dialog-content > p, span, h1 {
+    color: #000;
+}
+
+.card-content > .md-subhead {
+    color: #000;
 }
 
 .card-date {

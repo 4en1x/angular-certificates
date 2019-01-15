@@ -10,6 +10,18 @@
     border: 1px solid #ddd;
 }
 
+.page-amount {
+    position: relative;
+    float: left;
+    padding: 0 10px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
 .pagination>.disabled>a,
 .pagination>.disabled>a:focus,
 .pagination>.disabled>a:hover,
@@ -22,6 +34,7 @@
     border-color: #ddd;
 }
 
+
 .pagination>li {
     display: inline;
 }
@@ -31,6 +44,7 @@
     margin: 20px 0;
     border-radius: 4px;
     padding-left: 0;
+    vertical-align: middle;
 }
 
 .pagination-container {
@@ -47,4 +61,15 @@
     cursor: default;
     background-color: #337ab7;
     border-color: #337ab7;
+}
+
+a {
+    cursor: pointer;
+}
+
+.md-page-amount {
+    padding: 0;
+    margin: 0;
+    width: 0;
+    min-width: 0;
 }

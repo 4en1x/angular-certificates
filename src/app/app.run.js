@@ -1,5 +1,6 @@
 export default function run($rootScope, $location, $cookieStore, $http, $translate) {
   $rootScope.globals = $cookieStore.get('globals') || {};
+  $rootScope.userId = $cookieStore.get('userId');
   $rootScope.path = $location.path();
   if ($rootScope.globals.currentUser) {
     $http.defaults.headers.common.Authorization = $cookieStore.get('authToken');

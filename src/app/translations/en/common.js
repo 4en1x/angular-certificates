@@ -14,6 +14,7 @@ export default {
       last: 'Last',
       previous: 'Previous',
       next: 'Next',
+      amount: 'Amount',
     },
     full: {
       duration: 'Duration',

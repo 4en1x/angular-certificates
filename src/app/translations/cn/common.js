@@ -14,6 +14,7 @@ export default {
       last: '持续',
       previous: '以前',
       next: '下一个',
+      amount: '量',
     },
     full: {
       duration: '持续时间',

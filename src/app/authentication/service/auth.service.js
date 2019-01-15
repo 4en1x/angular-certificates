@@ -8,6 +8,7 @@ export default class AuthService {
     this.cookieStore = $cookieStore;
     this.timeout = $timeout;
     this.Base64 = Base64;
+    this.token = '';
   }
 
   Login(email, password, callback, errorCallback) {
@@ -28,11 +29,25 @@ export default class AuthService {
 
     }))
       .then((response) => {
-        const authToken = `Bearer ${response.data.access_token}`;
+        this.token = `Bearer ${response.data.access_token}`;
 
-        this.http.defaults.headers.common.Authorization = authToken;
-        this.cookieStore.put('authToken', authToken);
+        this.http.defaults.headers.common.Authorization = this.token;
+        this.cookieStore.put('authToken', this.token);
 
+        callback(response);
+      },
+      (error) => {
+        errorCallback(error);
+      });
+  }
+
+  GetID(callback, errorCallback) {
+    this.http(basicRequest({
+      url: 'users/id',
+      auth: this.token,
+    }))
+      .then((response) => {
+        this.cookieStore.put('userId', response.data);
         callback(response);
       },
       (error) => {

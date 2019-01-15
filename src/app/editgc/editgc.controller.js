@@ -49,7 +49,7 @@ export default class EditGCController {
     this.EditGCService.GetGC(id, (response) => {
       this.scope.gc = response.data;
       this.scope.dataLoading = false;
-    }, this.errorCallback.bind(this));
+    }, this.errorCallback);
   }
 
   addGC() {
@@ -57,7 +57,7 @@ export default class EditGCController {
     this.EditGCService.AddGC(this.scope.gc, (response) => {
       this.scope.dataLoading = false;
       this.AlertHelper.successCallback(response);
-    }, this.errorCallback.bind(this));
+    }, this.errorCallback);
   }
 
   deleteGC(id) {
@@ -65,7 +65,7 @@ export default class EditGCController {
     this.EditGCService.DeleteGC(id, (response) => {
       this.AlertHelper.successCallback(response);
       this.scope.dataLoading = false;
-    }, this.errorCallback.bind(this));
+    }, this.errorCallback);
   }
 
   beforeDeleteGC(gcId) {
@@ -115,6 +115,6 @@ export default class EditGCController {
     this.EditGCService.EditGC(id, this.scope.gc, (response) => {
       this.AlertHelper.successCallback(response);
       this.scope.dataLoading = false;
-    }, this.errorCallback.bind(this));
+    }, this.errorCallback);
   }
 }

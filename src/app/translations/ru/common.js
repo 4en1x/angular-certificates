@@ -14,6 +14,7 @@ export default {
       last: 'Последняя',
       previous: 'Предыдущая',
       next: 'Следующая',
+      amount: 'Количество',
     },
     full: {
       duration: 'Продолжительность',

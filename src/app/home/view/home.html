@@ -36,7 +36,7 @@
                 </md-card-actions>
 
                 <md-card-actions layout="row" layout-align="end center" class="item-price-container">
-                    <md-button md-colors="{background: 'Cyan'}">{{ 'home.buy.label' | translate }}</md-button>
+                    <md-button class="button-white" md-colors="{background: 'Cyan'}" ng-click="$ctrl.buy(item.id)">{{ 'home.buy.label' | translate }}</md-button>
                     <div class="item-price">
                         {{item.price}} BYN
                     </div>
@@ -46,6 +46,32 @@
     </div>
 
     <div class="pagination-container">
+        <ul class="pagination">
+            <md-list-item class="page-amount">
+                <md-menu class="md-secondary">
+                    <md-button class="md-page-amount"></md-button>
+                    <md-menu-content width="2">
+                        <md-menu-item>
+                            <md-button ng-click="$ctrl.setAmountOnPage(20)">
+                                <p class="user-icons">20</p>
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="$ctrl.setAmountOnPage(50)">
+                                <p class="user-icons">50</p>
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="$ctrl.setAmountOnPage(100)">
+                                <p class="user-icons">100</p>
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                {{ 'home.pager.amount' | translate }}
+            </md-list-item>
+        </ul>
+
         <ul ng-if="pager.pages.length" class="pagination">
             <li ng-class="{disabled:pager.currentPage === 1}">
                 <a ng-click="$ctrl.setPage(1)">{{ 'home.pager.first' | translate }}</a>

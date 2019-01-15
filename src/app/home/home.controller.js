@@ -10,12 +10,13 @@ export default class HomeController {
     this.getAll();
     this.scope.pager = {};
     this.scope.amount = 0;
+    this.scope.amountOnPage = 10;
     this.getAmount(true);
   }
 
   getAll(firstTime) {
     this.scope.dataLoading = true;
-    this.HomeService.GetAll(1, 10, (response) => {
+    this.HomeService.GetAll(1, this.scope.amountOnPage, (response) => {
       this.scope.gcs = response.data;
       this.scope.dataLoading = false;
     }, this.errorCallback.bind(this));
@@ -32,6 +33,14 @@ export default class HomeController {
     }, this.errorCallback.bind(this));
   }
 
+  buy(id) {
+    this.scope.dataLoading = true;
+    this.HomeService.Buy(id, (response) => {
+      this.AlertHelper.successCallback(response);
+      this.scope.dataLoading = false;
+    }, this.errorCallback.bind(this));
+  }
+
   setPage(page) {
     if (page < 1 || page > this.scope.pager.totalPages) {
       return;
@@ -39,10 +48,15 @@ export default class HomeController {
 
     this.scope.pager = this.PagerService.GetPager(this.scope.amount, page);
     this.scope.dataLoading = true;
-    this.HomeService.GetAll(page, 10, (response) => {
+    this.HomeService.GetAll(page, this.scope.amountOnPage, (response) => {
       this.scope.gcs = response.data;
       this.scope.dataLoading = false;
     }, this.errorCallback.bind(this));
+  }
+
+  setAmountOnPage(amount) {
+    this.scope.amountOnPage = amount;
+    this.setPage(1);
   }
 
   showFull(e) {

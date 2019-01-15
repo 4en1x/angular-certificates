@@ -28,8 +28,11 @@ export default class AuthController {
     this.AuthenticationService.Login(this.scope.email, this.scope.password, (response) => {
       this.AuthenticationService.SetCredentials(this.scope.email, this.scope.password, this.scope.email);
       this.AlertHelper.successCallback(response);
+      this.AuthenticationService.GetID((response) => {
+        this.rootScope.userId = response.data;
+      }, this.errorCallback);
       this.location.path('/');
-    }, this.errorCallback.bind(this));
+    }, this.errorCallback);
   }
 
   errorCallback(error) {
@@ -43,7 +46,7 @@ export default class AuthController {
       this.location.path('/login');
       this.scope.dataLoading = false;
       this.AlertHelper.successCallback(response);
-    }, this.errorCallback.bind(this));
+    }, this.errorCallback);
   }
 
   redirectRegister() {
