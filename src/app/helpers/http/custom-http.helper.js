@@ -11,7 +11,7 @@ export default function request({
     'Content-Type': 'application/json',
   };
 
-  if (!('Authorization' in headers)) {
+  if (!('Authorization' in customHeaders)) {
     customHeaders = Object.assign({
       Authorization: auth,
     }, customHeaders);
