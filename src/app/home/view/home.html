@@ -24,8 +24,16 @@
             </div>
             <div class="item-buttons-container">
                 <md-card-actions layout="row" layout-align="start center">
-                    <md-button class="edit-delete-buttons" md-colors="{background: 'Green'}" ng-href="/edit/{{item.id}}">{{ 'home.edit.label' | translate }}</md-button>
                     <md-button
+                            ng-if="globals.currentUser.username"
+                            class="edit-delete-buttons"
+                            md-colors="{background: 'Green'}"
+                            ng-href="/edit/{{item.id}}"
+                    >
+                        {{ 'home.edit.label' | translate }}
+                    </md-button>
+                    <md-button
+                            ng-if="globals.currentUser.username"
                             ng-controller="EditGCController as $ctrl2"
                             class="edit-delete-buttons"
                             md-colors="{background: 'Red'}"
