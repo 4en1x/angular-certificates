@@ -79,3 +79,26 @@
 md-dialog.md-transition-in, md-dialog.md-transition-out {
     min-width: 700px;
 }
+
+.filter {
+    display: flex;
+    /*justify-content: center;
+    align-items: center;
+    /*box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+    margin: 8px;*/
+}
+
+.filter-item {
+    padding: 15px 20px;
+    flex: 2;
+}
+
+.filter-item-large {
+    padding: 15px 20px;
+    flex: 3;
+}
+
+.pagination-filter {
+    padding: 0 0 !important;
+    margin: 5px 0 !important;
+}

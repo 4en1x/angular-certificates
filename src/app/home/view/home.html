@@ -1,4 +1,111 @@
 <div ng-controller="HomeController as $ctrl" ng-cloak>
+    <div class="filter filter-container">
+        <div class="filter-item">
+            <md-input-container class="md-block">
+                <input
+                        ng-model="searchName"
+                        type="text"
+                        placeholder="Name"
+                        name="searchName"
+                        id="searchName"
+                        class="form-control"
+                >
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <input
+                        ng-model="searchDescription"
+                        type="text"
+                        placeholder="Description"
+                        name="searchDescription"
+                        id="searchDescription"
+                        class="form-control"
+                >
+            </md-input-container>
+        </div>
+        <div class="filter-item-large">
+            <div layout="row">
+                <md-button class="md-fab row-style-add-tag" aria-label="Add tag" ng-click="$ctrl.addSearchTag()">
+                    <i class="material-icons row-style-add-tag-icon">add</i>
+                </md-button>
+
+                <md-input-container class="md-block row-style-tags">
+                    <input ng-model="inputTag" type="text" placeholder="{{ 'crud.tags.placeholder' | translate }}" name="tags" id="tags" class="form-control">
+                </md-input-container>
+            </div>
+            <md-chips ng-model="tagsSearch"
+                      readonly=true
+                      md-removable=true
+                      input-aria-label="Chips"
+            >
+                <md-chip-template>
+                    <strong>{{$chip.name}}</strong>
+                </md-chip-template>
+            </md-chips>
+        </div>
+        <div class="filter-item">
+            <ul class="pagination pagination-filter">
+                <md-list-item class="page-amount">
+                    <md-menu class="md-secondary">
+                        <md-button class="md-page-amount"></md-button>
+                        <md-menu-content width="2">
+                            <md-menu-item>
+                                <md-button ng-click="$ctrl.setOrder('creation_date')">
+                                    <p class="user-icons">Creation Date</p>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="$ctrl.setOrder('modification_date')">
+                                    <p class="user-icons">Modification Date</p>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="$ctrl.setOrder('price')">
+                                    <p class="user-icons">Price</p>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="$ctrl.setOrder('name')">
+                                    <p class="user-icons">Name</p>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="$ctrl.setOrder('description')">
+                                    <p class="user-icons">Description</p>
+                                </md-button>
+                            </md-menu-item>
+
+                        </md-menu-content>
+                    </md-menu>
+                    Order Type
+                </md-list-item>
+            </ul>
+            <ul class="pagination pagination-filter">
+                <md-list-item class="page-amount">
+                    <md-menu class="md-secondary">
+                        <md-button class="md-page-amount"></md-button>
+                        <md-menu-content width="2">
+                            <md-menu-item>
+                                <md-button ng-click="$ctrl.setOrderParameter('desc')">
+                                    <p class="user-icons">DESC</p>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="$ctrl.setOrderParameter('asc')">
+                                    <p class="user-icons">ASC</p>
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                    Order Parameter
+                </md-list-item>
+            </ul>
+            <br>
+            <md-button ng-click="$ctrl.filter()">
+                <p class="user-icons">FILTER</p>
+            </md-button>
+        </div>
+    </div>
     <div flex class="gcs-container" ng-repeat="item in gcs">
         <md-card md-theme-watch class="gcs-card">
             <md-card-title class="card-title">

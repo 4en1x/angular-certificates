@@ -6,9 +6,12 @@ export default class HomeService {
     this.rootScope = $rootScope;
   }
 
-  GetAll(page = 1, amountOnPage = 10, callback, errorCallback) {
+  GetAll(page = 1, amountOnPage = 10, filter, callback, errorCallback) {
+    let tags = '';
+    filter.tags.forEach(tag => tags += `&tags=${tag.name}`);
+
     this.http(basicRequest({
-      url: `giftcertificates?amountOnPage=${amountOnPage}&page=${page}`,
+      url: `giftcertificates?amountOnPage=${amountOnPage}&page=${page}&sort=${filter.sort}&searchName=${filter.name}&searchDescription=${filter.description}${tags}`,
     }))
       .then((response) => {
         callback(response);
