@@ -19,7 +19,7 @@
                 <a class="home-button" href="/" ng-hide="path === '/'"><i class="material-icons">home</i></a>
             </div>
             <div class="nav-bar">
-                <a class="home-button add-icon-href" href="/add" ng-hide="path !== '/'">
+                <a class="home-button add-icon-href" href="/add" ng-hide="path !== '/' || !globals.currentUser.username  || userParams.role !== 'ADMIN'">
                     <i class="material-icons add-icon">create</i><span class="add-icon">{{ 'header.addCrtLabel' | translate }}</span>
                 </a>
             </div>

@@ -47,7 +47,10 @@ export default class AuthService {
       auth: this.token,
     }))
       .then((response) => {
-        this.cookieStore.put('userId', response.data);
+        this.cookieStore.put('userParams', {
+          id: response.data.id,
+          role: response.data.authorities[0].authority,
+        });
         callback(response);
       },
       (error) => {
@@ -89,7 +92,9 @@ export default class AuthService {
 
   ClearCredentials() {
     this.rootScope.globals = {};
+    this.rootScope.userParams = {};
     this.cookieStore.remove('globals');
+    this.cookieStore.remove('userParams');
     this.http.defaults.headers.common.Authorization = 'Basic ';
   }
 }

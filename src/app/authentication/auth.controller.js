@@ -29,7 +29,10 @@ export default class AuthController {
       this.AuthenticationService.SetCredentials(this.scope.email, this.scope.password, this.scope.email);
       this.AlertHelper.successCallback(response);
       this.AuthenticationService.GetID((response) => {
-        this.rootScope.userId = response.data;
+        this.rootScope.userParams = {
+          id: response.data.id,
+          role: response.data.authorities[0].authority,
+        };
       }, this.errorCallback);
       this.location.path('/');
     }, this.errorCallback);

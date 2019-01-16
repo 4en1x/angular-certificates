@@ -25,7 +25,7 @@
             <div class="item-buttons-container">
                 <md-card-actions layout="row" layout-align="start center">
                     <md-button
-                            ng-if="globals.currentUser.username"
+                            ng-if="globals.currentUser.username && userParams.role === 'ADMIN'"
                             class="edit-delete-buttons"
                             md-colors="{background: 'Green'}"
                             ng-href="/edit/{{item.id}}"
@@ -33,7 +33,7 @@
                         {{ 'home.edit.label' | translate }}
                     </md-button>
                     <md-button
-                            ng-if="globals.currentUser.username"
+                            ng-if="globals.currentUser.username  && userParams.role === 'ADMIN'"
                             ng-controller="EditGCController as $ctrl2"
                             class="edit-delete-buttons"
                             md-colors="{background: 'Red'}"
@@ -44,7 +44,14 @@
                 </md-card-actions>
 
                 <md-card-actions layout="row" layout-align="end center" class="item-price-container">
-                    <md-button class="button-white" md-colors="{background: 'Cyan'}" ng-click="$ctrl.buy(item.id)">{{ 'home.buy.label' | translate }}</md-button>
+                    <md-button
+                            ng-if="globals.currentUser.username"
+                            class="button-white"
+                            md-colors="{background: 'Cyan'}"
+                            ng-click="$ctrl.buy(item.id)"
+                    >
+                        {{ 'home.buy.label' | translate }}
+                    </md-button>
                     <div class="item-price">
                         {{item.price}} BYN
                     </div>

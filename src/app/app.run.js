@@ -1,6 +1,6 @@
 export default function run($rootScope, $location, $cookieStore, $http, $translate) {
   $rootScope.globals = $cookieStore.get('globals') || {};
-  $rootScope.userId = $cookieStore.get('userId');
+  $rootScope.userParams = $cookieStore.get('userParams');
   $rootScope.path = $location.path();
   if ($rootScope.globals.currentUser) {
     $http.defaults.headers.common.Authorization = $cookieStore.get('authToken');
@@ -9,13 +9,13 @@ export default function run($rootScope, $location, $cookieStore, $http, $transla
   $translate.use($cookieStore.get('language') || 'en');
 
   const watchChangeStart = $rootScope.$on('$locationChangeSuccess', (event, next, current) => {
-    const isUserNotLogged = !$rootScope.globals.currentUser && !$cookieStore.get('authToken');
+    const isUserNotLogged = !$rootScope.globals.currentUser || $rootScope.userParams.role !== 'ADMIN' || !$cookieStore.get('authToken');
     if (!(
       $location.path() === '/login'
           || $location.path() === '/register'
           || $location.path() === '/'
     ) && isUserNotLogged) {
-      if ($rootScope.globals.currentUser) {
+      if (!$rootScope.userParams) {
         $location.path('/login');
       } else {
         $location.path('/');
