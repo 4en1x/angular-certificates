@@ -1,5 +1,6 @@
 const loginTemplate = require('./authentication/view/login.html');
 const homeTemplate = require('./home/view/home.html');
+const myHomeTemplate = require('./home/view/my-home.html');
 const registerTemplate = require('./authentication/view/registration.html');
 const editGCTemplate = require('./editgc/view/edit.html');
 
@@ -16,6 +17,12 @@ export default function config($routeProvider, $locationProvider) {
       controller: 'HomeController',
       controllerAs: 'vm',
       template: homeTemplate,
+    })
+
+    .when('/my', {
+      controller: 'MyHomeController',
+      controllerAs: 'vm',
+      template: myHomeTemplate,
     })
 
     .when('/register', {

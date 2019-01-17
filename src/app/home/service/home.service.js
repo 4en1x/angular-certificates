@@ -21,6 +21,19 @@ export default class HomeService {
       });
   }
 
+  GetMy(callback, errorCallback) {
+    this.http(basicRequest({
+      url: `giftcertificates/user`,
+      auth: this.http.defaults.headers.common.Authorization,
+    }))
+      .then((response) => {
+        callback(response);
+      },
+      (error) => {
+        errorCallback(error);
+      });
+  }
+
   Buy(id, callback, errorCallback) {
     this.http(basicRequest({
       url: `payments/buy?giftCertificateId=${id}&userId=${this.rootScope.userId}`,
@@ -35,9 +48,12 @@ export default class HomeService {
       });
   }
 
-  GetAmount(callback, errorCallback) {
+  GetAmount(filter, callback, errorCallback) {
+    let tags = '';
+    filter.tags.forEach(tag => tags += `&tags=${tag.name}`);
+
     this.http(basicRequest({
-      url: 'giftcertificates/amount',
+      url: `giftcertificates/amount?sort=${filter.sort}&searchName=${filter.name}&searchDescription=${filter.description}${tags}`,
     }))
       .then((response) => {
         callback(response);

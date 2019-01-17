@@ -1,0 +1,52 @@
+<div ng-controller="MyHomeController as $ctrl" ng-cloak>
+    <div flex class="gcs-container" ng-repeat="item in gcs">
+        <md-card md-theme-watch class="gcs-card">
+            <md-card-title class="card-title">
+                <md-card-title-text>
+                    <span class="md-headline" data-id = "{{item.id}}" ng-hide ="item.count === 1" ng-click="$ctrl.showFull($event)">{{item.name | uppercase}} ({{item.count | uppercase}} ORDERS)</span>
+                    <span class="md-headline" data-id = "{{item.id}}" ng-hide ="item.count !== 1" ng-click="$ctrl.showFull($event)">{{item.name | uppercase}}</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-lg card-media card-date">
+                        <span class="md-subhead">{{item.dateOfModification | date: 'longDate'}}</span>
+                    </div>
+                </md-card-title-media>
+            </md-card-title>
+            <div class="card-content">
+                <md-chips ng-model="item.tags"
+                          readonly=true
+                          input-aria-label="Chips"
+
+                >
+                    <md-chip-template>
+                        <strong>{{$chip.name}}</strong>
+                    </md-chip-template>
+                </md-chips>
+                <span class="md-subhead">{{item.description}}</span>
+            </div>
+            <div class="item-buttons-container">
+                <md-card-actions layout="row" layout-align="end center" class="item-price-container">
+                    <md-button
+                            ng-if="globals.currentUser.username"
+                            class="button-white"
+                            md-colors="{background: 'Cyan'}"
+                            ng-click="$ctrl.buy(item.id)"
+                    >
+                        {{ 'home.buy.label' | translate }}
+                    </md-button>
+                    <div class="item-price">
+                        {{item.price}} BYN
+                    </div>
+                </md-card-actions>
+            </div>
+        </md-card>
+    </div>
+
+    <h1 class="nothing" ng-if="gcs.length === 0">{{ 'home.nothing' | translate }}</h1>
+
+    <div ng-if="dataLoading" class="spinner-container">
+        <md-progress-circular md-mode="indeterminate" class="custom-spinner"></md-progress-circular>
+    </div>
+</div>
+
+

@@ -160,3 +160,8 @@ input[type=number]::-webkit-outer-spin-button {
 .md-dialog-container, md-dialog {
     z-index: 10000;
 }
+
+
+.md-chips:focus, .ng-binding:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}

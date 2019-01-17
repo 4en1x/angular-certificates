@@ -7,18 +7,18 @@ export default class HomeController {
     this.HomeService = HomeService;
     this.PagerService = PagerService;
     this.AlertHelper = AlertHelper;
-    this.scope.filter = {
+    this.scope.filter = JSON.parse(window.localStorage.getItem('filter')) || {
       sort: 'modification_date_desc',
       name: '',
       description: '',
       tags: [],
     };
 
-    this.scope.searchParams = 'desc';
-    this.scope.searchOrder = 'modification_date';
-    this.scope.tagsSearch = [];
-    this.scope.searchName = '';
-    this.scope.searchDescription = '';
+    this.scope.searchParams = this.scope.filter.sort.substring(this.scope.filter.sort.lastIndexOf('_') + 1, this.scope.filter.sort.length);
+    this.scope.searchOrder = this.scope.filter.sort.substring(0, this.scope.filter.sort.lastIndexOf('_'));
+    this.scope.tagsSearch = this.scope.filter.tags.slice(0);
+    this.scope.searchName = this.scope.filter.name;
+    this.scope.searchDescription = this.scope.filter.description;
 
     this.getAll();
     this.scope.pager = {};
@@ -39,7 +39,7 @@ export default class HomeController {
 
   getAmount(firstTime) {
     this.scope.dataLoading = true;
-    this.HomeService.GetAmount((response) => {
+    this.HomeService.GetAmount(this.scope.filter, (response) => {
       this.scope.amount = response.data;
       if (firstTime === true) {
         this.setPage(1);
@@ -64,6 +64,7 @@ export default class HomeController {
     this.scope.pager = this.PagerService.GetPager(this.scope.amount, page);
     this.scope.page = page;
     this.scope.dataLoading = true;
+    window.scrollTo(0, 0);
     this.HomeService.GetAll(page, this.scope.amountOnPage, this.scope.filter, (response) => {
       this.scope.gcs = response.data;
       this.scope.dataLoading = false;
@@ -120,16 +121,26 @@ export default class HomeController {
     this.scope.searchOrder = order;
   }
 
+  addTagToFilter(tag) {
+    this.scope.tagsSearch.push({
+      name: tag,
+    });
+  }
+
   filter() {
     this.scope.filter = {
       sort: `${this.scope.searchOrder}_${this.scope.searchParams}`,
       name: this.scope.searchName,
       description: this.scope.searchDescription,
-      tags: this.scope.tagsSearch,
+      tags: this.scope.tagsSearch.slice(0),
     };
+
+    window.localStorage.setItem('filter', JSON.stringify(this.scope.filter));
 
     this.HomeService.GetAll(this.scope.page, this.scope.amountOnPage, this.scope.filter, (response) => {
       this.scope.gcs = response.data;
+      this.getAmount(true);
+
       this.scope.dataLoading = false;
     }, this.errorCallback.bind(this));
   }

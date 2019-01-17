@@ -5,12 +5,15 @@ export default class HomeService {
     this.http = $http;
   }
 
-  GetGC(id = 1, callback) {
+  GetGC(id = 1, callback, errorCallback) {
     this.http(basicRequest({
       url: `giftcertificates/${id}`,
     }))
       .then((response) => {
         callback(response);
+      },
+      (error) => {
+        errorCallback(error);
       });
   }
 

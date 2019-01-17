@@ -25,8 +25,34 @@ export default {
         label: 'Отменить',
       },
     },
+    filter: {
+      name: {
+        placeholder: 'Название',
+        label: 'Название',
+      },
+      description: {
+        placeholder: 'Описание',
+        label: 'Описание',
+      },
+      price: {
+        label: 'Цена',
+      },
+      crDate: {
+        label: 'Дата создания',
+      },
+      mdDate: {
+        label: 'Дата  последнего изменения',
+      },
+      orderType: 'Тип сортировки',
+      orderParam: 'Параметр сортировки',
+      asc: 'ASC',
+      desc: 'DESC',
+      filter: 'ФИЛЬТР',
+    },
+    nothing: 'Ничего не найдено',
   },
   header: {
+    my: 'Мои Сертификаты',
     name: 'МАГАЗИН ПОДАРОЧНЫХ СЕРТИФИКАТОВ',
     addCrtLabel: 'Добавить сертификат',
     logoutLabel: 'Выйти',

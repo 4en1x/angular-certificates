@@ -25,8 +25,34 @@ export default {
         label: 'Cancel',
       },
     },
+    filter: {
+      name: {
+        placeholder: 'Name',
+        label: 'Name',
+      },
+      description: {
+        placeholder: 'Description',
+        label: 'Description',
+      },
+      price: {
+        label: 'Price',
+      },
+      crDate: {
+        label: 'Creation Date',
+      },
+      mdDate: {
+        label: 'Modification Date',
+      },
+      orderType: 'Order Type',
+      orderParam: 'Order Parameter',
+      asc: 'ASC',
+      desc: 'DESC',
+      filter: 'FILTER',
+    },
+    nothing: 'Nothing here',
   },
   header: {
+    my: 'My Certificates',
     name: 'GIFT CERTIFICATES SHOP',
     addCrtLabel: 'Add Certificate',
     logoutLabel: 'Logout',

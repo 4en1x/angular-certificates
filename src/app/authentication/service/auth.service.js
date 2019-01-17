@@ -93,6 +93,7 @@ export default class AuthService {
   ClearCredentials() {
     this.rootScope.globals = {};
     this.rootScope.userParams = {};
+    window.localStorage.removeItem('filter');
     this.cookieStore.remove('globals');
     this.cookieStore.remove('userParams');
     this.http.defaults.headers.common.Authorization = 'Basic ';

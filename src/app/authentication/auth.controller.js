@@ -35,7 +35,7 @@ export default class AuthController {
         };
       }, this.errorCallback);
       this.location.path('/');
-    }, this.errorCallback);
+    }, this.errorCallback.bind(this));
   }
 
   errorCallback(error) {
@@ -49,7 +49,7 @@ export default class AuthController {
       this.location.path('/login');
       this.scope.dataLoading = false;
       this.AlertHelper.successCallback(response);
-    }, this.errorCallback);
+    }, this.errorCallback.bind(this));
   }
 
   redirectRegister() {

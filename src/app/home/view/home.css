@@ -102,3 +102,7 @@ md-dialog.md-transition-in, md-dialog.md-transition-out {
     padding: 0 0 !important;
     margin: 5px 0 !important;
 }
+
+.nothing {
+    text-align: center;
+}

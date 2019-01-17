@@ -25,8 +25,34 @@ export default {
         label: '取消',
       },
     },
+    filter: {
+      name: {
+        placeholder: '名称',
+        label: '名称',
+      },
+      description: {
+        placeholder: '描述',
+        label: '描述',
+      },
+      price: {
+        label: '价钱',
+      },
+      crDate: {
+        label: '创立日期',
+      },
+      mdDate: {
+        label: '修改日期',
+      },
+      orderType: '订单类型',
+      orderParam: '订单参数',
+      asc: 'ASC',
+      desc: 'DESC',
+      filter: '过滤',
+    },
+      nothing: '这里没有什么',
   },
   header: {
+    my: '我的证书',
     name: '礼品证书店',
     addCrtLabel: '添加证书',
     logoutLabel: '登出',

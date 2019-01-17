@@ -14,6 +14,7 @@ export default function run($rootScope, $location, $cookieStore, $http, $transla
       $location.path() === '/login'
           || $location.path() === '/register'
           || $location.path() === '/'
+          || $location.path() === '/my'
     ) && isUserNotLogged) {
       if (!$rootScope.userParams) {
         $location.path('/login');

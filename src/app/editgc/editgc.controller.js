@@ -19,6 +19,7 @@ export default class EditGCController {
 
     this.scope.$on('$locationChangeStart', (event) => {
       const path = $location.path();
+      if (!this.scope.form) return;
       if (this.scope.form.$dirty) {
         const that = this;
         const mdDialogCtrl = function ($scope) {
@@ -49,7 +50,7 @@ export default class EditGCController {
     this.EditGCService.GetGC(id, (response) => {
       this.scope.gc = response.data;
       this.scope.dataLoading = false;
-    }, this.errorCallback);
+    }, this.errorCallback.bind(this));
   }
 
   addGC() {
@@ -57,7 +58,7 @@ export default class EditGCController {
     this.EditGCService.AddGC(this.scope.gc, (response) => {
       this.scope.dataLoading = false;
       this.AlertHelper.successCallback(response);
-    }, this.errorCallback);
+    }, this.errorCallback.bind(this));
   }
 
   deleteGC(id) {
@@ -65,7 +66,7 @@ export default class EditGCController {
     this.EditGCService.DeleteGC(id, (response) => {
       this.AlertHelper.successCallback(response);
       this.scope.dataLoading = false;
-    }, this.errorCallback);
+    }, this.errorCallback.bind(this));
   }
 
   beforeDeleteGC(gcId) {
@@ -115,6 +116,6 @@ export default class EditGCController {
     this.EditGCService.EditGC(id, this.scope.gc, (response) => {
       this.AlertHelper.successCallback(response);
       this.scope.dataLoading = false;
-    }, this.errorCallback);
+    }, this.errorCallback.bind(this));
   }
 }

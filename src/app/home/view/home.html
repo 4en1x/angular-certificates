@@ -5,7 +5,7 @@
                 <input
                         ng-model="searchName"
                         type="text"
-                        placeholder="Name"
+                        placeholder="{{ 'home.filter.name.placeholder' | translate }}"
                         name="searchName"
                         id="searchName"
                         class="form-control"
@@ -16,7 +16,7 @@
                 <input
                         ng-model="searchDescription"
                         type="text"
-                        placeholder="Description"
+                        placeholder="{{ 'home.filter.description.placeholder' | translate }}"
                         name="searchDescription"
                         id="searchDescription"
                         class="form-control"
@@ -51,33 +51,33 @@
                         <md-menu-content width="2">
                             <md-menu-item>
                                 <md-button ng-click="$ctrl.setOrder('creation_date')">
-                                    <p class="user-icons">Creation Date</p>
+                                    <p class="user-icons">{{ 'home.filter.crDate.label' | translate }}</p>
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
                                 <md-button ng-click="$ctrl.setOrder('modification_date')">
-                                    <p class="user-icons">Modification Date</p>
+                                    <p class="user-icons">{{ 'home.filter.mdDate.label' | translate }}</p>
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
                                 <md-button ng-click="$ctrl.setOrder('price')">
-                                    <p class="user-icons">Price</p>
+                                    <p class="user-icons">{{ 'home.filter.price.label' | translate }}</p>
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
                                 <md-button ng-click="$ctrl.setOrder('name')">
-                                    <p class="user-icons">Name</p>
+                                    <p class="user-icons">{{ 'home.filter.name.label' | translate }}</p>
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
                                 <md-button ng-click="$ctrl.setOrder('description')">
-                                    <p class="user-icons">Description</p>
+                                    <p class="user-icons">{{ 'home.filter.name.label' | translate }}</p>
                                 </md-button>
                             </md-menu-item>
 
                         </md-menu-content>
                     </md-menu>
-                    Order Type
+                    {{ 'home.filter.orderType' | translate }} ({{ searchOrder }})
                 </md-list-item>
             </ul>
             <ul class="pagination pagination-filter">
@@ -87,22 +87,22 @@
                         <md-menu-content width="2">
                             <md-menu-item>
                                 <md-button ng-click="$ctrl.setOrderParameter('desc')">
-                                    <p class="user-icons">DESC</p>
+                                    <p class="user-icons">{{ 'home.filter.desc' | translate }}</p>
                                 </md-button>
                             </md-menu-item>
                             <md-menu-item>
                                 <md-button ng-click="$ctrl.setOrderParameter('asc')">
-                                    <p class="user-icons">ASC</p>
+                                    <p class="user-icons">{{ 'home.filter.asc' | translate }}</p>
                                 </md-button>
                             </md-menu-item>
                         </md-menu-content>
                     </md-menu>
-                    Order Parameter
+                    {{ 'home.filter.orderParam' | translate }} ({{ searchParams }})
                 </md-list-item>
             </ul>
             <br>
             <md-button ng-click="$ctrl.filter()">
-                <p class="user-icons">FILTER</p>
+                <p class="user-icons">{{ 'home.filter.filter' | translate }}</p>
             </md-button>
         </div>
     </div>
@@ -122,8 +122,9 @@
                 <md-chips ng-model="item.tags"
                           readonly=true
                           input-aria-label="Chips"
+
                 >
-                    <md-chip-template>
+                    <md-chip-template ng-click="$ctrl.addTagToFilter($chip.name)">
                         <strong>{{$chip.name}}</strong>
                     </md-chip-template>
                 </md-chips>
@@ -168,11 +169,16 @@
     </div>
 
     <div class="pagination-container">
-        <ul class="pagination">
+        <ul class="pagination" ng-if="pager.pages.length > 2">
             <md-list-item class="page-amount">
                 <md-menu class="md-secondary">
                     <md-button class="md-page-amount"></md-button>
                     <md-menu-content width="2">
+                        <md-menu-item>
+                            <md-button ng-click="$ctrl.setAmountOnPage(10)">
+                                <p class="user-icons">10</p>
+                            </md-button>
+                        </md-menu-item>
                         <md-menu-item>
                             <md-button ng-click="$ctrl.setAmountOnPage(20)">
                                 <p class="user-icons">20</p>
@@ -183,18 +189,13 @@
                                 <p class="user-icons">50</p>
                             </md-button>
                         </md-menu-item>
-                        <md-menu-item>
-                            <md-button ng-click="$ctrl.setAmountOnPage(100)">
-                                <p class="user-icons">100</p>
-                            </md-button>
-                        </md-menu-item>
                     </md-menu-content>
                 </md-menu>
-                {{ 'home.pager.amount' | translate }}
+                {{ 'home.pager.amount' | translate }} -  {{ amountOnPage }}
             </md-list-item>
         </ul>
 
-        <ul ng-if="pager.pages.length" class="pagination">
+        <ul ng-if="pager.pages.length > 2" class="pagination">
             <li ng-class="{disabled:pager.currentPage === 1}">
                 <a ng-click="$ctrl.setPage(1)">{{ 'home.pager.first' | translate }}</a>
             </li>
@@ -212,6 +213,8 @@
             </li>
         </ul>
     </div>
+
+    <h1 class="nothing" ng-if="gcs.length === 0">{{ 'home.nothing' | translate }}</h1>
 
     <div ng-if="dataLoading" class="spinner-container">
         <md-progress-circular md-mode="indeterminate" class="custom-spinner"></md-progress-circular>

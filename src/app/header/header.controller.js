@@ -1,8 +1,9 @@
 export default class HeaderController {
-  constructor($scope, $rootScope, $cookieStore, $translate) {
+  constructor($scope, $rootScope, $cookieStore, $translate, $http) {
     this.cookieStore = $cookieStore;
     this.rootScope = $rootScope;
     this.scope = $scope;
+    this.http = $http;
     this.translate = $translate;
 
     this.rootScope.globals = this.cookieStore.get('globals') || {};
@@ -27,6 +28,7 @@ export default class HeaderController {
   }
 
   changeLanguage(langKey) {
+    this.http.defaults.headers.common['Accept-Language'] = langKey;
     this.translate.use(langKey);
     this.cookieStore.put('language', langKey);
     this.scope.langs = [];
