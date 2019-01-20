@@ -2,9 +2,8 @@ const deleteConfirmTemplate = require('./view/deleteConfirmation.html');
 const exitConfirmTemplate = require('./view/exitConfirmation.html');
 
 export default class EditGCController {
-  constructor($scope, $rootScope, $mdDialog, $routeParams, $location, EditGCService, AlertHelper) {
+  constructor($scope, $routeParams, $mdDialog, $location, EditGCService, AlertHelper) {
     this.scope = $scope;
-    this.rootScope = $rootScope;
     this.location = $location;
     this.routeParams = $routeParams;
     this.mdDialog = $mdDialog;

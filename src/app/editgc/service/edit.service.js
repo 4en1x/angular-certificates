@@ -1,6 +1,6 @@
 import basicRequest from '../../helpers/http/custom-http.helper';
 
-export default class HomeService {
+export default class EditService {
   constructor($http) {
     this.http = $http;
   }
