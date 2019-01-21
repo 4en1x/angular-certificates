@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/home/home.module.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">app/home/</a> home.module.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.05% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>32/41</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">73.91% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>17/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.05% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>32/41</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+&nbsp;
+/******/
+(function (modules) {
+  // webpackBootstrap
+&nbsp;
+  /******/
+  // The module cache
+&nbsp;
+  /******/
+  var installedModules = {};
+  /******/
+&nbsp;
+  /******/
+  // The require function
+&nbsp;
+  /******/
+&nbsp;
+  function __webpack_require__(moduleId) {
+    /******/
+&nbsp;
+    /******/
+    // Check if module is in cache
+&nbsp;
+    /******/
+    if (installedModules[moduleId]) {
+      /******/
+      return installedModules[moduleId].exports;
+      /******/
+    }
+    /******/
+    // Create a new module (and put it into the cache)
+&nbsp;
+    /******/
+&nbsp;
+&nbsp;
+    var module = installedModules[moduleId] = {
+      /******/
+      i: moduleId,
+&nbsp;
+      /******/
+      l: false,
+&nbsp;
+      /******/
+      exports: {}
+      /******/
+&nbsp;
+    };
+    /******/
+&nbsp;
+    /******/
+    // Execute the module function
+&nbsp;
+    /******/
+&nbsp;
+    modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+    /******/
+&nbsp;
+    /******/
+    // Flag the module as loaded
+&nbsp;
+    /******/
+&nbsp;
+    module.l = true;
+    /******/
+&nbsp;
+    /******/
+    // Return the exports of the module
+&nbsp;
+    /******/
+&nbsp;
+    return module.exports;
+    /******/
+  }
+  /******/
+&nbsp;
+  /******/
+&nbsp;
+  /******/
+  // expose the modules object (__webpack_modules__)
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.m = modules;
+  /******/
+&nbsp;
+  /******/
+  // expose the module cache
+&nbsp;
+  /******/
+&nbsp;
+  __webpack_require__.c = installedModules;
+  /******/
+&nbsp;
+  /******/
+  // identity function for calling harmony imports with the correct context
+&nbsp;
+  /******/
+&nbsp;
+  __webpack_require__.i = <span class="fstat-no" title="function not covered" >function (value) {</span>
+<span class="cstat-no" title="statement not covered" >    return value;</span>
+  };
+  /******/
+&nbsp;
+  /******/
+  // define getter function for harmony exports
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.d = <span class="fstat-no" title="function not covered" >function (exports, name, getter) {</span>
+    /******/
+<span class="cstat-no" title="statement not covered" >    if (!__webpack_require__.o(exports, name)) {</span>
+      /******/
+<span class="cstat-no" title="statement not covered" >      Object.defineProperty(exports, name, {</span>
+        /******/
+        configurable: false,
+&nbsp;
+        /******/
+        enumerable: true,
+&nbsp;
+        /******/
+        get: getter
+        /******/
+&nbsp;
+      });
+      /******/
+    }
+    /******/
+&nbsp;
+  };
+  /******/
+&nbsp;
+  /******/
+  // getDefaultExport function for compatibility with non-harmony modules
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.n = <span class="fstat-no" title="function not covered" >function (module) {</span>
+    /******/
+<span class="cstat-no" title="statement not covered" >    var getter = module &amp;&amp; module.__esModule ?</span>
+    /******/
+<span class="fstat-no" title="function not covered" >    function getDefault() {</span>
+<span class="cstat-no" title="statement not covered" >      return module['default'];</span>
+    } :
+    /******/
+<span class="fstat-no" title="function not covered" >    function getModuleExports() {</span>
+<span class="cstat-no" title="statement not covered" >      return module;</span>
+    };
+    /******/
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    __webpack_require__.d(getter, 'a', getter);</span>
+    /******/
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return getter;</span>
+    /******/
+  };
+  /******/
+&nbsp;
+  /******/
+  // Object.prototype.hasOwnProperty.call
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.o = <span class="fstat-no" title="function not covered" >function (object, property) {</span>
+<span class="cstat-no" title="statement not covered" >    return Object.prototype.hasOwnProperty.call(object, property);</span>
+  };
+  /******/
+&nbsp;
+  /******/
+  // __webpack_public_path__
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.p = "/var/folders/yq/24w_xk_j64g0rlkb9sq75hgh0000gn/T/_karma_webpack_/";
+  /******/
+&nbsp;
+  /******/
+  // Load entry module and return exports
+&nbsp;
+  /******/
+&nbsp;
+  return __webpack_require__(__webpack_require__.s = 20);
+  /******/
+})(
+/************************************************************************/
+&nbsp;
+/******/
+{
+  /***/
+  0:
+  /***/
+  function _(module, exports) {
+    eval("/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAuthor Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\nmodule.exports = function(useSourceMap) {\n\tvar list = [];\n\n\t// return the list of modules as css string\n\tlist.toString = function toString() {\n\t\treturn this.map(function (item) {\n\t\t\tvar content = cssWithMappingToString(item, useSourceMap);\n\t\t\tif(item[2]) {\n\t\t\t\treturn \"@media \" + item[2] + \"{\" + content + \"}\";\n\t\t\t} else {\n\t\t\t\treturn content;\n\t\t\t}\n\t\t}).join(\"\");\n\t};\n\n\t// import a list of modules into the list\n\tlist.i = function(modules, mediaQuery) {\n\t\tif(typeof modules === \"string\")\n\t\t\tmodules = [[null, modules, \"\"]];\n\t\tvar alreadyImportedModules = {};\n\t\tfor(var i = 0; i &lt; this.length; i++) {\n\t\t\tvar id = this[i][0];\n\t\t\tif(typeof id === \"number\")\n\t\t\t\talreadyImportedModules[id] = true;\n\t\t}\n\t\tfor(i = 0; i &lt; modules.length; i++) {\n\t\t\tvar item = modules[i];\n\t\t\t// skip already imported module\n\t\t\t// this implementation is not 100% perfect for weird media query combinations\n\t\t\t//  when a module is imported multiple times with different media queries.\n\t\t\t//  I hope this will never occur (Hey this way we have smaller bundles)\n\t\t\tif(typeof item[0] !== \"number\" || !alreadyImportedModules[item[0]]) {\n\t\t\t\tif(mediaQuery &amp;&amp; !item[2]) {\n\t\t\t\t\titem[2] = mediaQuery;\n\t\t\t\t} else if(mediaQuery) {\n\t\t\t\t\titem[2] = \"(\" + item[2] + \") and (\" + mediaQuery + \")\";\n\t\t\t\t}\n\t\t\t\tlist.push(item);\n\t\t\t}\n\t\t}\n\t};\n\treturn list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n\tvar content = item[1] || '';\n\tvar cssMapping = item[3];\n\tif (!cssMapping) {\n\t\treturn content;\n\t}\n\n\tif (useSourceMap &amp;&amp; typeof btoa === 'function') {\n\t\tvar sourceMapping = toComment(cssMapping);\n\t\tvar sourceURLs = cssMapping.sources.map(function (source) {\n\t\t\treturn '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'\n\t\t});\n\n\t\treturn [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n\t}\n\n\treturn [content].join('\\n');\n}\n\n// Adapted from convert-source-map (MIT)\nfunction toComment(sourceMap) {\n\t// eslint-disable-next-line no-undef\n\tvar base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n\tvar data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;\n\n\treturn '/*# ' + data + ' */';\n}\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/css-loader/lib/css-base.js\n// module id = 0\n// module chunks = 0 2 3 4\n\n//# sourceURL=webpack:///./~/css-loader/lib/css-base.js?");
+    /***/
+  },
+&nbsp;
+  /***/
+  1:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    eval("/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAuthor Tobias Koppers @sokra\n*/\n\nvar stylesInDom = {};\n\nvar\tmemoize = function (fn) {\n\tvar memo;\n\n\treturn function () {\n\t\tif (typeof memo === \"undefined\") memo = fn.apply(this, arguments);\n\t\treturn memo;\n\t};\n};\n\nvar isOldIE = memoize(function () {\n\t// Test for IE &lt;= 9 as proposed by Browserhacks\n\t// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805\n\t// Tests for existence of standard globals is to allow style-loader\n\t// to operate correctly into non-standard environments\n\t// @see https://github.com/webpack-contrib/style-loader/issues/177\n\treturn window &amp;&amp; document &amp;&amp; document.all &amp;&amp; !window.atob;\n});\n\nvar getTarget = function (target) {\n  return document.querySelector(target);\n};\n\nvar getElement = (function (fn) {\n\tvar memo = {};\n\n\treturn function(target) {\n                // If passing function in options, then use it for resolve \"head\" element.\n                // Useful for Shadow Root style i.e\n                // {\n                //   insertInto: function () { return document.querySelector(\"#foo\").shadowRoot }\n                // }\n                if (typeof target === 'function') {\n                        return target();\n                }\n                if (typeof memo[target] === \"undefined\") {\n\t\t\tvar styleTarget = getTarget.call(this, target);\n\t\t\t// Special case to return head of iframe instead of iframe itself\n\t\t\tif (window.HTMLIFrameElement &amp;&amp; styleTarget instanceof window.HTMLIFrameElement) {\n\t\t\t\ttry {\n\t\t\t\t\t// This will throw an exception if access to iframe is blocked\n\t\t\t\t\t// due to cross-origin restrictions\n\t\t\t\t\tstyleTarget = styleTarget.contentDocument.head;\n\t\t\t\t} catch(e) {\n\t\t\t\t\tstyleTarget = null;\n\t\t\t\t}\n\t\t\t}\n\t\t\tmemo[target] = styleTarget;\n\t\t}\n\t\treturn memo[target]\n\t};\n})();\n\nvar singleton = null;\nvar\tsingletonCounter = 0;\nvar\tstylesInsertedAtTop = [];\n\nvar\tfixUrls = __webpack_require__(64);\n\nmodule.exports = function(list, options) {\n\tif (typeof DEBUG !== \"undefined\" &amp;&amp; DEBUG) {\n\t\tif (typeof document !== \"object\") throw new Error(\"The style-loader cannot be used in a non-browser environment\");\n\t}\n\n\toptions = options || {};\n\n\toptions.attrs = typeof options.attrs === \"object\" ? options.attrs : {};\n\n\t// Force single-tag solution on IE6-9, which has a hard limit on the # of &lt;style&gt;\n\t// tags it will allow on a page\n\tif (!options.singleton &amp;&amp; typeof options.singleton !== \"boolean\") options.singleton = isOldIE();\n\n\t// By default, add &lt;style&gt; tags to the &lt;head&gt; element\n        if (!options.insertInto) options.insertInto = \"head\";\n\n\t// By default, add &lt;style&gt; tags to the bottom of the target\n\tif (!options.insertAt) options.insertAt = \"bottom\";\n\n\tvar styles = listToStyles(list, options);\n\n\taddStylesToDom(styles, options);\n\n\treturn function update (newList) {\n\t\tvar mayRemove = [];\n\n\t\tfor (var i = 0; i &lt; styles.length; i++) {\n\t\t\tvar item = styles[i];\n\t\t\tvar domStyle = stylesInDom[item.id];\n\n\t\t\tdomStyle.refs--;\n\t\t\tmayRemove.push(domStyle);\n\t\t}\n\n\t\tif(newList) {\n\t\t\tvar newStyles = listToStyles(newList, options);\n\t\t\taddStylesToDom(newStyles, options);\n\t\t}\n\n\t\tfor (var i = 0; i &lt; mayRemove.length; i++) {\n\t\t\tvar domStyle = mayRemove[i];\n\n\t\t\tif(domStyle.refs === 0) {\n\t\t\t\tfor (var j = 0; j &lt; domStyle.parts.length; j++) domStyle.parts[j]();\n\n\t\t\t\tdelete stylesInDom[domStyle.id];\n\t\t\t}\n\t\t}\n\t};\n};\n\nfunction addStylesToDom (styles, options) {\n\tfor (var i = 0; i &lt; styles.length; i++) {\n\t\tvar item = styles[i];\n\t\tvar domStyle = stylesInDom[item.id];\n\n\t\tif(domStyle) {\n\t\t\tdomStyle.refs++;\n\n\t\t\tfor(var j = 0; j &lt; domStyle.parts.length; j++) {\n\t\t\t\tdomStyle.parts[j](item.parts[j]);\n\t\t\t}\n\n\t\t\tfor(; j &lt; item.parts.length; j++) {\n\t\t\t\tdomStyle.parts.push(addStyle(item.parts[j], options));\n\t\t\t}\n\t\t} else {\n\t\t\tvar parts = [];\n\n\t\t\tfor(var j = 0; j &lt; item.parts.length; j++) {\n\t\t\t\tparts.push(addStyle(item.parts[j], options));\n\t\t\t}\n\n\t\t\tstylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};\n\t\t}\n\t}\n}\n\nfunction listToStyles (list, options) {\n\tvar styles = [];\n\tvar newStyles = {};\n\n\tfor (var i = 0; i &lt; list.length; i++) {\n\t\tvar item = list[i];\n\t\tvar id = options.base ? item[0] + options.base : item[0];\n\t\tvar css = item[1];\n\t\tvar media = item[2];\n\t\tvar sourceMap = item[3];\n\t\tvar part = {css: css, media: media, sourceMap: sourceMap};\n\n\t\tif(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});\n\t\telse newStyles[id].parts.push(part);\n\t}\n\n\treturn styles;\n}\n\nfunction insertStyleElement (options, style) {\n\tvar target = getElement(options.insertInto)\n\n\tif (!target) {\n\t\tthrow new Error(\"Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.\");\n\t}\n\n\tvar lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];\n\n\tif (options.insertAt === \"top\") {\n\t\tif (!lastStyleElementInsertedAtTop) {\n\t\t\ttarget.insertBefore(style, target.firstChild);\n\t\t} else if (lastStyleElementInsertedAtTop.nextSibling) {\n\t\t\ttarget.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);\n\t\t} else {\n\t\t\ttarget.appendChild(style);\n\t\t}\n\t\tstylesInsertedAtTop.push(style);\n\t} else if (options.insertAt === \"bottom\") {\n\t\ttarget.appendChild(style);\n\t} else if (typeof options.insertAt === \"object\" &amp;&amp; options.insertAt.before) {\n\t\tvar nextSibling = getElement(options.insertInto + \" \" + options.insertAt.before);\n\t\ttarget.insertBefore(style, nextSibling);\n\t} else {\n\t\tthrow new Error(\"[Style Loader]\\n\\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\\n Must be 'top', 'bottom', or Object.\\n (https://github.com/webpack-contrib/style-loader#insertat)\\n\");\n\t}\n}\n\nfunction removeStyleElement (style) {\n\tif (style.parentNode === null) return false;\n\tstyle.parentNode.removeChild(style);\n\n\tvar idx = stylesInsertedAtTop.indexOf(style);\n\tif(idx &gt;= 0) {\n\t\tstylesInsertedAtTop.splice(idx, 1);\n\t}\n}\n\nfunction createStyleElement (options) {\n\tvar style = document.createElement(\"style\");\n\n\tif(options.attrs.type === undefined) {\n\t\toptions.attrs.type = \"text/css\";\n\t}\n\n\taddAttrs(style, options.attrs);\n\tinsertStyleElement(options, style);\n\n\treturn style;\n}\n\nfunction createLinkElement (options) {\n\tvar link = document.createElement(\"link\");\n\n\tif(options.attrs.type === undefined) {\n\t\toptions.attrs.type = \"text/css\";\n\t}\n\toptions.attrs.rel = \"stylesheet\";\n\n\taddAttrs(link, options.attrs);\n\tinsertStyleElement(options, link);\n\n\treturn link;\n}\n\nfunction addAttrs (el, attrs) {\n\tObject.keys(attrs).forEach(function (key) {\n\t\tel.setAttribute(key, attrs[key]);\n\t});\n}\n\nfunction addStyle (obj, options) {\n\tvar style, update, remove, result;\n\n\t// If a transform function was defined, run it on the css\n\tif (options.transform &amp;&amp; obj.css) {\n\t    result = options.transform(obj.css);\n\n\t    if (result) {\n\t    \t// If transform returns a value, use that instead of the original css.\n\t    \t// This allows running runtime transformations on the css.\n\t    \tobj.css = result;\n\t    } else {\n\t    \t// If the transform function returns a falsy value, don't add this css.\n\t    \t// This allows conditional loading of css\n\t    \treturn function() {\n\t    \t\t// noop\n\t    \t};\n\t    }\n\t}\n\n\tif (options.singleton) {\n\t\tvar styleIndex = singletonCounter++;\n\n\t\tstyle = singleton || (singleton = createStyleElement(options));\n\n\t\tupdate = applyToSingletonTag.bind(null, style, styleIndex, false);\n\t\tremove = applyToSingletonTag.bind(null, style, styleIndex, true);\n\n\t} else if (\n\t\tobj.sourceMap &amp;&amp;\n\t\ttypeof URL === \"function\" &amp;&amp;\n\t\ttypeof URL.createObjectURL === \"function\" &amp;&amp;\n\t\ttypeof URL.revokeObjectURL === \"function\" &amp;&amp;\n\t\ttypeof Blob === \"function\" &amp;&amp;\n\t\ttypeof btoa === \"function\"\n\t) {\n\t\tstyle = createLinkElement(options);\n\t\tupdate = updateLink.bind(null, style, options);\n\t\tremove = function () {\n\t\t\tremoveStyleElement(style);\n\n\t\t\tif(style.href) URL.revokeObjectURL(style.href);\n\t\t};\n\t} else {\n\t\tstyle = createStyleElement(options);\n\t\tupdate = applyToTag.bind(null, style);\n\t\tremove = function () {\n\t\t\tremoveStyleElement(style);\n\t\t};\n\t}\n\n\tupdate(obj);\n\n\treturn function updateStyle (newObj) {\n\t\tif (newObj) {\n\t\t\tif (\n\t\t\t\tnewObj.css === obj.css &amp;&amp;\n\t\t\t\tnewObj.media === obj.media &amp;&amp;\n\t\t\t\tnewObj.sourceMap === obj.sourceMap\n\t\t\t) {\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tupdate(obj = newObj);\n\t\t} else {\n\t\t\tremove();\n\t\t}\n\t};\n}\n\nvar replaceText = (function () {\n\tvar textStore = [];\n\n\treturn function (index, replacement) {\n\t\ttextStore[index] = replacement;\n\n\t\treturn textStore.filter(Boolean).join('\\n');\n\t};\n})();\n\nfunction applyToSingletonTag (style, index, remove, obj) {\n\tvar css = remove ? \"\" : obj.css;\n\n\tif (style.styleSheet) {\n\t\tstyle.styleSheet.cssText = replaceText(index, css);\n\t} else {\n\t\tvar cssNode = document.createTextNode(css);\n\t\tvar childNodes = style.childNodes;\n\n\t\tif (childNodes[index]) style.removeChild(childNodes[index]);\n\n\t\tif (childNodes.length) {\n\t\t\tstyle.insertBefore(cssNode, childNodes[index]);\n\t\t} else {\n\t\t\tstyle.appendChild(cssNode);\n\t\t}\n\t}\n}\n\nfunction applyToTag (style, obj) {\n\tvar css = obj.css;\n\tvar media = obj.media;\n\n\tif(media) {\n\t\tstyle.setAttribute(\"media\", media)\n\t}\n\n\tif(style.styleSheet) {\n\t\tstyle.styleSheet.cssText = css;\n\t} else {\n\t\twhile(style.firstChild) {\n\t\t\tstyle.removeChild(style.firstChild);\n\t\t}\n\n\t\tstyle.appendChild(document.createTextNode(css));\n\t}\n}\n\nfunction updateLink (link, options, obj) {\n\tvar css = obj.css;\n\tvar sourceMap = obj.sourceMap;\n\n\t/*\n\t\tIf convertToAbsoluteUrls isn't defined, but sourcemaps are enabled\n\t\tand there is no publicPath defined then lets turn convertToAbsoluteUrls\n\t\ton by default.  Otherwise default to the convertToAbsoluteUrls option\n\t\tdirectly\n\t*/\n\tvar autoFixUrls = options.convertToAbsoluteUrls === undefined &amp;&amp; sourceMap;\n\n\tif (options.convertToAbsoluteUrls || autoFixUrls) {\n\t\tcss = fixUrls(css);\n\t}\n\n\tif (sourceMap) {\n\t\t// http://stackoverflow.com/a/26603875\n\t\tcss += \"\\n/*# sourceMappingURL=data:application/json;base64,\" + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + \" */\";\n\t}\n\n\tvar blob = new Blob([css], { type: \"text/css\" });\n\n\tvar oldSrc = link.href;\n\n\tlink.href = URL.createObjectURL(blob);\n\n\tif(oldSrc) URL.revokeObjectURL(oldSrc);\n}\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/style-loader/lib/addStyles.js\n// module id = 1\n// module chunks = 0 2 3 4\n\n//# sourceURL=webpack:///./~/style-loader/lib/addStyles.js?");
+    /***/
+  },
+&nbsp;
+  /***/
+  2:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    "use strict";
+&nbsp;
+    eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar AlertHelper = function () {\n  function AlertHelper(ngToast, $translate) {\n    var _this = this;\n\n    _classCallCheck(this, AlertHelper);\n\n    this.ngToast = ngToast;\n    this.scope = {};\n\n    $translate(['alert.error', 'alert.success']).then(function (t) {\n      _this.scope.error = t['alert.error'];\n      _this.scope.success = t['alert.success'];\n    });\n  }\n\n  _createClass(AlertHelper, [{\n    key: 'errorCallback',\n    value: function errorCallback(error) {\n      var _this2 = this;\n\n      var content = error.data.exceptionMessage || [this.scope.error];\n\n      if (error.data.exceptionMessage) {\n        content = content.split('; ').filter(function (item) {\n          return item !== '';\n        });\n      }\n      content.forEach(function (item) {\n        _this2.ngToast.create({\n          timeout: 3000,\n          content: item,\n          dismissButton: true,\n          className: 'danger'\n        });\n      });\n    }\n  }, {\n    key: 'successCallback',\n    value: function successCallback(response) {\n      var content = this.scope.success;\n\n      this.ngToast.create({\n        timeout: 3000,\n        content: content,\n        dismissButton: true\n      });\n    }\n  }]);\n\n  return AlertHelper;\n}();\n\nexports.default = AlertHelper;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/helpers/alert/alert.helper.js\n// module id = 2\n// module chunks = 0 2 3 4 21\n\n//# sourceURL=webpack:///./src/app/helpers/alert/alert.helper.js?");
+    /***/
+  },
+&nbsp;
+  /***/
+  20:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    "use strict";
+&nbsp;
+    eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _home = __webpack_require__(40);\n\nvar _home2 = _interopRequireDefault(_home);\n\nvar _myHome = __webpack_require__(41);\n\nvar _myHome2 = _interopRequireDefault(_myHome);\n\nvar _home3 = __webpack_require__(42);\n\nvar _home4 = _interopRequireDefault(_home3);\n\nvar _pager = __webpack_require__(43);\n\nvar _pager2 = _interopRequireDefault(_pager);\n\nvar _alert = __webpack_require__(2);\n\nvar _alert2 = _interopRequireDefault(_alert);\n\n__webpack_require__(62);\n\n__webpack_require__(63);\n\nfunction _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? obj : { default: obj }; }\n\nexports.default = angular.module('home', []).controller('HomeController', _home2.default).controller('MyHomeController', _myHome2.default).factory('HomeService', _home4.default).factory('PagerService', _pager2.default).factory('AlertHelper', _alert2.default);\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/home/home.module.js\n// module id = 20\n// module chunks = 0 2\n\n//# sourceURL=webpack:///./src/app/home/home.module.js?");
+    /***/
+  },
+&nbsp;
+  /***/
+  3:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    "use strict";
+&nbsp;
+    eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = request;\nfunction request(_ref) {\n  var url = _ref.url,\n      method = _ref.method,\n      data = _ref.data,\n      redirect_url = _ref.redirect_url,\n      dataType = _ref.dataType,\n      headers = _ref.headers,\n      auth = _ref.auth;\n\n  var customHeaders = headers || {\n    'Content-Type': 'application/json'\n  };\n\n  if (!('Authorization' in customHeaders)) {\n    customHeaders = Object.assign({\n      Authorization: auth\n    }, customHeaders);\n  }\n\n  return {\n    url: 'http://localhost:8888/' + url,\n    method: method || 'GET',\n    data: data || '',\n    redirect_url: redirect_url,\n    dataType: dataType || 'json',\n    headers: customHeaders\n  };\n}\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/helpers/http/custom-http.helper.js\n// module id = 3\n// module chunks = 0 1 2 3 4 10 12 13 19\n\n//# sourceURL=webpack:///./src/app/helpers/http/custom-http.helper.js?");
+    /***/
+  },
+&nbsp;
+  /***/
+  40:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    "use strict";
+&nbsp;
+    eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar fullViewTemplate = __webpack_require__(6);\n\nvar HomeController = function () {\n  function HomeController($scope, $mdDialog, HomeService, PagerService, AlertHelper) {\n    _classCallCheck(this, HomeController);\n\n    this.scope = $scope;\n    this.mdDialog = $mdDialog;\n    this.HomeService = HomeService;\n    this.PagerService = PagerService;\n    this.AlertHelper = AlertHelper;\n    this.scope.filter = JSON.parse(window.localStorage.getItem('filter')) || {\n      sort: 'modification_date_desc',\n      name: '',\n      description: '',\n      tags: []\n    };\n\n    this.scope.searchParams = this.scope.filter.sort.substring(this.scope.filter.sort.lastIndexOf('_') + 1, this.scope.filter.sort.length);\n    this.scope.searchOrder = this.scope.filter.sort.substring(0, this.scope.filter.sort.lastIndexOf('_'));\n    this.scope.tagsSearch = this.scope.filter.tags.slice(0);\n    this.scope.searchName = this.scope.filter.name;\n    this.scope.searchDescription = this.scope.filter.description;\n\n    this.getAll();\n    this.scope.pager = {};\n    this.scope.amount = 0;\n    this.scope.amountOnPage = 10;\n    this.scope.page = 1;\n\n    this.getAmount(true);\n  }\n\n  _createClass(HomeController, [{\n    key: 'getAll',\n    value: function getAll(firstTime) {\n      var _this = this;\n\n      this.scope.dataLoading = true;\n      this.HomeService.GetAll(1, this.scope.amountOnPage, this.scope.filter, function (response) {\n        _this.scope.gcs = response.data;\n        _this.scope.dataLoading = false;\n      }, this.errorCallback.bind(this));\n    }\n  }, {\n    key: 'getAmount',\n    value: function getAmount(firstTime) {\n      var _this2 = this;\n\n      this.scope.dataLoading = true;\n      this.HomeService.GetAmount(this.scope.filter, function (response) {\n        _this2.scope.amount = response.data;\n        if (firstTime === true) {\n          _this2.setPage(1);\n        }\n        _this2.scope.dataLoading = false;\n      }, this.errorCallback.bind(this));\n    }\n  }, {\n    key: 'buy',\n    value: function buy(id) {\n      var _this3 = this;\n\n      this.scope.dataLoading = true;\n      this.HomeService.Buy(id, function (response) {\n        _this3.AlertHelper.successCallback(response);\n        _this3.scope.dataLoading = false;\n      }, this.errorCallback.bind(this));\n    }\n  }, {\n    key: 'setPage',\n    value: function setPage(page) {\n      var _this4 = this;\n\n      if (page &lt; 1 || page &gt; this.scope.pager.totalPages) {\n        return;\n      }\n\n      this.scope.pager = this.PagerService.GetPager(this.scope.amount, page);\n      this.scope.page = page;\n      this.scope.dataLoading = true;\n      window.scrollTo(0, 0);\n      this.HomeService.GetAll(page, this.scope.amountOnPage, this.scope.filter, function (response) {\n        _this4.scope.gcs = response.data;\n        _this4.scope.dataLoading = false;\n      }, this.errorCallback.bind(this));\n    }\n  }, {\n    key: 'setAmountOnPage',\n    value: function setAmountOnPage(amount) {\n      this.scope.amountOnPage = amount;\n      this.setPage(1);\n    }\n  }, {\n    key: 'showFull',\n    value: function showFull(e) {\n      var gc = this.scope.gcs.filter(function (item) {\n        return item.id.toString() === e.target.dataset.id;\n      })[0];\n\n      var that = this;\n      var mdDialogCtrl = function mdDialogCtrl($scope, dataToPass) {\n        $scope.gc = dataToPass;\n        $scope.cancel = function () {\n          that.mdDialog.cancel();\n        };\n      };\n\n      this.mdDialog.show({\n        locals: { dataToPass: gc },\n        controller: mdDialogCtrl,\n        template: fullViewTemplate,\n        parent: angular.element(document.body),\n        targetEvent: e,\n        clickOutsideToClose: true,\n        fullscreen: false\n      });\n    }\n  }, {\n    key: 'addSearchTag',\n    value: function addSearchTag() {\n      if (!this.scope.inputTag) {\n        return;\n      }\n\n      if (!this.scope.tagsSearch) {\n        this.scope.tagsSearch = [];\n      }\n\n      this.scope.tagsSearch.push({\n        name: this.scope.inputTag\n      });\n      this.scope.inputTag = '';\n    }\n  }, {\n    key: 'setOrderParameter',\n    value: function setOrderParameter(param) {\n      this.scope.searchParams = param;\n    }\n  }, {\n    key: 'setOrder',\n    value: function setOrder(order) {\n      this.scope.searchOrder = order;\n    }\n  }, {\n    key: 'addTagToFilter',\n    value: function addTagToFilter(tag) {\n      this.scope.tagsSearch.push({\n        name: tag\n      });\n    }\n  }, {\n    key: 'filter',\n    value: function filter() {\n      var _this5 = this;\n\n      this.scope.filter = {\n        sort: this.scope.searchOrder + '_' + this.scope.searchParams,\n        name: this.scope.searchName,\n        description: this.scope.searchDescription,\n        tags: this.scope.tagsSearch.slice(0)\n      };\n\n      window.localStorage.setItem('filter', JSON.stringify(this.scope.filter));\n\n      this.HomeService.GetAll(this.scope.page, this.scope.amountOnPage, this.scope.filter, function (response) {\n        _this5.scope.gcs = response.data;\n        _this5.getAmount(true);\n\n        _this5.scope.dataLoading = false;\n      }, this.errorCallback.bind(this));\n    }\n  }, {\n    key: 'errorCallback',\n    value: function errorCallback(error) {\n      this.AlertHelper.errorCallback(error);\n      this.scope.dataLoading = false;\n    }\n  }]);\n\n  return HomeController;\n}();\n\nexports.default = HomeController;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/home/home.controller.js\n// module id = 40\n// module chunks = 0 2 9\n\n//# sourceURL=webpack:///./src/app/home/home.controller.js?");
+    /***/
+  },
+&nbsp;
+  /***/
+  41:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    "use strict";
+&nbsp;
+    eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar fullViewTemplate = __webpack_require__(6);\n\nvar MyHomeController = function () {\n  function MyHomeController($scope, $mdDialog, HomeService, AlertHelper) {\n    _classCallCheck(this, MyHomeController);\n\n    this.scope = $scope;\n    this.mdDialog = $mdDialog;\n    this.HomeService = HomeService;\n    this.AlertHelper = AlertHelper;\n    this.getMy();\n  }\n\n  _createClass(MyHomeController, [{\n    key: 'getMy',\n    value: function getMy() {\n      var _this = this;\n\n      this.scope.dataLoading = true;\n      this.HomeService.GetMy(function (response) {\n        _this.scope.gcs = _this.filter(response.data);\n        _this.scope.dataLoading = false;\n      }, this.errorCallback.bind(this));\n    }\n  }, {\n    key: 'filter',\n    value: function filter(items) {\n      var filterItems = {};\n      var namesWithCounts = items.reduce(function (acc, curr) {\n        if (typeof acc[curr.name] === 'undefined') {\n          acc[curr.name] = 1;\n        } else {\n          acc[curr.name] += 1;\n        }\n        return acc;\n      }, {});\n\n      filterItems = items.filter(function (item, index, self) {\n        return index === self.findIndex(function (t) {\n          return t.name === item.name;\n        });\n      });\n      filterItems = filterItems.map(function (item) {\n        return Object.assign(item, { count: namesWithCounts[item.name] });\n      });\n\n      return filterItems;\n    }\n  }, {\n    key: 'buy',\n    value: function buy(id) {\n      var _this2 = this;\n\n      this.scope.dataLoading = true;\n      this.HomeService.Buy(id, function (response) {\n        _this2.AlertHelper.successCallback(response);\n        _this2.scope.dataLoading = false;\n      }, this.errorCallback.bind(this));\n    }\n  }, {\n    key: 'showFull',\n    value: function showFull(e) {\n      var gc = this.scope.gcs.filter(function (item) {\n        return item.id.toString() === e.target.dataset.id;\n      })[0];\n\n      var that = this;\n      var mdDialogCtrl = function mdDialogCtrl($scope, dataToPass) {\n        $scope.gc = dataToPass;\n        $scope.cancel = function () {\n          that.mdDialog.cancel();\n        };\n      };\n\n      this.mdDialog.show({\n        locals: { dataToPass: gc },\n        controller: mdDialogCtrl,\n        template: fullViewTemplate,\n        parent: angular.element(document.body),\n        targetEvent: e,\n        clickOutsideToClose: true,\n        fullscreen: false\n      });\n    }\n  }, {\n    key: 'errorCallback',\n    value: function errorCallback(error) {\n      this.AlertHelper.errorCallback(error);\n      this.scope.dataLoading = false;\n    }\n  }]);\n\n  return MyHomeController;\n}();\n\nexports.default = MyHomeController;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/home/my-home.controller.js\n// module id = 41\n// module chunks = 0 2 8\n\n//# sourceURL=webpack:///./src/app/home/my-home.controller.js?");
+    /***/
+  },
+&nbsp;
+  /***/
+  42:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    "use strict";
+&nbsp;
+    eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _customHttp = __webpack_require__(3);\n\nvar _customHttp2 = _interopRequireDefault(_customHttp);\n\nfunction _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar HomeService = function () {\n  function HomeService($http, $rootScope) {\n    _classCallCheck(this, HomeService);\n\n    this.http = $http;\n    this.rootScope = $rootScope;\n  }\n\n  _createClass(HomeService, [{\n    key: 'GetAll',\n    value: function GetAll() {\n      var page = arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : 1;\n      var amountOnPage = arguments.length &gt; 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : 10;\n      var filter = arguments[2];\n      var callback = arguments[3];\n      var errorCallback = arguments[4];\n\n      var tags = '';\n      filter.tags.forEach(function (tag) {\n        return tags += '&amp;tags=' + tag.name;\n      });\n\n      this.http((0, _customHttp2.default)({\n        url: 'giftcertificates?amountOnPage=' + amountOnPage + '&amp;page=' + page + '&amp;sort=' + filter.sort + '&amp;searchName=' + filter.name + '&amp;searchDescription=' + filter.description + tags\n      })).then(function (response) {\n        callback(response);\n      }, function (error) {\n        errorCallback(error);\n      });\n    }\n  }, {\n    key: 'GetMy',\n    value: function GetMy(callback, errorCallback) {\n      this.http((0, _customHttp2.default)({\n        url: 'giftcertificates/user',\n        auth: this.http.defaults.headers.common.Authorization\n      })).then(function (response) {\n        callback(response);\n      }, function (error) {\n        errorCallback(error);\n      });\n    }\n  }, {\n    key: 'Buy',\n    value: function Buy(id, callback, errorCallback) {\n      this.http((0, _customHttp2.default)({\n        url: 'payments/buy?giftCertificateId=' + id + '&amp;userId=' + this.rootScope.userId,\n        auth: this.http.defaults.headers.common.Authorization,\n        method: 'POST'\n      })).then(function (response) {\n        callback(response);\n      }, function (error) {\n        errorCallback(error);\n      });\n    }\n  }, {\n    key: 'GetAmount',\n    value: function GetAmount(filter, callback, errorCallback) {\n      var tags = '';\n      filter.tags.forEach(function (tag) {\n        return tags += '&amp;tags=' + tag.name;\n      });\n\n      this.http((0, _customHttp2.default)({\n        url: 'giftcertificates/amount?sort=' + filter.sort + '&amp;searchName=' + filter.name + '&amp;searchDescription=' + filter.description + tags\n      })).then(function (response) {\n        callback(response);\n      }, function (error) {\n        errorCallback(error);\n      });\n    }\n  }]);\n\n  return HomeService;\n}();\n\nexports.default = HomeService;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/home/service/home.service.js\n// module id = 42\n// module chunks = 0 2 10\n\n//# sourceURL=webpack:///./src/app/home/service/home.service.js?");
+    /***/
+  },
+&nbsp;
+  /***/
+  43:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    "use strict";
+&nbsp;
+    eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i &lt; arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar PagerService = function () {\n  function PagerService() {\n    _classCallCheck(this, PagerService);\n  }\n\n  _createClass(PagerService, [{\n    key: \"GetPager\",\n    value: function GetPager(totalItems, currentPage, pageSize) {\n      // default to first page\n      currentPage = currentPage || 1;\n\n      // default page size is 10\n      pageSize = pageSize || 10;\n\n      // calculate total pages\n      var totalPages = Math.ceil(totalItems / pageSize);\n\n      var startPage = void 0;var endPage = void 0;\n      if (totalPages &lt;= 10) {\n        // less than 10 total pages so show all\n        startPage = 1;\n        endPage = totalPages;\n      } else {\n        // more than 10 total pages so calculate start and end pages\n        if (currentPage &lt;= 6) {\n          startPage = 1;\n          endPage = 10;\n        } else if (currentPage + 4 &gt;= totalPages) {\n          startPage = totalPages - 9;\n          endPage = totalPages;\n        } else {\n          startPage = currentPage - 5;\n          endPage = currentPage + 4;\n        }\n      }\n\n      // calculate start and end item indexes\n      var startIndex = (currentPage - 1) * pageSize;\n      var endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);\n\n      // create an array of pages to ng-repeat in the pager control\n      var pages = [].concat(_toConsumableArray(Array(totalPages + 1).keys())).slice(startPage, endPage + 1);\n\n      // return object with all pager properties required by the view\n      return {\n        totalItems: totalItems,\n        currentPage: currentPage,\n        pageSize: pageSize,\n        totalPages: totalPages,\n        startPage: startPage,\n        endPage: endPage,\n        startIndex: startIndex,\n        endIndex: endIndex,\n        pages: pages\n      };\n    }\n  }]);\n\n  return PagerService;\n}();\n\nexports.default = PagerService;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/home/service/pager.service.js\n// module id = 43\n// module chunks = 0 2 18\n\n//# sourceURL=webpack:///./src/app/home/service/pager.service.js?");
+    /***/
+  },
+&nbsp;
+  /***/
+  49:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    eval("exports = module.exports = __webpack_require__(0)(false);\n// imports\n\n\n// module\nexports.push([module.i, \".gcs-container{\\n    width: 50%;\\n    display: inline-flex;\\n}\\n\\n.gcs-card {\\n    width: 100%;\\n}\\n\\n.card-content {\\n    min-height: 150px;\\n    padding-right: 10px;\\n    padding-left: 10px;\\n    background-color: rgb(255, 252, 255);\\n}\\n\\n.card-title {\\n    background-color: rgb(63, 81, 181);\\n    height: 30px;\\n}\\n\\n.md-headline, .md-subhead {\\n    color: rgb(255, 252, 255);\\n}\\n\\n.button-white {\\n    color: rgb(255, 252, 255) !important;\\n}\\n.md-button {\\n    border-radius: 5px;\\n}\\n\\n.md-dialog-content &gt; p, span, h1 {\\n    color: #000;\\n}\\n\\n.card-content &gt; .md-subhead {\\n    color: #000;\\n}\\n\\n.card-date {\\n    margin-top: 10px;\\n}\\n\\n.tags-container {\\n    display: inline-block;\\n    padding-right: 10px;\\n    padding-left: 10px;\\n    margin: 5px 5px 5px 0;\\n    background-color: #33383b54;\\n    border-width: 2px;\\n    border-radius: 10px;\\n    border-color: #33383b84;\\n}\\n\\n.item-price{\\n    padding-left: 15px;\\n    font-weight: 500;\\n}\\n\\n.item-price-container {\\n    float: right;\\n    width: 100%;\\n}\\n\\n.item-buttons-container {\\n    display: flex;\\n}\\n\\n.edit-delete-buttons {\\n    margin-right: 5px !important;\\n}\\n\\n.md-headline {\\n    outline: none;\\n    cursor: pointer;\\n}\\n\\nmd-dialog.md-transition-in, md-dialog.md-transition-out {\\n    min-width: 700px;\\n}\\n\\n.filter {\\n    display: flex;\\n    /*justify-content: center;\\n    align-items: center;\\n    /*box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);\\n    margin: 8px;*/\\n}\\n\\n.filter-item {\\n    padding: 15px 20px;\\n    flex: 2;\\n}\\n\\n.filter-item-large {\\n    padding: 15px 20px;\\n    flex: 3;\\n}\\n\\n.pagination-filter {\\n    padding: 0 0 !important;\\n    margin: 5px 0 !important;\\n}\\n\\n.nothing {\\n    text-align: center;\\n}\", \"\"]);\n\n// exports\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/css-loader!./src/app/home/view/home.css\n// module id = 49\n// module chunks = 0 2\n\n//# sourceURL=webpack:///./src/app/home/view/home.css?./~/css-loader");
+    /***/
+  },
+&nbsp;
+  /***/
+  50:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    eval("exports = module.exports = __webpack_require__(0)(false);\n// imports\n\n\n// module\nexports.push([module.i, \".pagination&gt;li&gt;a, .pagination&gt;li&gt;span {\\n    position: relative;\\n    float: left;\\n    padding: 12px 18px;\\n    margin-left: -1px;\\n    line-height: 1.42857143;\\n    color: #337ab7;\\n    text-decoration: none;\\n    background-color: #fff;\\n    border: 1px solid #ddd;\\n}\\n\\n.page-amount {\\n    position: relative;\\n    float: left;\\n    padding: 0 10px;\\n    margin-left: -1px;\\n    line-height: 1.42857143;\\n    color: #337ab7;\\n    text-decoration: none;\\n    background-color: #fff;\\n    border: 1px solid #ddd;\\n}\\n\\n.pagination&gt;.disabled&gt;a,\\n.pagination&gt;.disabled&gt;a:focus,\\n.pagination&gt;.disabled&gt;a:hover,\\n.pagination&gt;.disabled&gt;span,\\n.pagination&gt;.disabled&gt;span:focus,\\n.pagination&gt;.disabled&gt;span:hover {\\n    color: #777;\\n    cursor: not-allowed;\\n    background-color: #fff;\\n    border-color: #ddd;\\n}\\n\\n\\n.pagination&gt;li {\\n    display: inline;\\n}\\n\\n.pagination {\\n    display: inline-block;\\n    margin: 20px 0;\\n    border-radius: 4px;\\n    padding-left: 0;\\n    vertical-align: middle;\\n}\\n\\n.pagination-container {\\n    text-align: center;\\n}\\n.pagination&gt;.active&gt;a,\\n.pagination&gt;.active&gt;a:focus,\\n.pagination&gt;.active&gt;a:hover,\\n.pagination&gt;.active&gt;span,\\n.pagination&gt;.active&gt;span:focus,\\n.pagination&gt;.active&gt;span:hover {\\n    z-index: 2;\\n    color: #fff;\\n    cursor: default;\\n    background-color: #337ab7;\\n    border-color: #337ab7;\\n}\\n\\na {\\n    cursor: pointer;\\n}\\n\\n.md-page-amount {\\n    padding: 0;\\n    margin: 0;\\n    width: 0;\\n    min-width: 0;\\n}\", \"\"]);\n\n// exports\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/css-loader!./src/app/home/view/pagination.css\n// module id = 50\n// module chunks = 0 2\n\n//# sourceURL=webpack:///./src/app/home/view/pagination.css?./~/css-loader");
+    /***/
+  },
+&nbsp;
+  /***/
+  6:
+  /***/
+  function _(module, exports) {
+    eval("module.exports = \"&lt;md-dialog aria-label=\\\"Full View\\\" ng-controller=\\\"HomeController as $ctrl\\\" ng-cloak&gt;\\n    &lt;form ng-cloak&gt;\\n        &lt;md-toolbar&gt;\\n            &lt;div class=\\\"md-toolbar-tools\\\"&gt;\\n                &lt;h2&gt;{{gc.name | uppercase}}&lt;/h2&gt;\\n                &lt;span flex&gt;&lt;/span&gt;\\n                &lt;md-button class=\\\"md-icon-button\\\" ng-click=\\\"cancel()\\\"&gt;\\n                    &lt;i class=\\\"material-icons\\\" aria-label=\\\"Close dialog\\\"&gt;cancel&lt;/i&gt;\\n                &lt;/md-button&gt;\\n            &lt;/div&gt;\\n        &lt;/md-toolbar&gt;\\n\\n        &lt;md-dialog-content&gt;\\n            &lt;div class=\\\"md-dialog-content\\\"&gt;\\n                &lt;md-chips ng-model=\\\"gc.tags\\\"\\n                          readonly=true\\n                          input-aria-label=\\\"Chips\\\"\\n                &gt;\\n                    &lt;md-chip-template&gt;\\n                        &lt;strong&gt;{{$chip.name}}&lt;/strong&gt;\\n                    &lt;/md-chip-template&gt;\\n                &lt;/md-chips&gt;\\n                &lt;p class=\\\"md-subhead\\\"&gt;{{gc.description}}&lt;/p&gt;\\n                &lt;p class=\\\"md-subhead\\\"&gt;&lt;strong&gt;{{ 'home.full.duration' | translate }}:&lt;/strong&gt; {{gc.duration}}&lt;/p&gt;\\n                &lt;p class=\\\"md-subhead\\\"&gt;&lt;strong&gt;{{ 'home.full.creationDate' | translate }}:&lt;/strong&gt; {{gc.dateOfCreation| date: 'longDate'}}&lt;/p&gt;\\n                &lt;p class=\\\"md-subhead\\\"&gt;&lt;strong&gt;{{ 'home.full.modificationDate' | translate }}:&lt;/strong&gt; {{gc.dateOfModification| date: 'longDate'}}&lt;/p&gt;\\n                &lt;p class=\\\"md-subhead\\\"&gt;&lt;strong&gt;{{ 'home.full.price' | translate }}:&lt;/strong&gt; {{gc.price}} BYN&lt;/p&gt;\\n            &lt;/div&gt;\\n        &lt;/md-dialog-content&gt;\\n\\n        &lt;md-dialog-actions layout=\\\"row\\\"&gt;\\n            &lt;span flex&gt;&lt;/span&gt;\\n            &lt;md-button ng-click=\\\"cancel()\\\"&gt;\\n                {{ 'home.full.cancel.label' | translate }}\\n            &lt;/md-button&gt;\\n        &lt;/md-dialog-actions&gt;\\n    &lt;/form&gt;\\n&lt;/md-dialog&gt;\\n\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/home/view/fullView.html\n// module id = 6\n// module chunks = 0 2 8 9\n\n//# sourceURL=webpack:///./src/app/home/view/fullView.html?");
+    /***/
+  },
+&nbsp;
+  /***/
+  62:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    eval("\nvar content = __webpack_require__(49);\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(1)(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {\n\tmodule.hot.accept(\"!!../../../../node_modules/css-loader/index.js!./home.css\", function() {\n\t\tvar newContent = require(\"!!../../../../node_modules/css-loader/index.js!./home.css\");\n\n\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\n\t\tvar locals = (function(a, b) {\n\t\t\tvar key, idx = 0;\n\n\t\t\tfor(key in a) {\n\t\t\t\tif(!b || a[key] !== b[key]) return false;\n\t\t\t\tidx++;\n\t\t\t}\n\n\t\t\tfor(key in b) idx--;\n\n\t\t\treturn idx === 0;\n\t\t}(content.locals, newContent.locals));\n\n\t\tif(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');\n\n\t\tupdate(newContent);\n\t});\n\n\tmodule.hot.dispose(function() { update(); });\n}\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/home/view/home.css\n// module id = 62\n// module chunks = 0 2\n\n//# sourceURL=webpack:///./src/app/home/view/home.css?");
+    /***/
+  },
+&nbsp;
+  /***/
+  63:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    eval("\nvar content = __webpack_require__(50);\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(1)(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {\n\tmodule.hot.accept(\"!!../../../../node_modules/css-loader/index.js!./pagination.css\", function() {\n\t\tvar newContent = require(\"!!../../../../node_modules/css-loader/index.js!./pagination.css\");\n\n\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\n\t\tvar locals = (function(a, b) {\n\t\t\tvar key, idx = 0;\n\n\t\t\tfor(key in a) {\n\t\t\t\tif(!b || a[key] !== b[key]) return false;\n\t\t\t\tidx++;\n\t\t\t}\n\n\t\t\tfor(key in b) idx--;\n\n\t\t\treturn idx === 0;\n\t\t}(content.locals, newContent.locals));\n\n\t\tif(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');\n\n\t\tupdate(newContent);\n\t});\n\n\tmodule.hot.dispose(function() { update(); });\n}\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/home/view/pagination.css\n// module id = 63\n// module chunks = 0 2\n\n//# sourceURL=webpack:///./src/app/home/view/pagination.css?");
+    /***/
+  },
+&nbsp;
+  /***/
+  64:
+  /***/
+  function _(module, exports) {
+    eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element with a data-uri to\n * embed the css on the page. This breaks all relative urls because now they are relative to a\n * bundle instead of the current page.\n *\n * One solution is to only use full urls, but that may be impossible.\n *\n * Instead, this function \"fixes\" the relative urls to be absolute according to the current page location.\n *\n * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.\n *\n */\n\nmodule.exports = function (css) {\n  // get current location\n  var location = typeof window !== \"undefined\" &amp;&amp; window.location;\n\n  if (!location) {\n    throw new Error(\"fixUrls requires window.location\");\n  }\n\n\t// blank or null?\n\tif (!css || typeof css !== \"string\") {\n\t  return css;\n  }\n\n  var baseUrl = location.protocol + \"//\" + location.host;\n  var currentDir = baseUrl + location.pathname.replace(/\\/[^\\/]*$/, \"/\");\n\n\t// convert each url(...)\n\t/*\n\tThis regular expression is just a way to recursively match brackets within\n\ta string.\n\n\t /url\\s*\\(  = Match on the word \"url\" with any whitespace after it and then a parens\n\t   (  = Start a capturing group\n\t     (?:  = Start a non-capturing group\n\t         [^)(]  = Match anything that isn't a parentheses\n\t         |  = OR\n\t         \\(  = Match a start parentheses\n\t             (?:  = Start another non-capturing groups\n\t                 [^)(]+  = Match anything that isn't a parentheses\n\t                 |  = OR\n\t                 \\(  = Match a start parentheses\n\t                     [^)(]*  = Match anything that isn't a parentheses\n\t                 \\)  = Match a end parentheses\n\t             )  = End Group\n              *\\) = Match anything and then a close parens\n          )  = Close non-capturing group\n          *  = Match anything\n       )  = Close capturing group\n\t \\)  = Match a close parens\n\n\t /gi  = Get all matches, not the first.  Be case insensitive.\n\t */\n\tvar fixedCss = css.replace(/url\\s*\\(((?:[^)(]|\\((?:[^)(]+|\\([^)(]*\\))*\\))*)\\)/gi, function(fullMatch, origUrl) {\n\t\t// strip quotes (if they exist)\n\t\tvar unquotedOrigUrl = origUrl\n\t\t\t.trim()\n\t\t\t.replace(/^\"(.*)\"$/, function(o, $1){ return $1; })\n\t\t\t.replace(/^'(.*)'$/, function(o, $1){ return $1; });\n\n\t\t// already a full url? no change\n\t\tif (/^(#|data:|http:\\/\\/|https:\\/\\/|file:\\/\\/\\/|\\s*$)/i.test(unquotedOrigUrl)) {\n\t\t  return fullMatch;\n\t\t}\n\n\t\t// convert the url to a full url\n\t\tvar newUrl;\n\n\t\tif (unquotedOrigUrl.indexOf(\"//\") === 0) {\n\t\t  \t//TODO: should we add protocol?\n\t\t\tnewUrl = unquotedOrigUrl;\n\t\t} else if (unquotedOrigUrl.indexOf(\"/\") === 0) {\n\t\t\t// path should be relative to the base url\n\t\t\tnewUrl = baseUrl + unquotedOrigUrl; // already starts with '/'\n\t\t} else {\n\t\t\t// path should be relative to current directory\n\t\t\tnewUrl = currentDir + unquotedOrigUrl.replace(/^\\.\\//, \"\"); // Strip leading './'\n\t\t}\n\n\t\t// send back the fixed url(...)\n\t\treturn \"url(\" + JSON.stringify(newUrl) + \")\";\n\t});\n\n\t// send back the fixed css\n\treturn fixedCss;\n};\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./~/style-loader/lib/urls.js\n// module id = 64\n// module chunks = 0 2 3 4\n\n//# sourceURL=webpack:///./~/style-loader/lib/urls.js?");
+    /***/
+  }
+  /******/
+&nbsp;
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jan 21 2019 13:55:14 GMT+0300 (+03)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

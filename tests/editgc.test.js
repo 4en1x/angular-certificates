@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import { assert } from 'chai';
 import EditGCController from '../src/app/editgc/editgc.controller';
 import EditGCService from '../src/app/editgc/service/edit.service';
@@ -40,6 +41,23 @@ describe('EditGCController', () => {
       $location,
       new EditGCService($http),
     );
+    assert.deepEqual(component.scope.gc, {});
+  });
+
+  it('Get gift certificate by id', async () => {
+    $routeParams.id = 1;
+    component = new EditGCController(
+      $rootScope,
+      $routeParams,
+      {},
+      $location,
+      new EditGCService($http),
+    );
+
+
+    await component.getGC(1);
+    console.log(component.scope.gc);
+
     assert.deepEqual(component.scope.gc, {});
   });
 });

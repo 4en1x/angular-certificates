@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/app.config.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">app/</a> app.config.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">68.75% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.14% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">68.75% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+&nbsp;
+/******/
+(function (modules) {
+  // webpackBootstrap
+&nbsp;
+  /******/
+  // The module cache
+&nbsp;
+  /******/
+  var installedModules = {};
+  /******/
+&nbsp;
+  /******/
+  // The require function
+&nbsp;
+  /******/
+&nbsp;
+  function __webpack_require__(moduleId) {
+    /******/
+&nbsp;
+    /******/
+    // Check if module is in cache
+&nbsp;
+    /******/
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (installedModules[moduleId]) {
+      /******/
+<span class="cstat-no" title="statement not covered" >      return installedModules[moduleId].exports;</span>
+      /******/
+    }
+    /******/
+    // Create a new module (and put it into the cache)
+&nbsp;
+    /******/
+&nbsp;
+&nbsp;
+    var module = installedModules[moduleId] = {
+      /******/
+      i: moduleId,
+&nbsp;
+      /******/
+      l: false,
+&nbsp;
+      /******/
+      exports: {}
+      /******/
+&nbsp;
+    };
+    /******/
+&nbsp;
+    /******/
+    // Execute the module function
+&nbsp;
+    /******/
+&nbsp;
+    modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+    /******/
+&nbsp;
+    /******/
+    // Flag the module as loaded
+&nbsp;
+    /******/
+&nbsp;
+    module.l = true;
+    /******/
+&nbsp;
+    /******/
+    // Return the exports of the module
+&nbsp;
+    /******/
+&nbsp;
+    return module.exports;
+    /******/
+  }
+  /******/
+&nbsp;
+  /******/
+&nbsp;
+  /******/
+  // expose the modules object (__webpack_modules__)
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.m = modules;
+  /******/
+&nbsp;
+  /******/
+  // expose the module cache
+&nbsp;
+  /******/
+&nbsp;
+  __webpack_require__.c = installedModules;
+  /******/
+&nbsp;
+  /******/
+  // identity function for calling harmony imports with the correct context
+&nbsp;
+  /******/
+&nbsp;
+  __webpack_require__.i = <span class="fstat-no" title="function not covered" >function (value) {</span>
+<span class="cstat-no" title="statement not covered" >    return value;</span>
+  };
+  /******/
+&nbsp;
+  /******/
+  // define getter function for harmony exports
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.d = <span class="fstat-no" title="function not covered" >function (exports, name, getter) {</span>
+    /******/
+<span class="cstat-no" title="statement not covered" >    if (!__webpack_require__.o(exports, name)) {</span>
+      /******/
+<span class="cstat-no" title="statement not covered" >      Object.defineProperty(exports, name, {</span>
+        /******/
+        configurable: false,
+&nbsp;
+        /******/
+        enumerable: true,
+&nbsp;
+        /******/
+        get: getter
+        /******/
+&nbsp;
+      });
+      /******/
+    }
+    /******/
+&nbsp;
+  };
+  /******/
+&nbsp;
+  /******/
+  // getDefaultExport function for compatibility with non-harmony modules
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.n = <span class="fstat-no" title="function not covered" >function (module) {</span>
+    /******/
+<span class="cstat-no" title="statement not covered" >    var getter = module &amp;&amp; module.__esModule ?</span>
+    /******/
+<span class="fstat-no" title="function not covered" >    function getDefault() {</span>
+<span class="cstat-no" title="statement not covered" >      return module['default'];</span>
+    } :
+    /******/
+<span class="fstat-no" title="function not covered" >    function getModuleExports() {</span>
+<span class="cstat-no" title="statement not covered" >      return module;</span>
+    };
+    /******/
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    __webpack_require__.d(getter, 'a', getter);</span>
+    /******/
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return getter;</span>
+    /******/
+  };
+  /******/
+&nbsp;
+  /******/
+  // Object.prototype.hasOwnProperty.call
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.o = <span class="fstat-no" title="function not covered" >function (object, property) {</span>
+<span class="cstat-no" title="statement not covered" >    return Object.prototype.hasOwnProperty.call(object, property);</span>
+  };
+  /******/
+&nbsp;
+  /******/
+  // __webpack_public_path__
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.p = "/var/folders/yq/24w_xk_j64g0rlkb9sq75hgh0000gn/T/_karma_webpack_/";
+  /******/
+&nbsp;
+  /******/
+  // Load entry module and return exports
+&nbsp;
+  /******/
+&nbsp;
+  return __webpack_require__(__webpack_require__.s = 13);
+  /******/
+})(
+/************************************************************************/
+&nbsp;
+/******/
+{
+  /***/
+  13:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    "use strict";
+&nbsp;
+    eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = config;\nvar loginTemplate = __webpack_require__(53);\nvar homeTemplate = __webpack_require__(58);\nvar myHomeTemplate = __webpack_require__(59);\nvar registerTemplate = __webpack_require__(54);\nvar editGCTemplate = __webpack_require__(56);\n\nfunction config($routeProvider, $locationProvider) {\n  $routeProvider.when('/login', {\n    controller: 'LoginController',\n    controllerAs: 'vm',\n    template: loginTemplate,\n    hideMenus: true\n  }).when('/', {\n    controller: 'HomeController',\n    controllerAs: 'vm',\n    template: homeTemplate\n  }).when('/my', {\n    controller: 'MyHomeController',\n    controllerAs: 'vm',\n    template: myHomeTemplate\n  }).when('/register', {\n    controller: 'LoginController',\n    controllerAs: 'vm',\n    template: registerTemplate,\n    hideMenus: true\n  }).when('/edit/:id', {\n    controller: 'EditGCController',\n    controllerAs: 'vm',\n    template: editGCTemplate,\n    hideMenus: true\n  }).when('/add', {\n    controller: 'EditGCController',\n    controllerAs: 'vm',\n    template: editGCTemplate,\n    hideMenus: true\n  }).otherwise({ redirectTo: '/' });\n\n  $locationProvider.html5Mode(true);\n}\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/app.config.js\n// module id = 13\n// module chunks = 0 5\n\n//# sourceURL=webpack:///./src/app/app.config.js?");
+    /***/
+  },
+&nbsp;
+  /***/
+  53:
+  /***/
+  function _(module, exports) {
+    eval("module.exports = \"&lt;div class=\\\"auth-container parent-size\\\" ng-controller=\\\"LoginController as $ctrl\\\" ng-cloak&gt;\\n    &lt;div class=\\\"auth-form\\\"&gt;\\n        &lt;div class=\\\"auth-form-header\\\"&gt;\\n            &lt;img src=\\\"{{ epamLogo }}\\\" height=\\\"40px\\\"/&gt;\\n        &lt;/div&gt;\\n        &lt;div&gt;\\n            &lt;form name=\\\"form\\\" role=\\\"form\\\"&gt;\\n                &lt;md-input-container class=\\\"md-block\\\"&gt;\\n                    &lt;input\\n                            ng-model=\\\"email\\\"\\n                            type=\\\"text\\\"\\n                            placeholder=\\\"{{ 'auth.login.placeholder' | translate }}\\\"\\n                            name=\\\"login\\\"\\n                            id=\\\"login\\\"\\n                            class=\\\"form-control\\\"\\n                            ng-required=\\\"true\\\"\\n                    &gt;\\n                &lt;/md-input-container&gt;\\n\\n                &lt;md-input-container class=\\\"md-block\\\"&gt;\\n                    &lt;input\\n                            ng-model=\\\"password\\\"\\n                            type=\\\"password\\\"\\n                            placeholder=\\\"{{ 'auth.password.placeholder' | translate }}\\\"\\n                            name=\\\"password\\\"\\n                            id=\\\"password\\\"\\n                            class=\\\"form-control\\\"\\n                            ng-required=\\\"true\\\"\\n                    &gt;\\n                &lt;/md-input-container&gt;\\n\\n                &lt;div class=\\\"form-actions\\\"&gt;\\n                    &lt;md-button\\n                            class=\\\"md-primary register-button\\\"\\n                            target=\\\"_blank\\\"\\n                            ng-click='$ctrl.redirectRegister()'\\n                    &gt;\\n                        {{ 'auth.register.label' | translate }}\\n                    &lt;/md-button&gt;\\n                    &lt;md-button\\n                            type=\\\"submit\\\"\\n                            ng-disabled=\\\"form.$invalid || dataLoading\\\"\\n                            class=\\\"md-raised md-warn login-button\\\"\\n                            ng-click=\\\"$ctrl.login()\\\"\\n                    &gt;\\n                        {{ 'auth.login.label' | translate }}\\n                    &lt;/md-button&gt;\\n                &lt;/div&gt;\\n            &lt;/form&gt;\\n\\n            &lt;div ng-if=\\\"dataLoading\\\" class=\\\"spinner-container\\\"&gt;\\n                &lt;md-progress-circular md-mode=\\\"indeterminate\\\" class=\\\"custom-spinner\\\"&gt;&lt;/md-progress-circular&gt;\\n            &lt;/div&gt;\\n        &lt;/div&gt;\\n    &lt;/div&gt;\\n&lt;/div&gt;\\n\\n\\n\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/authentication/view/login.html\n// module id = 53\n// module chunks = 0 5\n\n//# sourceURL=webpack:///./src/app/authentication/view/login.html?");
+    /***/
+  },
+&nbsp;
+  /***/
+  54:
+  /***/
+  function _(module, exports) {
+    eval("module.exports = \"&lt;div class=\\\"auth-container parent-size\\\" ng-controller=\\\"LoginController as $ctrl\\\" ng-cloak&gt;\\n    &lt;div class=\\\"auth-form\\\"&gt;\\n        &lt;div class=\\\"auth-form-header\\\"&gt;\\n           &lt;h1&gt;{{ 'auth.register.name' | translate }}&lt;/h1&gt;\\n        &lt;/div&gt;\\n        &lt;div&gt;\\n            &lt;form name=\\\"form\\\" role=\\\"form\\\" ng-submit=\\\"$ctrl.register()\\\"&gt;\\n                &lt;md-input-container class=\\\"md-block\\\"&gt;\\n                    &lt;input\\n                            ng-model=\\\"userName\\\"\\n                            type=\\\"text\\\"\\n                            placeholder=\\\"{{ 'auth.username.placeholder' | translate }}\\\"\\n                            name=\\\"userName\\\"\\n                            id=\\\"userName\\\"\\n                            class=\\\"form-control\\\"\\n                            required\\n                    &gt;\\n                    &lt;div ng-messages=\\\"form.userName.$error\\\"&gt;\\n                        &lt;div ng-message=\\\"required\\\"&gt;{{ 'auth.error.required' | translate }}&lt;/div&gt;\\n                    &lt;/div&gt;\\n                &lt;/md-input-container&gt;\\n\\n                &lt;div layout=\\\"row\\\"&gt;\\n                    &lt;md-input-container class=\\\"md-block row-style-password\\\"&gt;\\n                        &lt;input\\n                                ng-model=\\\"password\\\"\\n                                type=\\\"password\\\"\\n                                placeholder=\\\"{{ 'auth.password.placeholder' | translate }}\\\"\\n                                name=\\\"password\\\"\\n                                id=\\\"password\\\"\\n                                class=\\\"form-control\\\"\\n                                required\\n                                minlength=\\\"5\\\"\\n                                maxlength=\\\"23\\\"\\n                                ng-change=\\\"$ctrl.validateForm(form)\\\"\\n                        &gt;\\n                        &lt;div ng-messages=\\\"form.password.$error\\\"&gt;\\n                            &lt;div ng-message=\\\"validatePasswordsMatch\\\"&gt;{{ 'auth.error.passwordMatch' | translate }}&lt;/div&gt;\\n                            &lt;div ng-message-exp=\\\"['minlength', 'maxlength']\\\"&gt;\\n                                {{ 'auth.error.length' | translate }}\\n                            &lt;/div&gt;\\n                            &lt;div ng-message=\\\"required\\\"&gt;{{ 'auth.error.required' | translate }}&lt;/div&gt;\\n                        &lt;/div&gt;\\n                    &lt;/md-input-container&gt;\\n\\n                    &lt;md-input-container class=\\\"md-block row-style-repeat-password\\\"&gt;\\n                        &lt;input\\n                                ng-model=\\\"repeatPassword\\\"\\n                                type=\\\"password\\\"\\n                                placeholder=\\\"{{ 'auth.repeatPassword.placeholder' | translate }}\\\"\\n                                name=\\\"repeatPassword\\\"\\n                                id=\\\"repeatPassword\\\"\\n                                class=\\\"form-control\\\"\\n                                required\\n                                minlength=\\\"5\\\"\\n                                maxlength=\\\"23\\\"\\n                                ng-change=\\\"$ctrl.validateForm(form)\\\"\\n                        &gt;\\n                        &lt;div ng-messages=\\\"form.repeatPassword.$error\\\"&gt;\\n                            &lt;div ng-message=\\\"validatePasswordsMatch\\\"&gt;{{ 'auth.error.passwordMatch' | translate }}&lt;/div&gt;\\n                            &lt;div ng-message=\\\"required\\\"&gt;{{ 'auth.error.required' | translate }}&lt;/div&gt;\\n                            &lt;div ng-message-exp=\\\"['minlength', 'maxlength']\\\"&gt;\\n                                {{ 'auth.error.length' | translate }}\\n                            &lt;/div&gt;\\n                        &lt;/div&gt;\\n                    &lt;/md-input-container&gt;\\n                &lt;/div&gt;\\n\\n                &lt;div class=\\\"form-actions\\\"&gt;\\n                    &lt;md-button class=\\\"md-primary register-button\\\" ng-click='$ctrl.redirectLogin()'&gt;{{ 'auth.login.back' | translate }}&lt;/md-button&gt;\\n                    &lt;md-button type=\\\"submit\\\" ng-disabled=\\\"form.$invalid || dataLoading\\\" class=\\\"md-raised md-warn login-button\\\"&gt;{{ 'auth.register.label' | translate }}&lt;/md-button&gt;\\n                    &lt;img ng-if=\\\"dataLoading\\\" src=\\\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\\\"/&gt;\\n                &lt;/div&gt;\\n            &lt;/form&gt;\\n        &lt;/div&gt;\\n    &lt;/div&gt;\\n&lt;/div&gt;\\n\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/authentication/view/registration.html\n// module id = 54\n// module chunks = 0 5\n\n//# sourceURL=webpack:///./src/app/authentication/view/registration.html?");
+    /***/
+  },
+&nbsp;
+  /***/
+  56:
+  /***/
+  function _(module, exports) {
+    eval("module.exports = \"&lt;div class=\\\"auth-container parent-size\\\" ng-controller=\\\"EditGCController as $ctrl\\\" ng-cloak&gt;\\n    &lt;div class=\\\"auth-form\\\"&gt;\\n        &lt;div class=\\\"auth-form-header\\\"&gt;\\n            &lt;h1 ng-hide=\\\"path === '/add'\\\"&gt;{{ 'crud.edit.name' | translate }}&lt;/h1&gt;\\n            &lt;h1 ng-hide=\\\"path !== '/add'\\\"&gt;{{ 'crud.add.name' | translate }}&lt;/h1&gt;\\n        &lt;/div&gt;\\n        &lt;div&gt;\\n            &lt;div ng-show=\\\"error\\\" class=\\\"alert-danger\\\"&gt;{{ error }}&lt;/div&gt;\\n\\n            &lt;form name=\\\"form\\\" role=\\\"form\\\"&gt;\\n                &lt;md-input-container class=\\\"md-block\\\"&gt;\\n                    &lt;input\\n                            ng-model=\\\"gc.name\\\"\\n                            type=\\\"text\\\"\\n                            placeholder=\\\"{{ 'crud.title.placeholder' | translate }}\\\"\\n                            name=\\\"name\\\"\\n                            id=\\\"name\\\"\\n                            class=\\\"form-control\\\"\\n                            required\\n                            md-maxlength=\\\"20\\\"\\n                    &gt;\\n                    &lt;div ng-messages=\\\"form.name.$error\\\"&gt;\\n                        &lt;div ng-message=\\\"md-maxlength\\\"&gt;\\n                            {{ 'crud.title.error' | translate }}\\n                        &lt;/div&gt;\\n                        &lt;div ng-message=\\\"required\\\"&gt;{{ 'crud.error.required' | translate }}&lt;/div&gt;\\n                    &lt;/div&gt;\\n                &lt;/md-input-container&gt;\\n\\n                &lt;md-input-container class=\\\"md-block\\\"&gt;\\n                    &lt;label&gt;{{ 'crud.description.label' | translate }}&lt;/label&gt;\\n                    &lt;textarea\\n                            ng-model=\\\"gc.description\\\"\\n                            name=\\\"description\\\"\\n                            id=\\\"description\\\"\\n                            class=\\\"form-control\\\"\\n                            required\\n                            md-maxlength=\\\"250\\\"\\n                            rows=\\\"3\\\"\\n                    &gt;&lt;/textarea&gt;\\n                    &lt;div ng-messages=\\\"form.description.$error\\\"&gt;\\n                        &lt;div ng-message=\\\"md-maxlength\\\"&gt;\\n                            {{ 'crud.description.error' | translate }}\\n                        &lt;/div&gt;\\n                        &lt;div ng-message=\\\"required\\\"&gt;{{ 'crud.error.required' | translate }}&lt;/div&gt;\\n                    &lt;/div&gt;\\n                &lt;/md-input-container&gt;\\n\\n                &lt;div layout=\\\"row\\\"&gt;\\n                    &lt;md-input-container class=\\\"md-block row-style-duration\\\"&gt;\\n                        &lt;input\\n                                ng-model=\\\"gc.duration\\\"\\n                                type=\\\"number\\\"\\n                                placeholder=\\\"{{ 'crud.duration.placeholder' | translate }}\\\"\\n                                name=\\\"duration\\\"\\n                                id=\\\"duration\\\"\\n                                class=\\\"form-control\\\"\\n                                required\\n                                md-maxlength=\\\"3\\\"\\n                        &gt;\\n                        &lt;div ng-messages=\\\"form.duration.$error\\\"&gt;\\n                            &lt;div ng-message=\\\"md-maxlength\\\"&gt;\\n                                {{ 'crud.duration.error' | translate }}\\n                            &lt;/div&gt;\\n                            &lt;div ng-message=\\\"required\\\"&gt;{{ 'crud.error.required' | translate }}&lt;/div&gt;\\n                        &lt;/div&gt;\\n                    &lt;/md-input-container&gt;\\n\\n                    &lt;md-input-container class=\\\"md-block row-style-price\\\"&gt;\\n                        &lt;input\\n                                ng-model=\\\"gc.price\\\"\\n                                type=\\\"number\\\"\\n                                placeholder=\\\"{{ 'crud.price.placeholder' | translate }}\\\"\\n                                name=\\\"price\\\"\\n                                id=\\\"price\\\"\\n                                class=\\\"form-control\\\"\\n                                required\\n                                md-maxlength=\\\"7\\\"\\n                        &gt;\\n                        &lt;div ng-messages=\\\"form.price.$error\\\"&gt;\\n                            &lt;div ng-message=\\\"md-maxlength\\\"&gt;\\n                                {{ 'crud.price.error' | translate }}\\n                            &lt;/div&gt;\\n                            &lt;div ng-message=\\\"required\\\"&gt;{{ 'crud.error.required' | translate }}&lt;/div&gt;\\n                        &lt;/div&gt;\\n                    &lt;/md-input-container&gt;\\n                &lt;/div&gt;\\n\\n                &lt;div layout=\\\"row\\\"&gt;\\n                    &lt;md-button class=\\\"md-fab row-style-add-tag\\\" aria-label=\\\"Add tag\\\" ng-click=\\\"$ctrl.addTag()\\\"&gt;\\n                        &lt;i class=\\\"material-icons row-style-add-tag-icon\\\"&gt;add&lt;/i&gt;\\n                    &lt;/md-button&gt;\\n\\n                    &lt;md-input-container class=\\\"md-block row-style-tags\\\"&gt;\\n                        &lt;input ng-model=\\\"inputTag\\\" type=\\\"text\\\" placeholder=\\\"{{ 'crud.tags.placeholder' | translate }}\\\" name=\\\"tags\\\" id=\\\"tags\\\" class=\\\"form-control\\\"&gt;\\n                    &lt;/md-input-container&gt;\\n                &lt;/div&gt;\\n\\n                &lt;md-chips ng-model=\\\"gc.tags\\\"\\n                          readonly=true\\n                          md-removable=true\\n                          input-aria-label=\\\"Chips\\\"\\n                &gt;\\n                    &lt;md-chip-template&gt;\\n                        &lt;strong&gt;{{$chip.name}}&lt;/strong&gt;\\n                    &lt;/md-chip-template&gt;\\n                &lt;/md-chips&gt;\\n\\n                &lt;div layout=\\\"row\\\" class=\\\"actions-button\\\"&gt;\\n                    &lt;div class=\\\"form-actions\\\"&gt;\\n                        &lt;md-button\\n                                ng-disabled=\\\"form.$invalid || dataLoading\\\"\\n                                class=\\\"md-raised md-warn\\\"\\n                                ng-click=\\\"$ctrl.editGC(gc.id)\\\"\\n                                ng-hide=\\\"path === '/add'\\\"\\n                        &gt;\\n                            {{ 'crud.edit.label' | translate }}\\n                        &lt;/md-button&gt;\\n                    &lt;/div&gt;\\n                    &lt;div class=\\\"form-actions\\\"&gt;\\n                        &lt;md-button\\n                                ng-disabled=\\\"form.$invalid || dataLoading\\\"\\n                                class=\\\"md-raised md-warn\\\"\\n                                ng-click=\\\"$ctrl.addGC()\\\"\\n                                ng-hide=\\\"path.indexOf('/edit') !== -1\\\"\\n                        &gt;\\n                            {{ 'crud.add.label' | translate }}\\n                        &lt;/md-button&gt;\\n                    &lt;/div&gt;\\n                    &lt;div class=\\\"form-actions\\\"&gt;\\n                        &lt;md-button\\n                                ng-disabled=\\\"form.$invalid || dataLoading\\\"\\n                                class=\\\"md-raised md-warn\\\"\\n                                ng-click=\\\"$ctrl.beforeDeleteGC(gc.id)\\\"\\n                                ng-hide=\\\"path === '/add'\\\"\\n                        &gt;\\n                            {{ 'crud.delete.label' | translate }}\\n                        &lt;/md-button&gt;\\n                    &lt;/div&gt;\\n                &lt;/div&gt;\\n            &lt;/form&gt;\\n\\n            &lt;div ng-if=\\\"dataLoading\\\" class=\\\"spinner-container\\\"&gt;\\n                &lt;md-progress-circular md-mode=\\\"indeterminate\\\" class=\\\"custom-spinner\\\"&gt;&lt;/md-progress-circular&gt;\\n            &lt;/div&gt;\\n        &lt;/div&gt;\\n    &lt;/div&gt;\\n&lt;/div&gt;\\n\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/editgc/view/edit.html\n// module id = 56\n// module chunks = 0 5\n\n//# sourceURL=webpack:///./src/app/editgc/view/edit.html?");
+    /***/
+  },
+&nbsp;
+  /***/
+  58:
+  /***/
+  function _(module, exports) {
+    eval("module.exports = \"&lt;div ng-controller=\\\"HomeController as $ctrl\\\" ng-cloak&gt;\\n    &lt;div class=\\\"filter filter-container\\\"&gt;\\n        &lt;div class=\\\"filter-item\\\"&gt;\\n            &lt;md-input-container class=\\\"md-block\\\"&gt;\\n                &lt;input\\n                        ng-model=\\\"searchName\\\"\\n                        type=\\\"text\\\"\\n                        placeholder=\\\"{{ 'home.filter.name.placeholder' | translate }}\\\"\\n                        name=\\\"searchName\\\"\\n                        id=\\\"searchName\\\"\\n                        class=\\\"form-control\\\"\\n                &gt;\\n            &lt;/md-input-container&gt;\\n\\n            &lt;md-input-container class=\\\"md-block\\\"&gt;\\n                &lt;input\\n                        ng-model=\\\"searchDescription\\\"\\n                        type=\\\"text\\\"\\n                        placeholder=\\\"{{ 'home.filter.description.placeholder' | translate }}\\\"\\n                        name=\\\"searchDescription\\\"\\n                        id=\\\"searchDescription\\\"\\n                        class=\\\"form-control\\\"\\n                &gt;\\n            &lt;/md-input-container&gt;\\n        &lt;/div&gt;\\n        &lt;div class=\\\"filter-item-large\\\"&gt;\\n            &lt;div layout=\\\"row\\\"&gt;\\n                &lt;md-button class=\\\"md-fab row-style-add-tag\\\" aria-label=\\\"Add tag\\\" ng-click=\\\"$ctrl.addSearchTag()\\\"&gt;\\n                    &lt;i class=\\\"material-icons row-style-add-tag-icon\\\"&gt;add&lt;/i&gt;\\n                &lt;/md-button&gt;\\n\\n                &lt;md-input-container class=\\\"md-block row-style-tags\\\"&gt;\\n                    &lt;input ng-model=\\\"inputTag\\\" type=\\\"text\\\" placeholder=\\\"{{ 'crud.tags.placeholder' | translate }}\\\" name=\\\"tags\\\" id=\\\"tags\\\" class=\\\"form-control\\\"&gt;\\n                &lt;/md-input-container&gt;\\n            &lt;/div&gt;\\n            &lt;md-chips ng-model=\\\"tagsSearch\\\"\\n                      readonly=true\\n                      md-removable=true\\n                      input-aria-label=\\\"Chips\\\"\\n            &gt;\\n                &lt;md-chip-template&gt;\\n                    &lt;strong&gt;{{$chip.name}}&lt;/strong&gt;\\n                &lt;/md-chip-template&gt;\\n            &lt;/md-chips&gt;\\n        &lt;/div&gt;\\n        &lt;div class=\\\"filter-item\\\"&gt;\\n            &lt;ul class=\\\"pagination pagination-filter\\\"&gt;\\n                &lt;md-list-item class=\\\"page-amount\\\"&gt;\\n                    &lt;md-menu class=\\\"md-secondary\\\"&gt;\\n                        &lt;md-button class=\\\"md-page-amount\\\"&gt;&lt;/md-button&gt;\\n                        &lt;md-menu-content width=\\\"2\\\"&gt;\\n                            &lt;md-menu-item&gt;\\n                                &lt;md-button ng-click=\\\"$ctrl.setOrder('creation_date')\\\"&gt;\\n                                    &lt;p class=\\\"user-icons\\\"&gt;{{ 'home.filter.crDate.label' | translate }}&lt;/p&gt;\\n                                &lt;/md-button&gt;\\n                            &lt;/md-menu-item&gt;\\n                            &lt;md-menu-item&gt;\\n                                &lt;md-button ng-click=\\\"$ctrl.setOrder('modification_date')\\\"&gt;\\n                                    &lt;p class=\\\"user-icons\\\"&gt;{{ 'home.filter.mdDate.label' | translate }}&lt;/p&gt;\\n                                &lt;/md-button&gt;\\n                            &lt;/md-menu-item&gt;\\n                            &lt;md-menu-item&gt;\\n                                &lt;md-button ng-click=\\\"$ctrl.setOrder('price')\\\"&gt;\\n                                    &lt;p class=\\\"user-icons\\\"&gt;{{ 'home.filter.price.label' | translate }}&lt;/p&gt;\\n                                &lt;/md-button&gt;\\n                            &lt;/md-menu-item&gt;\\n                            &lt;md-menu-item&gt;\\n                                &lt;md-button ng-click=\\\"$ctrl.setOrder('name')\\\"&gt;\\n                                    &lt;p class=\\\"user-icons\\\"&gt;{{ 'home.filter.name.label' | translate }}&lt;/p&gt;\\n                                &lt;/md-button&gt;\\n                            &lt;/md-menu-item&gt;\\n                            &lt;md-menu-item&gt;\\n                                &lt;md-button ng-click=\\\"$ctrl.setOrder('description')\\\"&gt;\\n                                    &lt;p class=\\\"user-icons\\\"&gt;{{ 'home.filter.name.label' | translate }}&lt;/p&gt;\\n                                &lt;/md-button&gt;\\n                            &lt;/md-menu-item&gt;\\n\\n                        &lt;/md-menu-content&gt;\\n                    &lt;/md-menu&gt;\\n                    {{ 'home.filter.orderType' | translate }} ({{ searchOrder }})\\n                &lt;/md-list-item&gt;\\n            &lt;/ul&gt;\\n            &lt;ul class=\\\"pagination pagination-filter\\\"&gt;\\n                &lt;md-list-item class=\\\"page-amount\\\"&gt;\\n                    &lt;md-menu class=\\\"md-secondary\\\"&gt;\\n                        &lt;md-button class=\\\"md-page-amount\\\"&gt;&lt;/md-button&gt;\\n                        &lt;md-menu-content width=\\\"2\\\"&gt;\\n                            &lt;md-menu-item&gt;\\n                                &lt;md-button ng-click=\\\"$ctrl.setOrderParameter('desc')\\\"&gt;\\n                                    &lt;p class=\\\"user-icons\\\"&gt;{{ 'home.filter.desc' | translate }}&lt;/p&gt;\\n                                &lt;/md-button&gt;\\n                            &lt;/md-menu-item&gt;\\n                            &lt;md-menu-item&gt;\\n                                &lt;md-button ng-click=\\\"$ctrl.setOrderParameter('asc')\\\"&gt;\\n                                    &lt;p class=\\\"user-icons\\\"&gt;{{ 'home.filter.asc' | translate }}&lt;/p&gt;\\n                                &lt;/md-button&gt;\\n                            &lt;/md-menu-item&gt;\\n                        &lt;/md-menu-content&gt;\\n                    &lt;/md-menu&gt;\\n                    {{ 'home.filter.orderParam' | translate }} ({{ searchParams }})\\n                &lt;/md-list-item&gt;\\n            &lt;/ul&gt;\\n            &lt;br&gt;\\n            &lt;md-button ng-click=\\\"$ctrl.filter()\\\"&gt;\\n                &lt;p class=\\\"user-icons\\\"&gt;{{ 'home.filter.filter' | translate }}&lt;/p&gt;\\n            &lt;/md-button&gt;\\n        &lt;/div&gt;\\n    &lt;/div&gt;\\n    &lt;div flex class=\\\"gcs-container\\\" ng-repeat=\\\"item in gcs\\\"&gt;\\n        &lt;md-card md-theme-watch class=\\\"gcs-card\\\"&gt;\\n            &lt;md-card-title class=\\\"card-title\\\"&gt;\\n                &lt;md-card-title-text&gt;\\n                    &lt;span class=\\\"md-headline\\\" data-id = \\\"{{item.id}}\\\" ng-click=\\\"$ctrl.showFull($event)\\\"&gt;{{item.name | uppercase}}&lt;/span&gt;\\n                &lt;/md-card-title-text&gt;\\n                &lt;md-card-title-media&gt;\\n                    &lt;div class=\\\"md-media-lg card-media card-date\\\"&gt;\\n                        &lt;span class=\\\"md-subhead\\\"&gt;{{item.dateOfModification | date: 'longDate'}}&lt;/span&gt;\\n                    &lt;/div&gt;\\n                &lt;/md-card-title-media&gt;\\n            &lt;/md-card-title&gt;\\n            &lt;div class=\\\"card-content\\\"&gt;\\n                &lt;md-chips ng-model=\\\"item.tags\\\"\\n                          readonly=true\\n                          input-aria-label=\\\"Chips\\\"\\n\\n                &gt;\\n                    &lt;md-chip-template ng-click=\\\"$ctrl.addTagToFilter($chip.name)\\\"&gt;\\n                        &lt;strong&gt;{{$chip.name}}&lt;/strong&gt;\\n                    &lt;/md-chip-template&gt;\\n                &lt;/md-chips&gt;\\n                &lt;span class=\\\"md-subhead\\\"&gt;{{item.description}}&lt;/span&gt;\\n            &lt;/div&gt;\\n            &lt;div class=\\\"item-buttons-container\\\"&gt;\\n                &lt;md-card-actions layout=\\\"row\\\" layout-align=\\\"start center\\\"&gt;\\n                    &lt;md-button\\n                            ng-if=\\\"globals.currentUser.username &amp;&amp; userParams.role === 'ADMIN'\\\"\\n                            class=\\\"edit-delete-buttons\\\"\\n                            md-colors=\\\"{background: 'Green'}\\\"\\n                            ng-href=\\\"/edit/{{item.id}}\\\"\\n                    &gt;\\n                        {{ 'home.edit.label' | translate }}\\n                    &lt;/md-button&gt;\\n                    &lt;md-button\\n                            ng-if=\\\"globals.currentUser.username  &amp;&amp; userParams.role === 'ADMIN'\\\"\\n                            ng-controller=\\\"EditGCController as $ctrl2\\\"\\n                            class=\\\"edit-delete-buttons\\\"\\n                            md-colors=\\\"{background: 'Red'}\\\"\\n                            ng-click=\\\"$ctrl2.beforeDeleteGC(gc.id)\\\"\\n                    &gt;\\n                        {{ 'home.delete.label' | translate }}\\n                    &lt;/md-button&gt;\\n                &lt;/md-card-actions&gt;\\n\\n                &lt;md-card-actions layout=\\\"row\\\" layout-align=\\\"end center\\\" class=\\\"item-price-container\\\"&gt;\\n                    &lt;md-button\\n                            ng-if=\\\"globals.currentUser.username\\\"\\n                            class=\\\"button-white\\\"\\n                            md-colors=\\\"{background: 'Cyan'}\\\"\\n                            ng-click=\\\"$ctrl.buy(item.id)\\\"\\n                    &gt;\\n                        {{ 'home.buy.label' | translate }}\\n                    &lt;/md-button&gt;\\n                    &lt;div class=\\\"item-price\\\"&gt;\\n                        {{item.price}} BYN\\n                    &lt;/div&gt;\\n                &lt;/md-card-actions&gt;\\n            &lt;/div&gt;\\n        &lt;/md-card&gt;\\n    &lt;/div&gt;\\n\\n    &lt;div class=\\\"pagination-container\\\"&gt;\\n        &lt;ul class=\\\"pagination\\\" ng-if=\\\"pager.pages.length &gt; 2\\\"&gt;\\n            &lt;md-list-item class=\\\"page-amount\\\"&gt;\\n                &lt;md-menu class=\\\"md-secondary\\\"&gt;\\n                    &lt;md-button class=\\\"md-page-amount\\\"&gt;&lt;/md-button&gt;\\n                    &lt;md-menu-content width=\\\"2\\\"&gt;\\n                        &lt;md-menu-item&gt;\\n                            &lt;md-button ng-click=\\\"$ctrl.setAmountOnPage(10)\\\"&gt;\\n                                &lt;p class=\\\"user-icons\\\"&gt;10&lt;/p&gt;\\n                            &lt;/md-button&gt;\\n                        &lt;/md-menu-item&gt;\\n                        &lt;md-menu-item&gt;\\n                            &lt;md-button ng-click=\\\"$ctrl.setAmountOnPage(20)\\\"&gt;\\n                                &lt;p class=\\\"user-icons\\\"&gt;20&lt;/p&gt;\\n                            &lt;/md-button&gt;\\n                        &lt;/md-menu-item&gt;\\n                        &lt;md-menu-item&gt;\\n                            &lt;md-button ng-click=\\\"$ctrl.setAmountOnPage(50)\\\"&gt;\\n                                &lt;p class=\\\"user-icons\\\"&gt;50&lt;/p&gt;\\n                            &lt;/md-button&gt;\\n                        &lt;/md-menu-item&gt;\\n                    &lt;/md-menu-content&gt;\\n                &lt;/md-menu&gt;\\n                {{ 'home.pager.amount' | translate }} -  {{ amountOnPage }}\\n            &lt;/md-list-item&gt;\\n        &lt;/ul&gt;\\n\\n        &lt;ul ng-if=\\\"pager.pages.length &gt; 2\\\" class=\\\"pagination\\\"&gt;\\n            &lt;li ng-class=\\\"{disabled:pager.currentPage === 1}\\\"&gt;\\n                &lt;a ng-click=\\\"$ctrl.setPage(1)\\\"&gt;{{ 'home.pager.first' | translate }}&lt;/a&gt;\\n            &lt;/li&gt;\\n            &lt;li ng-class=\\\"{disabled:pager.currentPage === 1}\\\"&gt;\\n                &lt;a ng-click=\\\"$ctrl.setPage(pager.currentPage - 1)\\\"&gt;{{ 'home.pager.previous' | translate }}&lt;/a&gt;\\n            &lt;/li&gt;\\n            &lt;li ng-repeat=\\\"page in pager.pages\\\" ng-class=\\\"{active:pager.currentPage === page}\\\"&gt;\\n                &lt;a ng-click=\\\"$ctrl.setPage(page)\\\"&gt;{{page}}&lt;/a&gt;\\n            &lt;/li&gt;\\n            &lt;li ng-class=\\\"{disabled:pager.currentPage === pager.totalPages}\\\"&gt;\\n                &lt;a ng-click=\\\"$ctrl.setPage(pager.currentPage + 1)\\\"&gt;{{ 'home.pager.next' | translate }}&lt;/a&gt;\\n            &lt;/li&gt;\\n            &lt;li ng-class=\\\"{disabled:pager.currentPage === pager.totalPages}\\\"&gt;\\n                &lt;a ng-click=\\\"$ctrl.setPage(pager.totalPages)\\\"&gt;{{ 'home.pager.last' | translate }}&lt;/a&gt;\\n            &lt;/li&gt;\\n        &lt;/ul&gt;\\n    &lt;/div&gt;\\n\\n    &lt;h1 class=\\\"nothing\\\" ng-if=\\\"gcs.length === 0\\\"&gt;{{ 'home.nothing' | translate }}&lt;/h1&gt;\\n\\n    &lt;div ng-if=\\\"dataLoading\\\" class=\\\"spinner-container\\\"&gt;\\n        &lt;md-progress-circular md-mode=\\\"indeterminate\\\" class=\\\"custom-spinner\\\"&gt;&lt;/md-progress-circular&gt;\\n    &lt;/div&gt;\\n&lt;/div&gt;\\n\\n\\n\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/home/view/home.html\n// module id = 58\n// module chunks = 0 5\n\n//# sourceURL=webpack:///./src/app/home/view/home.html?");
+    /***/
+  },
+&nbsp;
+  /***/
+  59:
+  /***/
+  function _(module, exports) {
+    eval("module.exports = \"&lt;div ng-controller=\\\"MyHomeController as $ctrl\\\" ng-cloak&gt;\\n    &lt;div flex class=\\\"gcs-container\\\" ng-repeat=\\\"item in gcs\\\"&gt;\\n        &lt;md-card md-theme-watch class=\\\"gcs-card\\\"&gt;\\n            &lt;md-card-title class=\\\"card-title\\\"&gt;\\n                &lt;md-card-title-text&gt;\\n                    &lt;span class=\\\"md-headline\\\" data-id = \\\"{{item.id}}\\\" ng-hide =\\\"item.count === 1\\\" ng-click=\\\"$ctrl.showFull($event)\\\"&gt;{{item.name | uppercase}} ({{item.count | uppercase}} ORDERS)&lt;/span&gt;\\n                    &lt;span class=\\\"md-headline\\\" data-id = \\\"{{item.id}}\\\" ng-hide =\\\"item.count !== 1\\\" ng-click=\\\"$ctrl.showFull($event)\\\"&gt;{{item.name | uppercase}}&lt;/span&gt;\\n                &lt;/md-card-title-text&gt;\\n                &lt;md-card-title-media&gt;\\n                    &lt;div class=\\\"md-media-lg card-media card-date\\\"&gt;\\n                        &lt;span class=\\\"md-subhead\\\"&gt;{{item.dateOfModification | date: 'longDate'}}&lt;/span&gt;\\n                    &lt;/div&gt;\\n                &lt;/md-card-title-media&gt;\\n            &lt;/md-card-title&gt;\\n            &lt;div class=\\\"card-content\\\"&gt;\\n                &lt;md-chips ng-model=\\\"item.tags\\\"\\n                          readonly=true\\n                          input-aria-label=\\\"Chips\\\"\\n\\n                &gt;\\n                    &lt;md-chip-template&gt;\\n                        &lt;strong&gt;{{$chip.name}}&lt;/strong&gt;\\n                    &lt;/md-chip-template&gt;\\n                &lt;/md-chips&gt;\\n                &lt;span class=\\\"md-subhead\\\"&gt;{{item.description}}&lt;/span&gt;\\n            &lt;/div&gt;\\n            &lt;div class=\\\"item-buttons-container\\\"&gt;\\n                &lt;md-card-actions layout=\\\"row\\\" layout-align=\\\"end center\\\" class=\\\"item-price-container\\\"&gt;\\n                    &lt;md-button\\n                            ng-if=\\\"globals.currentUser.username\\\"\\n                            class=\\\"button-white\\\"\\n                            md-colors=\\\"{background: 'Cyan'}\\\"\\n                            ng-click=\\\"$ctrl.buy(item.id)\\\"\\n                    &gt;\\n                        {{ 'home.buy.label' | translate }}\\n                    &lt;/md-button&gt;\\n                    &lt;div class=\\\"item-price\\\"&gt;\\n                        {{item.price}} BYN\\n                    &lt;/div&gt;\\n                &lt;/md-card-actions&gt;\\n            &lt;/div&gt;\\n        &lt;/md-card&gt;\\n    &lt;/div&gt;\\n\\n    &lt;h1 class=\\\"nothing\\\" ng-if=\\\"gcs.length === 0\\\"&gt;{{ 'home.nothing' | translate }}&lt;/h1&gt;\\n\\n    &lt;div ng-if=\\\"dataLoading\\\" class=\\\"spinner-container\\\"&gt;\\n        &lt;md-progress-circular md-mode=\\\"indeterminate\\\" class=\\\"custom-spinner\\\"&gt;&lt;/md-progress-circular&gt;\\n    &lt;/div&gt;\\n&lt;/div&gt;\\n\\n\\n\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/home/view/my-home.html\n// module id = 59\n// module chunks = 0 5\n\n//# sourceURL=webpack:///./src/app/home/view/my-home.html?");
+    /***/
+  }
+  /******/
+&nbsp;
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jan 21 2019 13:55:14 GMT+0300 (+03)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

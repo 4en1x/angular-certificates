@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/editgc/editgc.controller.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">app/editgc/</a> editgc.controller.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.52% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45.45% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.52% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+&nbsp;
+/******/
+(function (modules) {
+  // webpackBootstrap
+&nbsp;
+  /******/
+  // The module cache
+&nbsp;
+  /******/
+  var installedModules = {};
+  /******/
+&nbsp;
+  /******/
+  // The require function
+&nbsp;
+  /******/
+&nbsp;
+  function __webpack_require__(moduleId) {
+    /******/
+&nbsp;
+    /******/
+    // Check if module is in cache
+&nbsp;
+    /******/
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (installedModules[moduleId]) {
+      /******/
+<span class="cstat-no" title="statement not covered" >      return installedModules[moduleId].exports;</span>
+      /******/
+    }
+    /******/
+    // Create a new module (and put it into the cache)
+&nbsp;
+    /******/
+&nbsp;
+&nbsp;
+    var module = installedModules[moduleId] = {
+      /******/
+      i: moduleId,
+&nbsp;
+      /******/
+      l: false,
+&nbsp;
+      /******/
+      exports: {}
+      /******/
+&nbsp;
+    };
+    /******/
+&nbsp;
+    /******/
+    // Execute the module function
+&nbsp;
+    /******/
+&nbsp;
+    modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+    /******/
+&nbsp;
+    /******/
+    // Flag the module as loaded
+&nbsp;
+    /******/
+&nbsp;
+    module.l = true;
+    /******/
+&nbsp;
+    /******/
+    // Return the exports of the module
+&nbsp;
+    /******/
+&nbsp;
+    return module.exports;
+    /******/
+  }
+  /******/
+&nbsp;
+  /******/
+&nbsp;
+  /******/
+  // expose the modules object (__webpack_modules__)
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.m = modules;
+  /******/
+&nbsp;
+  /******/
+  // expose the module cache
+&nbsp;
+  /******/
+&nbsp;
+  __webpack_require__.c = installedModules;
+  /******/
+&nbsp;
+  /******/
+  // identity function for calling harmony imports with the correct context
+&nbsp;
+  /******/
+&nbsp;
+  __webpack_require__.i = <span class="fstat-no" title="function not covered" >function (value) {</span>
+<span class="cstat-no" title="statement not covered" >    return value;</span>
+  };
+  /******/
+&nbsp;
+  /******/
+  // define getter function for harmony exports
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.d = <span class="fstat-no" title="function not covered" >function (exports, name, getter) {</span>
+    /******/
+<span class="cstat-no" title="statement not covered" >    if (!__webpack_require__.o(exports, name)) {</span>
+      /******/
+<span class="cstat-no" title="statement not covered" >      Object.defineProperty(exports, name, {</span>
+        /******/
+        configurable: false,
+&nbsp;
+        /******/
+        enumerable: true,
+&nbsp;
+        /******/
+        get: getter
+        /******/
+&nbsp;
+      });
+      /******/
+    }
+    /******/
+&nbsp;
+  };
+  /******/
+&nbsp;
+  /******/
+  // getDefaultExport function for compatibility with non-harmony modules
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.n = <span class="fstat-no" title="function not covered" >function (module) {</span>
+    /******/
+<span class="cstat-no" title="statement not covered" >    var getter = module &amp;&amp; module.__esModule ?</span>
+    /******/
+<span class="fstat-no" title="function not covered" >    function getDefault() {</span>
+<span class="cstat-no" title="statement not covered" >      return module['default'];</span>
+    } :
+    /******/
+<span class="fstat-no" title="function not covered" >    function getModuleExports() {</span>
+<span class="cstat-no" title="statement not covered" >      return module;</span>
+    };
+    /******/
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    __webpack_require__.d(getter, 'a', getter);</span>
+    /******/
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return getter;</span>
+    /******/
+  };
+  /******/
+&nbsp;
+  /******/
+  // Object.prototype.hasOwnProperty.call
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.o = <span class="fstat-no" title="function not covered" >function (object, property) {</span>
+<span class="cstat-no" title="statement not covered" >    return Object.prototype.hasOwnProperty.call(object, property);</span>
+  };
+  /******/
+&nbsp;
+  /******/
+  // __webpack_public_path__
+&nbsp;
+  /******/
+&nbsp;
+&nbsp;
+  __webpack_require__.p = "/var/folders/yq/24w_xk_j64g0rlkb9sq75hgh0000gn/T/_karma_webpack_/";
+  /******/
+&nbsp;
+  /******/
+  // Load entry module and return exports
+&nbsp;
+  /******/
+&nbsp;
+  return __webpack_require__(__webpack_require__.s = 37);
+  /******/
+})(
+/************************************************************************/
+&nbsp;
+/******/
+{
+  /***/
+  37:
+  /***/
+  function _(module, exports, __webpack_require__) {
+    "use strict";
+&nbsp;
+    eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar deleteConfirmTemplate = __webpack_require__(55);\nvar exitConfirmTemplate = __webpack_require__(57);\n\nvar EditGCController = function () {\n  function EditGCController($scope, $routeParams, $mdDialog, $location, EditGCService, AlertHelper) {\n    var _this = this;\n\n    _classCallCheck(this, EditGCController);\n\n    this.scope = $scope;\n    this.location = $location;\n    this.routeParams = $routeParams;\n    this.mdDialog = $mdDialog;\n    this.AlertHelper = AlertHelper;\n    this.EditGCService = EditGCService;\n    this.scope.gc = {};\n    var id = this.routeParams.id;\n\n    if (id) {\n      this.getGC(id);\n    }\n\n    this.scope.$on('$locationChangeStart', function (event) {\n      var path = $location.path();\n      if (!_this.scope.form) return;\n      if (_this.scope.form.$dirty) {\n        var that = _this;\n        var mdDialogCtrl = function mdDialogCtrl($scope) {\n          $scope.cancel = function () {\n            that.mdDialog.cancel();\n          };\n          $scope.confirm = function () {\n            that.scope.form.$dirty = false;\n            that.location.path(path);\n            that.mdDialog.cancel();\n          };\n        };\n        _this.mdDialog.show({\n          controller: mdDialogCtrl,\n          template: exitConfirmTemplate,\n          parent: angular.element(document.body),\n          clickOutsideToClose: true,\n          fullscreen: false\n        });\n\n        event.preventDefault();\n      }\n    });\n  }\n\n  _createClass(EditGCController, [{\n    key: 'getGC',\n    value: function getGC(id) {\n      var _this2 = this;\n\n      this.scope.dataLoading = true;\n      this.EditGCService.GetGC(id, function (response) {\n        _this2.scope.gc = response.data;\n        _this2.scope.dataLoading = false;\n      }, this.errorCallback.bind(this));\n    }\n  }, {\n    key: 'addGC',\n    value: function addGC() {\n      var _this3 = this;\n\n      this.scope.dataLoading = true;\n      this.EditGCService.AddGC(this.scope.gc, function (response) {\n        _this3.scope.dataLoading = false;\n        _this3.AlertHelper.successCallback(response);\n      }, this.errorCallback.bind(this));\n    }\n  }, {\n    key: 'deleteGC',\n    value: function deleteGC(id) {\n      var _this4 = this;\n\n      this.scope.dataLoading = true;\n      this.EditGCService.DeleteGC(id, function (response) {\n        _this4.AlertHelper.successCallback(response);\n        _this4.scope.dataLoading = false;\n      }, this.errorCallback.bind(this));\n    }\n  }, {\n    key: 'beforeDeleteGC',\n    value: function beforeDeleteGC(gcId) {\n      var that = this;\n      var mdDialogCtrl = function mdDialogCtrl($scope, dataToPass) {\n        $scope.id = dataToPass;\n        $scope.cancel = function () {\n          that.mdDialog.cancel();\n        };\n        $scope.delete = function (id) {\n          that.deleteGC(id);\n          that.mdDialog.cancel();\n        };\n      };\n      this.mdDialog.show({\n        locals: { dataToPass: gcId },\n        controller: mdDialogCtrl,\n        template: deleteConfirmTemplate,\n        parent: angular.element(document.body),\n        clickOutsideToClose: true,\n        fullscreen: false\n      });\n    }\n  }, {\n    key: 'errorCallback',\n    value: function errorCallback(error) {\n      this.AlertHelper.errorCallback(error);\n      this.scope.dataLoading = false;\n    }\n  }, {\n    key: 'addTag',\n    value: function addTag() {\n      if (!this.scope.inputTag) {\n        return;\n      }\n\n      if (!this.scope.gc.tags) {\n        this.scope.gc.tags = [];\n      }\n\n      this.scope.gc.tags.push({\n        name: this.scope.inputTag\n      });\n      this.scope.inputTag = '';\n    }\n  }, {\n    key: 'editGC',\n    value: function editGC(id) {\n      var _this5 = this;\n\n      this.scope.dataLoading = true;\n      this.EditGCService.EditGC(id, this.scope.gc, function (response) {\n        _this5.AlertHelper.successCallback(response);\n        _this5.scope.dataLoading = false;\n      }, this.errorCallback.bind(this));\n    }\n  }]);\n\n  return EditGCController;\n}();\n\nexports.default = EditGCController;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/editgc/editgc.controller.js\n// module id = 37\n// module chunks = 0 1 3 7\n\n//# sourceURL=webpack:///./src/app/editgc/editgc.controller.js?");
+    /***/
+  },
+&nbsp;
+  /***/
+  55:
+  /***/
+  function _(module, exports) {
+    eval("module.exports = \"&lt;md-dialog aria-label=\\\"Delete Confirmation\\\" ng-controller=\\\"HomeController as $ctrl\\\" ng-cloak&gt;\\n    &lt;form ng-cloak&gt;\\n        &lt;md-toolbar&gt;\\n            &lt;div class=\\\"md-toolbar-tools\\\"&gt;\\n                &lt;h2&gt;{{ 'dialog.exit.label.confirm' | translate }}&lt;/h2&gt;\\n                &lt;span flex&gt;&lt;/span&gt;\\n                &lt;md-button class=\\\"md-icon-button\\\" ng-click=\\\"cancel()\\\"&gt;\\n                    &lt;i class=\\\"material-icons\\\" aria-label=\\\"Close dialog\\\"&gt;cancel&lt;/i&gt;\\n                &lt;/md-button&gt;\\n            &lt;/div&gt;\\n        &lt;/md-toolbar&gt;\\n\\n        &lt;md-dialog-content&gt;\\n            &lt;div class=\\\"md-dialog-content\\\"&gt;\\n                &lt;p class=\\\"md-subhead\\\"&gt;{{ 'dialog.exit.label.want' | translate }}&lt;/p&gt;\\n            &lt;/div&gt;\\n        &lt;/md-dialog-content&gt;\\n\\n        &lt;md-dialog-actions layout=\\\"row\\\"&gt;\\n            &lt;span flex&gt;&lt;/span&gt;\\n            &lt;md-button ng-click=\\\"cancel()\\\"&gt;\\n                {{ 'dialog.exit.label.cancel' | translate }}\\n            &lt;/md-button&gt;\\n            &lt;span flex&gt;&lt;/span&gt;\\n            &lt;md-button ng-click=\\\"delete(id)\\\"&gt;\\n                {{ 'dialog.exit.label.delete' | translate }}\\n            &lt;/md-button&gt;\\n        &lt;/md-dialog-actions&gt;\\n    &lt;/form&gt;\\n&lt;/md-dialog&gt;\\n\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/editgc/view/deleteConfirmation.html\n// module id = 55\n// module chunks = 0 1 3 7\n\n//# sourceURL=webpack:///./src/app/editgc/view/deleteConfirmation.html?");
+    /***/
+  },
+&nbsp;
+  /***/
+  57:
+  /***/
+  function _(module, exports) {
+    eval("module.exports = \"&lt;md-dialog aria-label=\\\"Exit Confirmation\\\" ng-controller=\\\"HomeController as $ctrl\\\" ng-cloak&gt;\\n    &lt;form ng-cloak&gt;\\n        &lt;md-toolbar&gt;\\n            &lt;div class=\\\"md-toolbar-tools\\\"&gt;\\n                &lt;h2&gt;{{ 'dialog.exit.label.confirm' | translate }}&lt;/h2&gt;\\n                &lt;span flex&gt;&lt;/span&gt;\\n                &lt;md-button class=\\\"md-icon-button\\\" ng-click=\\\"cancel()\\\"&gt;\\n                    &lt;i class=\\\"material-icons\\\" aria-label=\\\"Close dialog\\\"&gt;cancel&lt;/i&gt;\\n                &lt;/md-button&gt;\\n            &lt;/div&gt;\\n        &lt;/md-toolbar&gt;\\n\\n        &lt;md-dialog-content&gt;\\n            &lt;div class=\\\"md-dialog-content\\\"&gt;\\n                &lt;p class=\\\"md-subhead\\\"&gt;{{ 'dialog.exit.label.unsaved' | translate }}&lt;/p&gt;\\n            &lt;/div&gt;\\n        &lt;/md-dialog-content&gt;\\n\\n        &lt;md-dialog-actions layout=\\\"row\\\"&gt;\\n            &lt;span flex&gt;&lt;/span&gt;\\n            &lt;md-button ng-click=\\\"cancel()\\\"&gt;\\n                {{ 'dialog.exit.label.cancel' | translate }}\\n            &lt;/md-button&gt;\\n            &lt;md-button ng-click=\\\"confirm()\\\"&gt;\\n                {{ 'dialog.exit.label.leave' | translate }}\\n            &lt;/md-button&gt;\\n        &lt;/md-dialog-actions&gt;\\n    &lt;/form&gt;\\n&lt;/md-dialog&gt;\\n\";\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/app/editgc/view/exitConfirmation.html\n// module id = 57\n// module chunks = 0 1 3 7\n\n//# sourceURL=webpack:///./src/app/editgc/view/exitConfirmation.html?");
+    /***/
+  }
+  /******/
+&nbsp;
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jan 21 2019 13:55:14 GMT+0300 (+03)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -20,12 +20,12 @@ module.exports = function (config) {
     files: [
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      'src/app/app.js',
+      'src/**/*.js',
       'tests/*.js',
     ],
 
     preprocessors: {
-      'src/app/app.js': ['webpack', 'babel'],
+      'src/**/*.js': ['webpack', 'babel', 'sourcemap', 'coverage'],
       'tests/*.js': ['webpack', 'babel'],
     },
 
@@ -58,7 +58,17 @@ module.exports = function (config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec'],
+    reporters: ['spec', 'coverage'],
+
+    coverageReporter: {
+      dir: 'reports/coverage',
+      reporters: [
+        {
+          type: 'html',
+          subdir: 'report-html',
+        },
+      ],
+    },
 
 
     // web server port
@@ -90,5 +100,7 @@ module.exports = function (config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity,
+
+
   });
 };
